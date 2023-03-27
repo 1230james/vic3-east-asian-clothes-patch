@@ -1,0 +1,67 @@
+﻿# Trigger definitions for DRY
+
+# Catches unwesternized characters OR characters in Devout or Rural Folk IGs
+# AWS does not westernize the dress of Devout and Rural Folk IG leaders apparently
+EACP_unwesternized_character_trigger = {
+    exists = scope:character
+    scope:character = {
+        OR = {
+            snori_character_westernize_trigger = no
+            scope:character = {
+                NOT = { # Westernize Devout + Rural Folk commanders anyway
+                    has_role = general # The army cares not about your personal opinions!
+                    has_role = admiral
+                }
+                OR = {
+                    interest_group = { is_interest_group_type = ig_devout }
+                    interest_group = { is_interest_group_type = ig_rural_folk }
+                }
+            }
+        }
+    }
+}
+
+EACP_unwesternized_pop_trigger = {
+    exists = scope:pop
+    scope:pop = {
+        OR = {
+            snori_pop_westernize_trigger = no
+            is_pop_type = farmers
+            is_pop_type = peasants
+            is_pop_type = laborers
+            is_pop_type = clergymen
+            is_pop_type = slaves
+        }
+    }
+}
+
+EACP_is_commander_trigger = {
+    exists = scope:character
+    scope:character = {
+        OR = {
+            has_role = general
+            has_role = admiral
+        }
+    }
+}
+
+# Check against all of EAC's Chinese clothes triggers
+EACP_is_character_EAC_chinese_trigger = {
+    exists = scope:character
+    scope:character = {
+        OR = {
+            chinese_imperial_clothes_trigger                = yes
+            chinese_imperial_clothes_ming_trigger           = yes
+            chinese_court_clothes_general_trigger_01        = yes
+            chinese_court_clothes_general_trigger_02        = yes
+            chinese_court_clothes_general_trigger_03        = yes
+            chinese_court_clothes_general_ming_trigger_00   = yes
+            chinese_court_clothes_general_ming_trigger_0102 = yes
+            chinese_court_clothes_general_ming_trigger_0304 = yes
+            chinese_court_clothes_republic_trigger          = yes
+            chinese_prince_clothes_ming_trigger             = yes
+            chinese_king_clothes_ming_trigger               = yes
+            chinese_imperial_clothes_republic_trigger       = yes
+        }
+    }
+}

@@ -1,7 +1,7 @@
 ﻿headgear = {
-	usage = game
-	selection_behavior = weighted_random
-	fallback = no_headgear
+    usage = game
+    selection_behavior = weighted_random
+    fallback = no_headgear
 
     no_headgear = {
         dna_modifiers = {
@@ -31,7 +31,8 @@
             modifier = {
                add = 100
                chinese_imperial_clothes_trigger = yes
-			   EAC_character_cool_trigger = no
+               EAC_character_cool_trigger = no
+               snori_character_westernize_trigger = no
             }
         }
     }
@@ -50,7 +51,8 @@
             modifier = {
                add = 100
                chinese_imperial_clothes_trigger = yes
-			   EAC_character_cool_trigger = yes
+               EAC_character_cool_trigger = yes
+               snori_character_westernize_trigger = no
             }
         }
     }
@@ -68,10 +70,11 @@
             base = 0
             modifier = {
                 add = 100
-				OR = {
-                	japanese_shogun_clothes_trigger = yes
-                	japanese_taishi_clothes_trigger = yes
-            	}
+                OR = {
+                    japanese_shogun_clothes_trigger = yes
+                    japanese_taishi_clothes_trigger = yes
+                }
+                snori_character_westernize_trigger = no
             }
         }
     }
@@ -89,7 +92,8 @@
             base = 0
             modifier = {
                 add = 100
-				japanese_imperial_clothes_trigger = yes
+                japanese_imperial_clothes_trigger = yes
+                snori_character_westernize_trigger = no
             }
         }
     }
@@ -714,7 +718,7 @@
             base = 0
             modifier = {
                 add = 100
-				AND = {
+                AND = {
                     east_asian_clothes_pop_trigger = yes
                     exists = scope:pop
                     scope:pop = {
@@ -723,7 +727,7 @@
                         }
                     }
                 }
-				japanese_clothes_pop_trigger = no
+                japanese_clothes_pop_trigger = no
                 nougyou_clothes_trigger = yes
            }
         }
@@ -969,7 +973,7 @@
     #        }
     #    }
     #}
-	 
+     
     mongolian_common_headgear = {
        dna_modifiers = {
              accessory = {
@@ -984,44 +988,46 @@
             base = 0
             modifier = {
                 add = 100
-				north_asian_clothes_pop_trigger = yes
+                north_asian_clothes_pop_trigger = yes
                 poor_clothes_pop_trigger = yes
            }
         }
      }
 
-	vietnamese_common_headgear = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = vietnamese_common_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
+    vietnamese_common_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = vietnamese_common_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
 
-		weight = {
-			base = 0
-			modifier = {
+        weight = {
+            base = 0
+            modifier = {
                 add = 100
-				nougyou_clothes_trigger = no
-				bureaucrats_clothes_pop_trigger = no
-				officers_clothes_pop_trigger = no
-				slaves_clothes_pop_trigger = no
-				vietnamese_clothes_pop_trigger = yes
-				sla
-				NAND = {
-					clergy_clothes_pop_trigger = yes
-					buddhist_clothes_pop_trigger = yes
-				}
-			}
-			modifier = {
-				add = 100
-				EAC_republic_clothes_trigger = yes
-				vietnamese_clothes_trigger = yes
-			}
-		}
-	}
+                nougyou_clothes_trigger = no
+                bureaucrats_clothes_pop_trigger = no
+                officers_clothes_pop_trigger = no
+                slaves_clothes_pop_trigger = no
+                vietnamese_clothes_pop_trigger = yes
+                # sla # EACP - wtf is this typo
+                NAND = {
+                    clergy_clothes_pop_trigger = yes
+                    buddhist_clothes_pop_trigger = yes
+                }
+                EACP_unwesternized_pop_trigger = yes
+            }
+            modifier = {
+                add = 100
+                EAC_republic_clothes_trigger = yes
+                vietnamese_clothes_trigger = yes
+                EACP_unwesternized_pop_trigger = yes
+            }
+        }
+    }
 
     chinese_common_headgear_kanemochi = {
        dna_modifiers = {
@@ -1039,82 +1045,87 @@
                 add = 100
                 OR = {
 #                    chinese_manchu_queue_hairstyle_character_trigger = yes
-					AND = {
-						chinese_manchu_queue_hairstyle_pops_trigger = yes
-						OR = {
-                    		upper_clothes_pop_trigger = yes
-							clergy_clothes_pop_trigger = yes
-							AND = {
-								middle_clothes_pop_trigger = yes
-								bureaucrats_clothes_pop_trigger = no
-							}
-						}
-					}
-				}
-#				OR = {
-#                	AND = {
+                    AND = {
+                        chinese_manchu_queue_hairstyle_pops_trigger = yes
+                        OR = {
+                            upper_clothes_pop_trigger = yes
+                            clergy_clothes_pop_trigger = yes
+                            AND = {
+                                middle_clothes_pop_trigger = yes
+                                bureaucrats_clothes_pop_trigger = no
+                            }
+                        }
+                        EACP_unwesternized_pop_trigger = yes
+                    }
+                }
+#                OR = {
+#                    AND = {
 #                        exists = scope:pop
 #                        scope:pop = {
-#							OR = {
-#                    			middle_clothes_pop_trigger = yes
-#                    			upper_clothes_pop_trigger = yes		
-#                    			AND = {
-#                    				buddhist_clothes_pop_trigger = yes
-#                    				clergy_clothes_pop_trigger = yes
-#                    			}
-#							}
-#                    		chinese_clothes_pop_trigger = yes
-#						}
+#                            OR = {
+#                                middle_clothes_pop_trigger = yes
+#                                upper_clothes_pop_trigger = yes        
+#                                AND = {
+#                                    buddhist_clothes_pop_trigger = yes
+#                                    clergy_clothes_pop_trigger = yes
+#                                }
+#                            }
+#                            chinese_clothes_pop_trigger = yes
+#                        }
 #                    }
-#					chinese_court_clothes_republic_trigger = yes
-#					chinese_imperial_clothes_republic_trigger = yes
-#				}
+#                    chinese_court_clothes_republic_trigger = yes
+#                    chinese_imperial_clothes_republic_trigger = yes
+#                }
            }
         }
      }
 
     chinese_foreign_headgear = {
-       dna_modifiers = {
-             accessory = {
-                 mode = add
-                 gene = headgear
-                 template = chinese_foreign_headgear
-                 range = { 0 1 } # For the randomness to work correctly
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = chinese_foreign_headgear
+                range = { 0 1 } # For the randomness to work correctly
             }
-          }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 100
-				OR = {
-                	AND = {
-						chinese_clothes_pop_trigger = yes
-						OR = {
-                    		republic_of_china_trigger = yes
-                    		overseas_eastasian_trigger = yes
-                    		no_china_exist_trigger = yes
-                    		AND = {
-                				chinese_manchu_queue_hairstyle_pops_trigger = no
-								monarch_clothes_pop_trigger = no
-                    		}
-						}
-						OR = {
-                    		middle_clothes_pop_trigger = yes
-                    		upper_clothes_pop_trigger = yes
-                    		AND = {
-                    			confucianism_clothes_pop_trigger = yes
-                    			clergy_clothes_pop_trigger = yes
-                    		}
-						}
-					}
-					chinese_court_clothes_republic_trigger = yes
-					chinese_imperial_clothes_republic_trigger = yes
-					tibetan_character_clothes_trigger = yes
-				}
-           }
         }
-     }
+        
+        # EACP - Replacing this westernization logic with AWC decision
+        weight = {
+            base = 0 
+            #modifier = {
+            #    add = 100
+            #    OR = {
+            #         
+            #        AND = {
+            #            chinese_clothes_pop_trigger = yes
+            #            OR = {
+            #                republic_of_china_trigger = yes
+            #                overseas_eastasian_trigger = yes
+            #                no_china_exist_trigger = yes
+            #                AND = {
+            #                    chinese_manchu_queue_hairstyle_pops_trigger = no
+            #                    monarch_clothes_pop_trigger = no
+            #                }
+            #            }
+            #            OR = {
+            #                middle_clothes_pop_trigger = yes
+            #                upper_clothes_pop_trigger = yes
+            #                AND = {
+            #                    confucianism_clothes_pop_trigger = yes
+            #                    clergy_clothes_pop_trigger = yes
+            #                }
+            #            }
+            #        }
+            #        OR = {
+            #            chinese_court_clothes_republic_trigger = yes
+            #            chinese_imperial_clothes_republic_trigger = yes
+            #            tibetan_character_clothes_trigger = yes
+            #        }
+            #    }
+            #}
+        }
+    }
 
     chinese_court_headgear_warm_1 = {
        dna_modifiers = {
@@ -1130,13 +1141,14 @@
             base = 0
             modifier = {
                 add = 2000
-				EAC_character_cool_trigger = no
-				OR = {
+                EAC_character_cool_trigger = no
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     chinese_court_clothes_official_trigger_01 = yes
                     chinese_court_clothes_general_trigger_01 = yes
                     north_asian_court_clothes_trigger = yes
                     qing_subject_clothes_trigger = yes
-				}
+                }
                 scope:character = {
                     is_female = no
                 }
@@ -1158,11 +1170,12 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = no
-				OR = {
+                EAC_character_cool_trigger = no
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     chinese_court_clothes_official_trigger_02 = yes
                     chinese_court_clothes_general_trigger_02 = yes
-				}
+                }
                 scope:character = {
                     is_female = no
                 }
@@ -1184,11 +1197,12 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = no
-				OR = {
+                EAC_character_cool_trigger = no
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     chinese_court_clothes_official_trigger_03 = yes
                     chinese_court_clothes_general_trigger_03 = yes
-				}
+                }
                 scope:character = {
                     is_female = no
                 }
@@ -1210,8 +1224,9 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = no
-				chinese_court_clothes_official_trigger_04 = yes
+                EAC_character_cool_trigger = no
+                EACP_unwesternized_character_trigger = yes
+                chinese_court_clothes_official_trigger_04 = yes
                 scope:character = {
                     is_female = no
                 }
@@ -1233,8 +1248,9 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = no
-				chinese_court_clothes_official_trigger_05 = yes
+                EAC_character_cool_trigger = no
+                EACP_unwesternized_character_trigger = yes
+                chinese_court_clothes_official_trigger_05 = yes
                 scope:character = {
                     is_female = no
                 }
@@ -1256,13 +1272,14 @@
             base = 0
             modifier = {
                 add = 2000
-				EAC_character_cool_trigger = yes
-				OR = {
+                EAC_character_cool_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     chinese_court_clothes_official_trigger_01 = yes
                     chinese_court_clothes_general_trigger_01 = yes
                     north_asian_court_clothes_trigger = yes
                     qing_subject_clothes_trigger = yes
-				}
+                }
                 scope:character = {
                     is_female = no
                 }
@@ -1284,11 +1301,12 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = yes
-				OR = {
+                EAC_character_cool_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     chinese_court_clothes_official_trigger_02 = yes
                     chinese_court_clothes_general_trigger_02 = yes
-				}
+                }
                 scope:character = {
                     is_female = no
                 }
@@ -1310,11 +1328,12 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = yes
-				OR = {
+                EAC_character_cool_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     chinese_court_clothes_official_trigger_03 = yes
                     chinese_court_clothes_general_trigger_03 = yes
-				}
+                }
                 scope:character = {
                     is_female = no
                 }
@@ -1336,7 +1355,8 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = yes
+                EAC_character_cool_trigger = yes
+                EACP_unwesternized_character_trigger = yes
                 chinese_court_clothes_official_trigger_04 = yes
                 scope:character = {
                     is_female = no
@@ -1359,8 +1379,9 @@
             base = 0
             modifier = {
                 add = 100
-				EAC_character_cool_trigger = yes
-				chinese_court_clothes_official_trigger_05 = yes
+                EAC_character_cool_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                chinese_court_clothes_official_trigger_05 = yes
                 scope:character = {
                     is_female = no
                 }
@@ -1382,12 +1403,13 @@
             base = 0
             modifier = {
                 add = 1000000
-				EAC_pop_cool_trigger = no
+                EAC_pop_cool_trigger = no
+                EACP_unwesternized_pop_trigger = yes
                 chinese_qing_clothes_pop_trigger = yes
-				OR = {
-					bureaucrats_clothes_pop_trigger = yes
-					officers_clothes_pop_trigger = yes
-					soldier_clothes_pop_trigger = yes
+                OR = {
+                    bureaucrats_clothes_pop_trigger = yes
+                    officers_clothes_pop_trigger = yes
+                    soldier_clothes_pop_trigger = yes
                 }
            }
         }
@@ -1407,12 +1429,13 @@
             base = 0
             modifier = {
                 add = 1000000
-				EAC_pop_cool_trigger = yes
+                EAC_pop_cool_trigger = yes
+                EACP_unwesternized_pop_trigger = yes
                 chinese_qing_clothes_pop_trigger = yes
-				OR = {
-					bureaucrats_clothes_pop_trigger = yes
-					officers_clothes_pop_trigger = yes
-					soldier_clothes_pop_trigger = yes
+                OR = {
+                    bureaucrats_clothes_pop_trigger = yes
+                    officers_clothes_pop_trigger = yes
+                    soldier_clothes_pop_trigger = yes
                 }
            }
         }
@@ -1432,13 +1455,14 @@
             base = 0
             modifier = {
                 add = 1000
-				OR = {
-					chinese_imperial_clothes_ming_trigger = yes
-					korean_imperial_clothes_trigger = yes
-				}
-			}
-		}
-	}
+                EACP_unwesternized_character_trigger = yes
+                OR = {
+                    chinese_imperial_clothes_ming_trigger = yes
+                    korean_imperial_clothes_trigger = yes
+                }
+            }
+        }
+    }
 
     chinese_king_headgear_ming = {
        dna_modifiers = {
@@ -1450,20 +1474,21 @@
             }
           }
 
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				OR = {
-					korean_king_clothes_trigger = yes
-					korean_prince_clothes_trigger = yes
-					chinese_prince_clothes_ming_trigger = yes
-					ming_subject_monarch_clothes_trigger = yes
-					chinese_king_clothes_ming_trigger = yes
-				}
-			}
-		}
-	}
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                EACP_unwesternized_character_trigger = yes
+                OR = {
+                    korean_king_clothes_trigger = yes
+                    korean_prince_clothes_trigger = yes
+                    chinese_prince_clothes_ming_trigger = yes
+                    ming_subject_monarch_clothes_trigger = yes
+                    chinese_king_clothes_ming_trigger = yes
+                }
+            }
+        }
+    }
 
     chinese_court_headgear_ming = {
        dna_modifiers = {
@@ -1479,7 +1504,8 @@
             base = 0
             modifier = {
                 add = 1000
-				OR = {
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     chinese_court_clothes_official_ming_trigger_01 = yes
                     chinese_court_clothes_official_ming_trigger_02 = yes
                     chinese_court_clothes_official_ming_trigger_03 = yes
@@ -1488,101 +1514,111 @@
                     chinese_court_clothes_general_ming_trigger_00 = yes
                     chinese_court_clothes_general_ming_trigger_0102 = yes
                     chinese_court_clothes_general_ming_trigger_0304 = yes
-					ming_subject_clothes_trigger = yes
-				}
-           }
+                    ming_subject_clothes_trigger = yes
+                }
+            }
         }
-     }
+    }
 
     vietnamese_imperial_headgear = {
        dna_modifiers = {
-             accessory = {
-                 mode = add
-                 gene = headgear
-                 template = vietnamese_imperial_headgear
-                 range = { 0 1 } # For the randomness to work correctly
+            accessory = {
+                mode = add
+                gene = headgear
+                template = vietnamese_imperial_headgear
+                range = { 0 1 } # For the randomness to work correctly
             }
-          }
+        }
 
         weight = {
             base = 0
             modifier = {
                 add = 100
+                EACP_unwesternized_character_trigger = yes
                 vietnamese_imperial_clothes_trigger = yes
-           }
+                EACP_is_commander_trigger = no
+            }
         }
-     }
+    }
 
     korean_court_headgear = {
        dna_modifiers = {
-             accessory = {
-                 mode = add
-                 gene = headgear
-                 template = korean_osamo
-                 range = { 0 1 } # For the randomness to work correctly
+            accessory = {
+                mode = add
+                gene = headgear
+                template = korean_osamo
+                range = { 0 1 } # For the randomness to work correctly
             }
-          }
+        }
 
         weight = {
             base = 0
             modifier = {
                 add = 1000
-				OR = {
-					korean_court_clothes_trigger_01 = yes
-					korean_court_clothes_trigger_02 = yes
-					korean_court_clothes_trigger_03 = yes
-					korean_court_clothes_trigger_04 = yes
-				}
-           }
+                EACP_unwesternized_character_trigger = yes
+                OR = {
+                    korean_court_clothes_trigger_01 = yes
+                    korean_court_clothes_trigger_02 = yes
+                    korean_court_clothes_trigger_03 = yes
+                    korean_court_clothes_trigger_04 = yes
+                }
+            }
         }
-     }
+    }
 
     vietnamese_court_headgear_official = {
        dna_modifiers = {
-             accessory = {
-                 mode = add
-                 gene = headgear
-                 template = chinese_court_headgear_ming
-                 range = { 0 1 } # For the randomness to work correctly
+            accessory = {
+                mode = add
+                gene = headgear
+                template = chinese_court_headgear_ming
+                range = { 0 1 } # For the randomness to work correctly
             }
-          }
+        }
 
         weight = {
             base = 0
             modifier = {
                 add = 1000
-				OR = {
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     vietnamese_court_clothes_official_trigger_01 = yes
                     vietnamese_court_clothes_official_trigger_02 = yes
                     vietnamese_court_clothes_official_trigger_03 = yes
                     vietnamese_court_clothes_official_trigger_04 = yes
                     vietnamese_court_clothes_official_trigger_05 = yes
-				}
-           }
+                }
+            }
         }
-     }
+    }
 
     vietnamese_court_headgear_general = {
-       dna_modifiers = {
-             accessory = {
-                 mode = add
-                 gene = headgear
-                 template = vietnamese_court_headgear
-                 range = { 0 1 } # For the randomness to work correctly
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = vietnamese_court_headgear
+                range = { 0 1 } # For the randomness to work correctly
             }
-          }
+        }
 
         weight = {
             base = 0
             modifier = {
                 add = 1000
-				OR = {
+                EACP_unwesternized_character_trigger = yes
+                OR = {
                     vietnamese_court_clothes_general_trigger_0102 = yes
                     vietnamese_court_clothes_general_trigger_0304 = yes
-				}
-           }
+                    AND = { # [EACP] No court clothing for commanders
+                        vietnamese_clothes_trigger = yes
+                        EACP_unwesternized_character_trigger = yes
+                        EACP_is_commander_trigger = yes
+                    }
+                }
+            }
         }
-     }
+    }
 
     chinese_han_officer_headgear_01 = {
         dna_modifiers = {
@@ -1597,8 +1633,9 @@
             base = 0
             modifier = {
                 add = 1000
-				chinese_ming_clothes_pop_trigger = yes
-				soldier_clothes_pop_trigger = yes
+                EACP_unwesternized_pop_trigger = yes
+                chinese_ming_clothes_pop_trigger = yes
+                soldier_clothes_pop_trigger = yes
             }
         }
     }
@@ -1616,28 +1653,30 @@
             base = 0
             modifier = {
                 add = 200
-				OR = {
-					AND = {
-						vietnamese_nguyen_clothes_pop_trigger = yes
-						OR = {
-							bureaucrats_clothes_pop_trigger = yes
-							AND = {
-								clergy_clothes_pop_trigger = yes
-								confucianism_clothes_pop_trigger = yes
-							}
-						}
-					}
-					AND = {
-						chinese_ming_clothes_pop_trigger = yes
-						chinese_han_clothes_pop_trigger = yes
-						OR = {
-                   	 		academics_clothes_pop_trigger = yes
-							AND = {
-								clergy_clothes_pop_trigger = yes
-								confucianism_clothes_pop_trigger = yes
-							}
-						}
-					}
+                OR = {
+                    AND = {
+                        EACP_unwesternized_pop_trigger = yes
+                        vietnamese_nguyen_clothes_pop_trigger = yes
+                        OR = {
+                            bureaucrats_clothes_pop_trigger = yes
+                            AND = {
+                                clergy_clothes_pop_trigger = yes
+                                confucianism_clothes_pop_trigger = yes
+                            }
+                        }
+                    }
+                    AND = {
+                        EACP_unwesternized_pop_trigger = yes
+                        chinese_ming_clothes_pop_trigger = yes
+                        chinese_han_clothes_pop_trigger = yes
+                        OR = {
+                                academics_clothes_pop_trigger = yes
+                            AND = {
+                                clergy_clothes_pop_trigger = yes
+                                confucianism_clothes_pop_trigger = yes
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1656,18 +1695,20 @@
             base = 0
             modifier = {
                 add = 200
-				OR = {
-					AND = {
-						vietnamese_nguyen_clothes_pop_trigger = yes
-						officers_clothes_pop_trigger = yes
-					}
-					AND = {
-						chinese_ming_clothes_pop_trigger = yes
-						OR = {
-							bureaucrats_clothes_pop_trigger = yes
-							officers_clothes_pop_trigger = yes
-                		}
-					}
+                OR = {
+                    AND = {
+                        EACP_unwesternized_pop_trigger = yes
+                        vietnamese_nguyen_clothes_pop_trigger = yes
+                        officers_clothes_pop_trigger = yes
+                    }
+                    AND = {
+                        EACP_unwesternized_pop_trigger = yes
+                        chinese_ming_clothes_pop_trigger = yes
+                        OR = {
+                            bureaucrats_clothes_pop_trigger = yes
+                            officers_clothes_pop_trigger = yes
+                        }
+                    }
                 }
             }
         }
@@ -1686,84 +1727,319 @@
             base = 0
             modifier = {
                 add = 200
-				chinese_ming_clothes_pop_trigger = yes
-				chinese_han_clothes_pop_trigger = yes
-				OR = {
+                EACP_unwesternized_pop_trigger = yes
+                chinese_ming_clothes_pop_trigger = yes
+                chinese_han_clothes_pop_trigger = yes
+                OR = {
+                    AND = {
+                        upper_clothes_pop_trigger = yes
+                        academics_clothes_pop_trigger = no
+                    }
+                    AND = {
+                        middle_clothes_pop_trigger = yes
+                        bureaucrats_clothes_pop_trigger = no
+                    }
+                }
+            }
+        }
+    }
+
+    korean_yangban_headgear = {    #추가댐!
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = korean_yangban_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                OR = {
+                    EACP_unwesternized_pop_trigger = yes
+                    EACP_unwesternized_character_trigger = yes
+                }
+                OR = {
+                    korean_yangban_clothes_trigger = yes
+                    AND = {
+                        EAC_republic_clothes_trigger = yes
+                        korean_clothes_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    korean_soldier_headgear = {    #추가댐!
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = korean_soldier_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                EACP_unwesternized_pop_trigger = yes
+                korean_ri_clothes_pop_trigger = yes
+                soldier_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
+    korean_general_headgear = {    #추가댐!
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = korean_general_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                OR = {
+                    AND = {
+                        exists = scope:pop
+                        EACP_unwesternized_pop_trigger = yes
+                        korean_ri_clothes_pop_trigger = yes
+                        officers_clothes_pop_trigger = yes
+                    }
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            EACP_unwesternized_character_trigger = yes
+                            OR = {
+                                has_role = general
+                                has_role = admiral
+                            }
+                            owner = c:KOR
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    # Adopt Western Clothes - Westernized Hats
+    
+    snori_european_royal_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_royal_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+               add = 1000
+               snori_character_westernize_trigger = yes
+               monarchy_clothes_trigger = yes
+            }
+        }
+    }
+
+    snori_european_common_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_common_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10
+                snori_character_westernize_trigger = yes
+                politician_clothes_trigger = yes
+                armed_forces_clothes_trigger = no
+				NOT = {
 					AND = {
-						upper_clothes_pop_trigger = yes
-						academics_clothes_pop_trigger = no
-					}
-					AND = {
-						middle_clothes_pop_trigger = yes
-						bureaucrats_clothes_pop_trigger = no
-					}
+                        exists = scope:character
+                        scope:character = {
+							OR = { 
+                                interest_group = { is_interest_group_type = ig_devout }
+                                interest_group = { is_interest_group_type = ig_rural_folk }
+                            }
+                            is_ruler = no
+                        }
+                    }
 				}
-			}
-		}
-	}
+            }
+        }
+    }
 
-	korean_yangban_headgear = {	#추가댐!
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = korean_yangban_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
+    snori_german_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = snori_german_military_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                snori_character_westernize_trigger = yes
+                OR = {
+                    scope:character = {
+                        has_role = general
+                    }
+                    AND = {
+                        politician_clothes_trigger = yes
+                        armed_forces_clothes_trigger = yes
+                    }
+                }
+            }
+        }
+    }
 
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				OR = {
-					korean_yangban_clothes_trigger = yes
-					AND = {
-						EAC_republic_clothes_trigger = yes
-						korean_clothes_trigger = yes
-					}
-				}
-			}
-		}
-	}
-	
-	korean_soldier_headgear = {	#추가댐!
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = korean_soldier_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
+    snori_european_admiral_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_admiral_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                snori_character_westernize_trigger = yes
+                OR = {
+                    scope:character = {
+                       has_role = admiral
+                    }
+                    scope:character = {
+                        has_role = general
+                        is_ruler = yes
+                        owner = {
+                            NOT = { has_law = law_type:law_monarchy}
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				korean_ri_clothes_pop_trigger = yes
-				soldier_clothes_pop_trigger = yes
-			}
-		}
-	}
-	
-	korean_general_headgear = {	#추가댐!
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = korean_general_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
+    snori_officers_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_military_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                snori_pop_westernize_trigger = yes
+                officers_clothes_pop_trigger = yes
+            }
+        }
+    }
 
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				korean_ri_clothes_pop_trigger = yes
-				officers_clothes_pop_trigger = yes
-			}
-		}
-	}
+
+    snori_european_capitalist_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_tophat
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                snori_pop_westernize_trigger = yes
+                upper_clothes_pop_trigger = yes
+            }
+        }
+    }
+
+    snori_european_bowler_hat = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_bowlerhat
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                snori_pop_westernize_trigger = yes
+                middle_clothes_pop_trigger = yes
+           }
+        }
+    }
+
+
+    snori_european_flat_cap = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_flatcap
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                snori_pop_westernize_trigger = yes
+                poor_clothes_pop_trigger = yes
+                peasants_clothes_pop_trigger = no
+            }
+        }
+    }
+
+    snori_european_peasants_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_strawhat
+                range = { 0 1 } # For the randomness to work correctly
+           
+            } 
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                AND = {
+                    peasants_clothes_pop_trigger = yes
+                    snori_pop_westernize_trigger = yes
+                }
+            }
+        }
+    }
+    
 }

@@ -107,6 +107,7 @@
             base = 0
             modifier = {
                 add = 1000
+                snori_pop_westernize_trigger = no
                 AND = {
                     exists = scope:pop
                     scope:pop = {
@@ -152,6 +153,7 @@
             base = 0
             modifier = {
                 add = 1000
+                snori_pop_westernize_trigger = no
                 AND = {
                     exists = scope:character
                     scope:character = {

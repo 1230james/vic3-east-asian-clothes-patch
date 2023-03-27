@@ -112,7 +112,9 @@
 			modifier = {
 				add = 100000
 				chinese_imperial_clothes_trigger = yes
-		   }
+                snori_character_westernize_trigger = no
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -138,6 +140,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_trigger_01 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 			}
 		}
 	}
@@ -164,7 +168,9 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_trigger_02 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -190,7 +196,9 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_trigger_03 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+            }
 		}
 	}
 
@@ -216,7 +224,9 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_trigger_04 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -242,7 +252,9 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_trigger_05 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -271,6 +283,8 @@
 					chinese_court_clothes_general_trigger_01 = yes
 					qing_subject_clothes_trigger = yes
 				}
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -297,6 +311,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_general_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -323,6 +339,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_general_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -349,6 +367,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_ming_trigger_01 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -375,6 +395,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_ming_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -401,6 +423,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_ming_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -427,6 +451,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_ming_trigger_04 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -453,6 +479,8 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_official_ming_trigger_05 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -479,7 +507,9 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_general_ming_trigger_00 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -505,7 +535,9 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_general_ming_trigger_0102 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -531,7 +563,9 @@
 			modifier = {
 				add = 1000
 				chinese_court_clothes_general_ming_trigger_0304 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -617,7 +651,9 @@
 			modifier = {
 				add = 100000
 				ming_subject_clothes_trigger = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -637,7 +673,9 @@
 			modifier = {
 				add = 1000
 				vietnamese_court_clothes_official_trigger_01 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -657,6 +695,8 @@
 			modifier = {
 				add = 1000
 				vietnamese_court_clothes_official_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -677,6 +717,8 @@
 			modifier = {
 				add = 1000
 				vietnamese_court_clothes_official_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -697,6 +739,8 @@
 			modifier = {
 				add = 1000
 				vietnamese_court_clothes_official_trigger_04 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -717,6 +761,8 @@
 			modifier = {
 				add = 1000
 				vietnamese_court_clothes_official_trigger_05 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -737,6 +783,8 @@
 			modifier = {
 				add = 1000
 				vietnamese_court_clothes_general_trigger_0102 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -757,6 +805,8 @@
 			modifier = {
 				add = 1000
 				vietnamese_court_clothes_general_trigger_0304 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		   }
 		}
 	}
@@ -776,12 +826,14 @@
 			base = 0
 			modifier = {
 				add = 100
+                EACP_unwesternized_character_trigger = yes
 				OR = {
 					 chinese_court_clothes_republic_trigger = yes
 					 chinese_imperial_clothes_republic_trigger = yes
 					 tibetan_character_clothes_trigger = yes
 				}
-		   }
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -800,6 +852,8 @@
 			base = 0
 			modifier = {
 				add = 100
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 				OR = {
 					 chinese_imperial_clothes_ming_trigger = yes
 					 vietnamese_imperial_clothes_trigger = yes
@@ -897,10 +951,12 @@
 				AND = {
 					exists = scope:character
 					scope:character = {
+                        EACP_unwesternized_character_trigger = yes
 						NOT = { has_culture = cu:korean }
 					}
 				}
-		   }
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -920,7 +976,9 @@
 			modifier = {
 				add = 1000
 				korean_court_clothes_trigger_01 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -940,7 +998,9 @@
 			modifier = {
 				add = 1000
 				korean_court_clothes_trigger_02 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -960,7 +1020,9 @@
 			modifier = {
 				add = 1000
 				korean_court_clothes_trigger_03 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -980,7 +1042,9 @@
 			modifier = {
 				add = 1000
 				korean_court_clothes_trigger_04 = yes
-		   }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
 		}
 	}
 
@@ -998,6 +1062,8 @@
 			modifier = {
 				add = 1000
 				north_asian_court_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 			}
 		}
 	}
@@ -1015,8 +1081,9 @@
 			base = 0
 			modifier = {
 				add = 100000
-				chinese_qing_clothes_pop_trigger = yes
+				chinese_clothes_pop_trigger = yes # EACP - Prevent Chinese officers from going to fallback in republics
 				soldier_clothes_pop_trigger = yes
+                snori_pop_westernize_trigger = no
 			}
 		}
 	}
@@ -1034,16 +1101,45 @@
 			base = 0
 			modifier = {
 				add = 100000
-				chinese_qing_clothes_pop_trigger = yes
+				chinese_clothes_pop_trigger = yes # EACP - Prevent Chinese officers from going to fallback in republics
 				OR = {
 					bureaucrats_clothes_pop_trigger = yes
 					officers_clothes_pop_trigger = yes
 				}
+                snori_pop_westernize_trigger = no
 			}
 		}
 	}
+    
+    # EACP addition - officer pop outfit + necklace
+    # Loosely inspired by Zeng Guofan photo on Wikipedia
+    chinese_general_clothes = {
+        dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = chinese_official_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+        weight = {
+			base = 0
+			modifier = {
+				add = 1000
+                EACP_is_character_EAC_chinese_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = yes
+			}
+		}
+    }
 
-	chinese_ming_offcier_clothes = {
+	chinese_ming_offcier_clothes = { # typo? lol
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -1064,7 +1160,14 @@
 					bureaucrats_clothes_pop_trigger = yes
 					officers_clothes_pop_trigger = yes
 				}
+                snori_pop_westernize_trigger = no
 			}
+            modifier = { # [EACP] No court clothing for commanders
+                add = 1000
+                vietnamese_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = yes
+            }
 		}
 	}
 
@@ -1082,6 +1185,7 @@
 			base = 0
 			modifier = {
 				add = 100000
+                snori_pop_westernize_trigger = no
 				chinese_ming_clothes_pop_trigger = yes
 				soldier_clothes_pop_trigger = yes
 			}
@@ -1108,6 +1212,7 @@
 					officers_clothes_pop_trigger = yes
 				}
 				middle_clothes_pop_trigger = yes
+                snori_pop_westernize_trigger = no
 			}
 		}
 	}
@@ -1144,6 +1249,7 @@
 						}
 					}
 				}
+                snori_pop_westernize_trigger = no
 			}
 		}
 	}
@@ -1162,11 +1268,13 @@
 			modifier = {
 				add = 500
 				vietnamese_clothes_pop_trigger = yes
+                EACP_unwesternized_pop_trigger = yes
 			}
 			modifier = {
 				add = 100
 				EAC_republic_clothes_trigger = yes
 				vietnamese_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
 			}
 			modifier = {
 				add = 100
@@ -1194,33 +1302,50 @@
 				add = 100000
 				vietnamese_nguyen_clothes_pop_trigger = yes
 				soldier_clothes_pop_trigger = yes
+                EACP_unwesternized_pop_trigger = yes
 			}
 		}
 	}
 
-	african_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = african_outfits_politician
-				range = { 0.34 1 } # For the work to randomly correctness
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = african_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
+	african_clothes = { # Taken from Adopt Western Clothes
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = african_outfits_politician
+                range = { 0.34 1 } # For the work to randomly correctness
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = african_necklaces
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				OR = {
+                AND = {
 				african_clothes_trigger = yes
-			}
-		}
-	}
+				snori_character_westernize_trigger = no
+				}
+				AND = {
+                    exists = scope:character
+                    scope:character = {
+                        OR = {
+                            interest_group = { is_interest_group_type = ig_devout }
+                            interest_group = { is_interest_group_type = ig_rural_folk }
+                        }
+                        is_ruler = no
+                        african_clothes_trigger = yes
+                        }
+                    }
+				}
+            }
+        }
+    }
 
 	european_royal_clothes = { #Currently only includes and checks for female clothes.
 		dna_modifiers = {
@@ -1795,6 +1920,7 @@
 						exists = scope:pop
 						scope:pop = {
 							culture = cu:japanese
+                            snori_pop_westernize_trigger = no
 						}
 						OR = {
 							soldier_clothes_pop_trigger = yes
@@ -1806,6 +1932,7 @@
 						scope:character = {
 							has_culture = cu:japanese
 							monarchy_clothes_trigger = yes
+                            EACP_unwesternized_character_trigger = yes
 						}
 					}
 				}
@@ -1813,7 +1940,7 @@
 		}
 	}
 
-		japanese_officers_clothes = {
+    japanese_officers_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -1849,7 +1976,7 @@
 			base = 0
 			modifier = {
 				add  = 1200
-				 AND = {
+				AND = {
 					japanese_clothes_trigger = yes
 					OR = {
 						military_clothes_trigger = yes
@@ -1858,7 +1985,9 @@
 							politician_clothes_trigger = yes
 						}
 					} 
-				}	
+                    snori_pop_westernize_trigger = no
+                    EACP_unwesternized_character_trigger = yes
+				}
 			}
 		}
 	}
@@ -1999,6 +2128,7 @@
 			modifier = {
 				add = 2000
 				japanese_shogun_clothes_trigger = yes
+                snori_character_westernize_trigger = no
 			}
 		}
 	}
@@ -2018,6 +2148,7 @@
 			modifier = {
 				add = 2000
 				japanese_taishi_clothes_trigger = yes
+                snori_character_westernize_trigger = no
 			}
 		}
 	}
@@ -2037,6 +2168,7 @@
 			modifier = {
 				add = 2000
 				japanese_imperial_clothes_trigger = yes
+                snori_character_westernize_trigger = no
 			}
 		}
 	}
@@ -2051,14 +2183,27 @@
 			}
 		} 
 
-		weight = {
-			base = 0
-			modifier = {
-				add = 500
+		weight = { # Copied from AWC
+            base = 0
+            modifier = {
+                add = 500
 				japanese_clothes_pop_trigger = yes
-				poor_clothes_pop_trigger = yes
-			}
-		}
+                AND = {
+					exists = scope:pop
+					scope:pop = {
+                        OR = {
+                            is_pop_type = farmers
+                            is_pop_type = peasants
+                            is_pop_type = laborers
+                            AND = {
+                                is_pop_type = machinists
+                                snori_pop_westernize_trigger = no
+                            }
+						}
+                    }					  
+                }
+            }
+        }
 	}
 
 	japanese_pop_mid_clothes = {
@@ -2085,13 +2230,25 @@
 		} 
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				japanese_clothes_pop_trigger = yes
-				poor_clothes_pop_trigger = no
-			}
-		}
+            base = 0
+            modifier = {
+                add = 1000
+				OR = {
+					AND = {
+                        japanese_clothes_pop_trigger = yes
+                        poor_clothes_pop_trigger = no
+                        snori_pop_westernize_trigger = no
+                    }
+					AND = {
+						exists = scope:pop
+						scope:pop = {
+                            is_pop_type = clergymen
+                            japanese_clothes_pop_trigger = yes
+                        }
+					}
+				}
+            }
+        }
 	}
 
 	japanese_common_clothes = {
@@ -2118,24 +2275,42 @@
 			}
 		}
 
-		 weight = {
-			base = 0
-			modifier = {
-				add = 100
-				AND = {
-					exists = scope:character
-					scope:character = {
-						OR = {
-							AND = {
-								has_culture = cu:japanese
-								monarchy_clothes_trigger = no
-							}
-							has_culture = cu:ainu
-						}
+		weight = {
+            base = 0
+            modifier = {
+                add = 100
+                OR = {
+					AND = {
+                        EACP_unwesternized_character_trigger = yes
+                        exists = scope:character
+                        scope:character = {
+                            OR = {
+                                AND = {
+                                    has_culture = cu:japanese
+                                }
+                                has_culture = cu:ainu
+                            }	
+                        }
+                    }
+					AND = {
+                        exists = scope:character
+                        scope:character = {
+                            OR = {
+                                AND = {
+                                    has_culture = cu:japanese
+                                    monarchy_clothes_trigger = no
+                                    OR = {
+                                        interest_group = { is_interest_group_type = ig_devout }
+                                        interest_group = { is_interest_group_type = ig_rural_folk }
+                                    }
+                                }
+                                has_culture = cu:ainu
+                            }
+                        }
 					}
 				}
-			}
-		}
+            }
+        }
 	}
 
 	korean_pop_clothes = {
@@ -2149,24 +2324,46 @@
 		} 
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 500
-				OR = {
+            base = 0
+            modifier = {
+                add = 500
+				AND = {
+                    exists = scope:pop
+                    scope:pop = {
+						OR = {
+                            culture = cu:korean
+                        }
+                    }  
+                }
+                OR = {
 					AND = {
-						korean_ri_clothes_pop_trigger = yes
-						soldier_clothes_pop_trigger = yes
-					}
-					AND = {
-						exists = scope:pop
-						scope:pop = {
-							culture = cu:korean
+                        exists = scope:pop
+                        scope:pop = {
+                            snori_pop_westernize_trigger = no
+                        }
+                        OR = {
+                            middle_clothes_pop_trigger = yes
+                            soldier_clothes_pop_trigger = yes
 						}
-						poor_clothes_pop_trigger = yes
 					}
+					AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            OR = {
+                                is_pop_type = farmers
+                                is_pop_type = peasants
+                                is_pop_type = laborers
+                                is_pop_type = clergymen # [EACP] Prevent Korean clergy from falling back on generic
+                                AND = {
+                                    is_pop_type = machinists
+                                    snori_pop_westernize_trigger = no
+                                }
+                            }
+                        }
+                    }
 				}
-			}
-		}
+            }
+        }
 	}
 
 	korean_clothes = {
@@ -2180,33 +2377,58 @@
 		}
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				OR = {
-					AND = {
-						korean_ri_clothes_pop_trigger = yes
-						officers_clothes_pop_trigger = yes
-					}
-					AND = {
-						exists = scope:pop
-						scope:pop = {
-							culture = cu:korean
+            base = 0
+            modifier = {
+                add = 100
+                OR = {
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            is_ruler = no
+							snori_character_westernize_trigger = no
 							OR = {
-								upper_clothes_pop_trigger = yes
-								middle_clothes_pop_trigger = yes
-								clergy_clothes_pop_trigger = yes
+                                owner = c:KOR
+                                culture = cu:korean
+                            }
+                        }
+                    }
+					AND = {
+                        exists = scope:character
+                        scope:character = {
+							OR = {
+								interest_group = { is_interest_group_type = ig_devout }
+								interest_group = { is_interest_group_type = ig_rural_folk }
 							}
-						}
+                            is_ruler = no
+							OR = {
+                                owner = c:KOR
+                                culture = cu:korean
+                            }
+                        }
+                    }
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            is_pop_type = officers
+							OR = {
+                                culture = cu:korean
+                            }
+							snori_pop_westernize_trigger = no
+                        }
 					}
-				}
-			}
-			modifier = {
-				add = 100
-				EAC_republic_clothes_trigger = yes
-				korean_clothes_trigger = yes
-			}
-		}
+                    AND = { # [EACP] No court clothing for commanders
+                        exists = scope:character
+                        scope:character = {
+							EACP_is_commander_trigger = yes
+							OR = {
+                                owner = c:KOR
+                                culture = cu:korean
+                            }
+                        }
+                    }
+                }
+            }
+        }
 	}
 
 	korean_imperial_clothes = {
@@ -2220,12 +2442,26 @@
 		}
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				korean_imperial_clothes_trigger = yes
-		   }
-		}
+            base = 0
+            modifier = {
+                add = 100
+				AND = {
+                    exists = scope:character
+                    scope:character = {
+                        is_ruler = yes
+						snori_character_westernize_trigger = no
+						OR = {
+                            owner = c:KOR
+                            culture = cu:korean
+                        }
+                        NOT = {
+                            has_role = general
+                            has_role = admiral
+                        }
+                    }
+                }
+            }
+        }
 	}
 
 	korean_king_clothes = {
@@ -2242,8 +2478,18 @@
 			base = 0
 			modifier = {
 				add = 100
+                snori_character_westernize_trigger = no
 				korean_king_clothes_trigger = yes
-		   }
+                AND = { # [EACP] No court clothing for commanders
+                    exists = scope:character
+                    scope:character = {
+                        NOT = {
+                            has_role = general
+                            has_role = admiral
+                        }
+                    }
+                }
+		    }
 		}
 	}
 
@@ -2261,8 +2507,18 @@
 			base = 0
 			modifier = {
 				add = 100
+                snori_character_westernize_trigger = no
 				korean_prince_clothes_trigger = yes
-		   }
+                AND = { # [EACP] No court clothing for commanders
+                    exists = scope:character
+                    scope:character = {
+                        NOT = {
+                            has_role = general
+                            has_role = admiral
+                        }
+                    }
+                }
+		    }
 		}
 	}
 arabic_clothes = {
@@ -2275,13 +2531,32 @@ arabic_clothes = {
 		}
 	}
 	weight = {
-		base = 0
-		modifier = {
-			add = 100
-			arabic_clothes_trigger = yes
-			armed_forces_clothes_trigger = no
-		}
-	}
+        base = 0
+        modifier = {
+            add = 100
+			OR = {
+				AND = {
+                    arabic_clothes_trigger = yes
+                    armed_forces_clothes_trigger = no
+                    snori_character_westernize_trigger = no
+				}
+				AND = {
+                    arabic_clothes_trigger = yes
+                    armed_forces_clothes_trigger = no
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+							OR = {
+								interest_group = { is_interest_group_type = ig_devout }
+								interest_group = { is_interest_group_type = ig_rural_folk }
+							}
+                            is_ruler = no
+                        }
+                    }
+                }
+			}
+        }
+    }
 }
 arabic_coats = {
 	dna_modifiers = {
@@ -2293,25 +2568,26 @@ arabic_coats = {
 		}
 	}
 	weight = {
-		base = 0
-		modifier = {
-			add = 500
-			AND = {
-				arabic_clothes_trigger = yes
-				OR = {
-					military_clothes_trigger = yes
-					officers_clothes_pop_trigger = yes
-					AND = {
-						armed_forces_clothes_trigger = yes
-						OR = { 
-							politician_clothes_trigger = yes
-							ruler_clothes_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
+        base = 0
+        modifier = {
+            add = 500
+            AND = {
+                arabic_clothes_trigger = yes
+				snori_character_westernize_trigger = no
+                OR = {
+                    military_clothes_trigger = yes
+                    officers_clothes_pop_trigger = yes
+                    AND = {
+                        armed_forces_clothes_trigger = yes
+                        OR = { 
+                            politician_clothes_trigger = yes
+                            ruler_clothes_trigger = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -2383,12 +2659,27 @@ indian_clothes = {
 		}
 	}
 	weight = {
-		base = 0
-		modifier = {
-			add = 100
-			indian_clothes_trigger = yes
-		}
-	}
+        base = 0
+        modifier = {
+            add = 100
+			OR = {
+                AND = {
+                    indian_clothes_trigger = yes
+                    snori_character_westernize_trigger = no
+                }
+                AND = {
+                    exists = scope:character
+                    scope:character = {
+                        OR = {
+                            interest_group = { is_interest_group_type = ig_devout }
+                            interest_group = { is_interest_group_type = ig_rural_folk }
+                        }
+                    }
+                    indian_clothes_trigger = yes
+                }
+			}
+        }
+    }
 }
 indian_royal_clothes = {
 	dna_modifiers = {
@@ -2417,21 +2708,22 @@ indian_royal_clothes = {
 
 	}
 	weight = {
-		base = 0
-		modifier = {
-			add = 200
-			OR = {
-				AND = {
-					indian_clothes_trigger = yes
-					monarchy_clothes_trigger = yes
-				}
-				AND = {
-					hindu_clothes_pop_trigger = yes
-					clergy_clothes_pop_trigger = yes
-				}
-			}
-		}
-	}
+        base = 0
+        modifier = {
+            add = 200
+            OR = {
+                AND = {
+                    indian_clothes_trigger = yes
+                    monarchy_clothes_trigger = yes
+					snori_character_westernize_trigger = no
+                }
+                AND = {
+                    hindu_clothes_pop_trigger = yes
+                    clergy_clothes_pop_trigger = yes
+                }
+            }
+        }
+    }
 }
 
 	
@@ -2453,12 +2745,30 @@ indian_royal_clothes = {
 		}
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				siamese_clothes_trigger = yes
-		   }
-		}
+            base = 0
+            modifier = {
+                add = 100
+				OR = {
+					AND = {
+                        siamese_clothes_trigger = yes
+                        snori_character_westernize_trigger = no
+                    }
+                    AND = {
+                        siamese_clothes_trigger = yes
+                        AND = {
+                            exists = scope:character
+                            scope:character = {
+                                OR = {
+                                    interest_group = { is_interest_group_type = ig_devout }
+                                    interest_group = { is_interest_group_type = ig_rural_folk }
+                                }
+                                is_ruler = no
+                            }
+                        }
+                    }
+                }
+            }
+        }
 	}
 
 	siamese_royal_clothes = {
@@ -2478,13 +2788,14 @@ indian_royal_clothes = {
 		}
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 1200
-				siamese_clothes_trigger = yes
-				monarchy_clothes_trigger = yes
-		   }
-		}
+            base = 0
+            modifier = {
+                add = 1200
+				snori_character_westernize_trigger = no
+                siamese_clothes_trigger = yes
+                monarchy_clothes_trigger = yes
+            }
+        }
 	}
 
 	christian_character_clothes = {
@@ -2856,21 +3167,34 @@ indigenous_oceanic_high_clothes_recognized = {
 		} 
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				south_east_asia_clothes_pop_trigger = yes
-				OR = {
-					poor_clothes_pop_trigger = yes
-					AND = {
-						exists = scope:pop
-						scope:pop = {
-							is_pop_type = soldiers
-						}
-					}
-				}
-			}
-		}
+            base = 0
+            modifier = {
+                add = 100
+                south_east_asia_clothes_pop_trigger = yes
+                OR = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            OR = {
+                                is_pop_type = farmers
+                                is_pop_type = peasants
+                                is_pop_type = laborers
+                                AND = {
+                                    is_pop_type = machinists
+                                    snori_pop_westernize_trigger = no
+                                }
+                            }
+                        }
+                    }
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            is_pop_type = soldiers
+                        }
+                    }
+                }
+            }
+        }
 	}
 	south_east_asia_middle_clothes = {
 		dna_modifiers = {
@@ -2883,13 +3207,14 @@ indigenous_oceanic_high_clothes_recognized = {
 		}
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				south_east_asia_clothes_pop_trigger = yes
-				middle_clothes_pop_trigger = yes
-			}
-		}
+            base = 0
+            modifier = {
+                add = 100
+				snori_pop_westernize_trigger = no
+                south_east_asia_clothes_pop_trigger = yes
+                middle_clothes_pop_trigger = yes
+            }
+        }
 	}
 
 	south_east_asia_upper_clothes = {
@@ -2909,21 +3234,22 @@ indigenous_oceanic_high_clothes_recognized = {
 		}
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 1200
-				south_east_asia_clothes_pop_trigger = yes
-				OR = {
-					upper_clothes_pop_trigger = yes
-					AND = {
-						exists = scope:pop
-						scope:pop = {
-							is_pop_type = officers
-						}
-					}
-				}
-			}
-		}
+            base = 0
+            modifier = {
+                add = 1200
+				snori_pop_westernize_trigger = no
+                south_east_asia_clothes_pop_trigger = yes
+                OR = {
+                    upper_clothes_pop_trigger = yes
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            is_pop_type = officers
+                        }
+                    }
+                }
+            }
+        }
 	}
 
 #Central Asia
@@ -3134,19 +3460,35 @@ indian_upper_clothes = {
 		} 
 
 		weight = {
-			base = 0
-			modifier = {
-				add = 500
-				OR = {
-					chinese_clothes_pop_trigger = yes
-					manchu_clothes_pop_trigger = yes
-				}
-				OR = {
-					poor_clothes_pop_trigger = yes
-					soldier_clothes_pop_trigger = yes
-			   }
-		   }
-		}
+            base = 0
+            modifier = {
+                add = 500
+                east_asian_clothes_pop_trigger = yes
+                japanese_clothes_pop_trigger = no
+                AND = {
+					exists = scope:pop
+					scope:pop = {
+                        OR = {
+                            is_pop_type = farmers
+                            is_pop_type = peasants
+                            is_pop_type = laborers
+                            AND = {
+                                is_pop_type = machinists
+                                snori_pop_westernize_trigger = no
+                            }
+                        }
+                    }					  
+                }
+				NOT = {
+				      AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            culture = cu:korean
+                        }
+					}
+                }
+            }
+        }
 	}
 
 chinese_middle_clothes = {
@@ -3159,25 +3501,28 @@ chinese_middle_clothes = {
 		}
 	} 
 	weight = {
-		base = 0
-		modifier = {
-			add = 500
-			OR = {
-				chinese_clothes_pop_trigger = yes
-				manchu_clothes_pop_trigger = yes
-			}
-			OR = {
-				middle_clothes_pop_trigger = yes
-				clergy_clothes_pop_trigger = yes
-			}
+        base = 0
+        modifier = {
+            add = 500
+            east_asian_clothes_pop_trigger = yes
+            japanese_clothes_pop_trigger = no
 			NOT = {
-				AND = {
-					chinese_qing_clothes_pop_trigger = yes
-					bureaucrats_clothes_pop_trigger = yes
-		   		}
-		   	}
-		}
-	}
+                AND = {
+                    exists = scope:pop
+                    scope:pop = {
+                        culture = cu:korean
+                    }
+                }
+            }
+            OR = {
+                AND = { # [EACP] Slightly altered behavior to keep traditional clothes on clergy pops
+                    middle_clothes_pop_trigger = yes
+                    snori_pop_westernize_trigger = no
+                }
+                clergy_clothes_pop_trigger = yes
+            }
+        }
+    }
 }
 chinese_upper_clothes = {
 	dna_modifiers = {
@@ -3189,17 +3534,23 @@ chinese_upper_clothes = {
 		}  
 	} 
 	weight = {
-		base = 0
-		modifier = {
-			add = 500
-			OR = {
-				chinese_clothes_pop_trigger = yes
-				manchu_clothes_pop_trigger = yes
-				north_asian_clothes_pop_trigger = yes
-			}
-			upper_clothes_pop_trigger = yes
-		}
-	}
+        base = 0
+        modifier = {
+            add = 500
+            east_asian_clothes_pop_trigger = yes
+            japanese_clothes_pop_trigger = no
+            upper_clothes_pop_trigger = yes      
+			snori_pop_westernize_trigger = no
+            NOT = {
+                AND = {
+                    exists = scope:pop
+                    scope:pop = {
+                        culture = cu:korean
+                    }
+                }
+            }			
+        }
+    }
 }
 
 #Arabic
@@ -3213,28 +3564,41 @@ chinese_upper_clothes = {
 			}
 		} 
 		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				OR = {
-					african_clothes_pop_trigger = yes
-					arabic_clothes_pop_trigger = yes
-					AND = {
-						exists = scope:pop
-						scope:pop = {
-							culture = cu:berber
-						}
-					}
-					AND = {
-						exists = scope:pop
-						scope:pop = {
-							culture = cu:tuareg
-						}
-					}
-				}
-				poor_clothes_pop_trigger = yes
-			}
-		}
+            base = 0
+            modifier = {
+                add = 1000
+                OR = {
+                    african_clothes_pop_trigger = yes
+                    arabic_clothes_pop_trigger = yes
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            culture = cu:berber
+                        }
+                    }
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            culture = cu:tuareg
+                        }
+                    }
+                }
+                AND = {
+					exists = scope:pop
+					scope:pop = {
+                        OR = {
+                            is_pop_type = farmers
+                            is_pop_type = peasants
+                            is_pop_type = laborers
+                            AND = {
+                                is_pop_type = machinists
+                                snori_pop_westernize_trigger = no
+                            }
+                        }
+                    }					  
+                }
+            }
+        }
 	}
 	arabic_middle_clothes = {
 		dna_modifiers = {
@@ -3246,15 +3610,16 @@ chinese_upper_clothes = {
 			}
 		} 
 		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				AND = {
-					arabic_clothes_pop_trigger = yes
-					middle_clothes_pop_trigger = yes
-				}
-		   }
-		}
+            base = 0
+            modifier = {
+                add = 1000
+                AND = {
+                    arabic_clothes_pop_trigger = yes
+                    middle_clothes_pop_trigger = yes
+					snori_pop_westernize_trigger = no
+                }
+            }
+        }
 	}
 	arabic_upper_clothes = {
 		dna_modifiers = {
@@ -3266,15 +3631,16 @@ chinese_upper_clothes = {
 			}
 		} 
 		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				AND = {
-					arabic_clothes_pop_trigger = yes
-					upper_clothes_pop_trigger = yes
-				}
-		   }
-		}
+            base = 0
+            modifier = {
+                add = 1000
+                AND = {
+                    arabic_clothes_pop_trigger = yes
+                    upper_clothes_pop_trigger = yes
+					snori_pop_westernize_trigger = no
+                }
+            }
+        }
 	}
 #European
 	european_poor_clothes = {
@@ -3750,29 +4116,30 @@ chinese_upper_clothes = {
 			}
 		}
 		weight = {
-			base = 0
-			modifier = {
-				add = 600
-				AND = {
-					OR = {
-						african_clothes_pop_trigger = yes
-						AND = {
-							exists = scope:pop
-							scope:pop = {
-								culture = cu:berber
-							}
-						}
-						AND = {
-							exists = scope:pop
-							scope:pop = {
-								culture = cu:tuareg
-							}
-						}
-					}
-					middle_clothes_pop_trigger = yes
-				}
-			}
-		}
+            base = 0
+            modifier = {
+                add = 600
+                AND = {
+                    OR = {
+                        african_clothes_pop_trigger = yes
+                        AND = {
+                            exists = scope:pop
+                            scope:pop = {
+                                culture = cu:berber
+                            }
+                        }
+                        AND = {
+                            exists = scope:pop
+                            scope:pop = {
+                                culture = cu:tuareg
+                            }
+                        }
+                    }
+                    middle_clothes_pop_trigger = yes
+					snori_pop_westernize_trigger = no
+                }
+            }
+        }
 	}
 	 african_upper_clothes = {
 		dna_modifiers = {
@@ -3785,40 +4152,41 @@ chinese_upper_clothes = {
 
 		}
 		weight = {
-			base = 0
-			modifier = {
-				add = 600
-				OR = {
-					AND = {
-						OR = {
-							african_clothes_pop_trigger = yes
-							AND = {
-								exists = scope:pop
-								scope:pop = {
-									culture = cu:berber
-								}
-							}
-							AND = {
-								exists = scope:pop
-								scope:pop = {
-									culture = cu:tuareg
-								}
-							}
-						}
-						upper_clothes_pop_trigger = yes
-					}
-					AND = {
-						african_clothes_pop_trigger = yes
-						clergy_clothes_pop_trigger = yes
-						scope:pop = {
-							religion = {
-								has_discrimination_trait = animist
-							}
-						}
-					}
-				}
-		   }
-		}
+            base = 0
+            modifier = {
+                add = 600
+				snori_pop_westernize_trigger = no
+                OR = {
+                    AND = {
+                        OR = {
+                            african_clothes_pop_trigger = yes
+                            AND = {
+                                exists = scope:pop
+                                scope:pop = {
+                                    culture = cu:berber
+                                }
+                            }
+                            AND = {
+                                exists = scope:pop
+                                scope:pop = {
+                                    culture = cu:tuareg
+                                }
+                            }
+                        }
+                        upper_clothes_pop_trigger = yes
+                    }
+                    AND = {
+                        african_clothes_pop_trigger = yes
+                        clergy_clothes_pop_trigger = yes
+                        scope:pop = {
+                            religion = {
+                                has_discrimination_trait = animist
+                            }
+                        }
+                    }
+                }
+            }
+        }
 	}
 
 
@@ -4167,3 +4535,515 @@ buddhist_religious_clothes = {
 		}
 	}
 }
+
+# Adopt Western Clothes - Westernized Clothes
+
+    snori_shopkeepers_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = shirt
+                template = european_shirt
+                range = { 0 0.2 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = outfits
+                template = european_working_class_outfits
+                range = { 0 0.5 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                shopkeepers_clothes_pop_trigger = yes
+                snori_pop_westernize_trigger = yes
+            }
+        }
+    }
+    
+    snori_kor_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = european_coats
+                range = { 0 0.27 } # limiting the set to single-breasted coats, so aiguillettes work
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                range = { 0 0.49 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = european_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                american_clothes_trigger = no
+                british_empire_clothes_trigger = no
+                french_empire_clothes_trigger = no
+                AND = {
+                    exists = scope:character
+                    scope:character = {
+						snori_character_westernize_trigger = yes
+                    }
+                }
+                AND = {
+                    ruler_clothes_trigger = yes
+                    monarchy_clothes_trigger = yes
+                }
+            }
+        }
+    }
+    
+    snori_kor_ruler_republic_clothes = {
+        dna_modifiers = {
+           accessory = {
+               mode = add
+               gene = waistcoats
+               template = european_waistcoats
+               range = { 0 0.67 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                AND = {
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            snori_character_westernize_trigger = yes
+                        }
+                    }
+                    ruler_clothes_trigger = yes
+                    republic_clothes_trigger = yes
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            is_female = no
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    snori_kor_ruler_republic_clothes_female = {
+        dna_modifiers = {
+           accessory = {
+               mode = add
+               gene = outfits
+               template = european_common_outfits
+               range = { 0 1 } # For the randomness to work correctly
+           }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                AND = {
+                    AND = {
+                    exists = scope:character
+                    scope:character = {
+						snori_character_westernize_trigger = yes
+                    }
+                  }
+                    ruler_clothes_trigger = yes
+                    republic_clothes_trigger = yes
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            is_female = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    snori_european_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = european_coats
+                range = { 0 0.27 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                american_clothes_trigger = no
+                british_empire_clothes_trigger = no
+                french_empire_clothes_trigger = no
+                AND = {
+                    exists = scope:character
+                    scope:character = {
+						snori_character_westernize_trigger = yes
+                    }
+                  }
+                OR = {
+                    military_clothes_trigger = yes
+                    officers_clothes_pop_trigger = yes
+                    AND = {
+                        armed_forces_clothes_trigger = yes
+                        politician_clothes_trigger = yes
+                    }
+                }
+                scope:character = {
+                    NOT = {
+                        AND = {
+                            exists = c:PRU
+                            owner = c:PRU 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    snori_european_politician_clothes = {
+        dna_modifiers = {
+           accessory = {
+               mode = add
+               gene = waistcoats
+               template = european_waistcoats
+               range = { 0 1 } # For the randomness to work correctly
+           }
+
+             accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = props
+                template = gene_lences
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                AND = {
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            snori_character_westernize_trigger = yes
+                        }
+                    }
+                    politician_clothes_trigger = yes
+                    armed_forces_clothes_trigger = no
+					NOT = { 
+                        AND = {
+                            exists = scope:character
+                            scope:character = {
+                                OR = { 
+                                    interest_group = { is_interest_group_type = ig_devout }
+                                    interest_group = { is_interest_group_type = ig_rural_folk }
+                                }
+                                is_ruler = no
+                            }
+                        }
+					}
+                }
+           }
+
+           modifier = { #If we want rulers to dress like politicians later.
+               add = 100
+               AND = {
+                   AND = {
+                    exists = scope:character
+                    scope:character = {
+						snori_character_westernize_trigger = yes
+                    }
+                  }
+                   ruler_clothes_trigger = yes
+                   monarchy_clothes_trigger = no
+               }
+           }
+
+
+        }
+    }
+    
+    snori_european_machinists = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = shirt
+                template = working_class_shirt
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = outfits
+                template = european_working_class_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                AND = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            snori_pop_westernize_trigger = yes
+							is_pop_type = machinists
+                                     }
+					        }  
+                    slaves_clothes_pop_trigger = no
+                }     
+           }
+        }
+    }
+    
+    snori_european_middle_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = shirt
+                template = european_shirt
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+             accessory = {
+                mode = add
+                gene = outfits
+                template = european_working_class_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+           #accessory = {
+           #    mode = add
+           #    gene = civilian_coats
+           #    template = european_civilian_coats
+           #    range = { 0 1 } # For the randomness to work correctly
+           #}
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                OR = {
+                    AND = {
+                        AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            snori_pop_westernize_trigger = yes
+                                     }
+					        }
+                        middle_clothes_pop_trigger = yes
+                    }
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = { 
+                                snori_pop_westernize_trigger = yes
+                        }
+                        OR = {
+                            middle_clothes_pop_trigger = yes
+                        }
+                        clergy_clothes_pop_trigger = no
+                    }
+                }                
+           }
+        }
+    }
+    
+    snori_european_upper_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = european_waistcoats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                AND = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            snori_pop_westernize_trigger = yes
+                                     }
+					        }
+                    upper_clothes_pop_trigger = yes
+                }
+           }
+        }
+    }
+    
+    snori_european_soldier_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = european_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                AND = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            snori_pop_westernize_trigger = yes
+                                     }
+					        }
+                    OR = {
+                        soldier_clothes_pop_trigger = yes
+                        officers_clothes_pop_trigger = yes
+                    }
+                }
+           }
+        }
+    }
+    
+    snori_enslaved_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = peasant_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = peasants_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                AND = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            snori_pop_westernize_trigger = yes
+                                     }
+					        }  
+                    slaves_clothes_pop_trigger = yes
+                }  
+            }
+        }
+    }
+}
+    
