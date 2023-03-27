@@ -2444,19 +2444,16 @@
 		weight = {
             base = 0
             modifier = {
-                add = 100
+                add = 1000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
 				AND = {
                     exists = scope:character
                     scope:character = {
                         is_ruler = yes
 						snori_character_westernize_trigger = no
+                        EACP_is_commander_trigger = no
 						OR = {
                             owner = c:KOR
                             culture = cu:korean
-                        }
-                        NOT = {
-                            has_role = general
-                            has_role = admiral
                         }
                     }
                 }
@@ -2477,18 +2474,10 @@
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 1000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
                 snori_character_westernize_trigger = no
 				korean_king_clothes_trigger = yes
-                AND = { # [EACP] No court clothing for commanders
-                    exists = scope:character
-                    scope:character = {
-                        NOT = {
-                            has_role = general
-                            has_role = admiral
-                        }
-                    }
-                }
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		    }
 		}
 	}
@@ -2506,18 +2495,10 @@
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 10000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
                 snori_character_westernize_trigger = no
 				korean_prince_clothes_trigger = yes
-                AND = { # [EACP] No court clothing for commanders
-                    exists = scope:character
-                    scope:character = {
-                        NOT = {
-                            has_role = general
-                            has_role = admiral
-                        }
-                    }
-                }
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		    }
 		}
 	}
