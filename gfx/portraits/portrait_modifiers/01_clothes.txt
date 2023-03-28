@@ -2336,31 +2336,18 @@
                     }  
                 }
                 OR = {
-					AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            snori_pop_westernize_trigger = no
-                        }
-                        OR = {
-                            middle_clothes_pop_trigger = yes
-                            soldier_clothes_pop_trigger = yes
-						}
+                    AND = {
+						korean_ri_clothes_pop_trigger = yes
+						soldier_clothes_pop_trigger = yes
+                        EACP_unwesternized_pop_trigger = yes
 					}
 					AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            OR = {
-                                is_pop_type = farmers
-                                is_pop_type = peasants
-                                is_pop_type = laborers
-                                is_pop_type = clergymen # [EACP] Prevent Korean clergy from falling back on generic
-                                AND = {
-                                    is_pop_type = machinists
-                                    snori_pop_westernize_trigger = no
-                                }
-                            }
-                        }
-                    }
+						exists = scope:pop
+						scope:pop = {
+							culture = cu:korean
+						}
+						poor_clothes_pop_trigger = yes
+					}
 				}
             }
         }
@@ -2382,39 +2369,21 @@
                 add = 100
                 OR = {
                     AND = {
-                        exists = scope:character
-                        scope:character = {
-                            is_ruler = no
-							snori_character_westernize_trigger = no
-							OR = {
-                                owner = c:KOR
-                                culture = cu:korean
-                            }
-                        }
-                    }
+						korean_ri_clothes_pop_trigger = yes
+						officers_clothes_pop_trigger = yes
+                        EACP_unwesternized_pop_trigger = yes
+					}
 					AND = {
-                        exists = scope:character
-                        scope:character = {
+						exists = scope:pop
+						scope:pop = {
+							culture = cu:korean
+                            EACP_unwesternized_pop_trigger = yes
 							OR = {
-								interest_group = { is_interest_group_type = ig_devout }
-								interest_group = { is_interest_group_type = ig_rural_folk }
+								upper_clothes_pop_trigger = yes
+								middle_clothes_pop_trigger = yes
+								clergy_clothes_pop_trigger = yes
 							}
-                            is_ruler = no
-							OR = {
-                                owner = c:KOR
-                                culture = cu:korean
-                            }
-                        }
-                    }
-                    AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            is_pop_type = officers
-							OR = {
-                                culture = cu:korean
-                            }
-							snori_pop_westernize_trigger = no
-                        }
+						}
 					}
                     AND = { # [EACP] No court clothing for commanders
                         exists = scope:character
