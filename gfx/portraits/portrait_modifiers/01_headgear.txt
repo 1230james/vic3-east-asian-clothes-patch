@@ -1556,6 +1556,7 @@
             modifier = {
                 add = 1000
                 EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no
                 OR = {
                     korean_court_clothes_trigger_01 = yes
                     korean_court_clothes_trigger_02 = yes
