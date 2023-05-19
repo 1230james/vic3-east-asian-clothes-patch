@@ -91,32 +91,102 @@
 		}
 	}
 
-	chinese_imperial_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = EAC_chinese_imperial_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-				chinese_imperial_clothes_trigger = yes
+    # EACP addition / tweak - Chinese emperor gets his yellow outfit from vanilla, but the prince gets EAC-added clothes
+    # Original imperial definition kept for reference
+    #chinese_imperial_clothes = {
+    #	dna_modifiers = {
+    #		accessory = {
+    #			mode = add
+    #			gene = outfits
+    #			template = EAC_chinese_imperial_outfits
+    #			range = { 0 1 } # For the randomness to work correctly
+    #		}
+    #		accessory = {
+    #			mode = add
+    #			gene = necklaces
+    #			template = chinese_necklaces
+    #			range = { 0 1 } # For the randomness to work correctly
+    #		}
+    #	}
+    #
+    #	weight = {
+    #		base = 0
+    #		modifier = {
+    #			add = 100000
+    #			chinese_imperial_clothes_trigger = yes
+    #           EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+    #           EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+    #	    }
+    #	}
+    #}
+    
+    # [EACP] New Chinese Emperor definition - bring back yellow outfit from vanilla
+    chinese_emperor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = chinese_necklaces
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                AND = {
+                    exists = scope:character
+                    chinese_imperial_clothes_trigger = yes
+                    scope:character = {
+                        is_heir = no
+                    }
+                }
                 EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-		    }
-		}
-	}
+            }
+        }
+    }
+    
+    # [EACP] Chinese Prince definition - uses new imperial clothes definition from EAC
+    chinese_prince_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = EAC_chinese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = chinese_necklaces
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                AND = {
+                    exists = scope:character
+                    chinese_imperial_clothes_trigger = yes
+                    scope:character = {
+                        is_ruler = no
+                    }
+                }
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+            }
+        }
+    }
 
 	chinese_court_clothes_official_01 = {
 
