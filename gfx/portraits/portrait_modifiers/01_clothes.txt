@@ -3413,8 +3413,12 @@ indian_upper_clothes = {
             base = 0
             modifier = {
                 add = 500
-                east_asian_clothes_pop_trigger = yes
-                japanese_clothes_pop_trigger = no
+                OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
+                    east_asian_clothes_pop_trigger = yes
+                    chinese_clothes_pop_trigger = yes
+                    manchu_clothes_pop_trigger = yes
+                    EACP_is_character_EAC_chinese_trigger = yes
+                }
                 AND = {
 					exists = scope:pop
 					scope:pop = {
@@ -3429,13 +3433,13 @@ indian_upper_clothes = {
                         }
                     }					  
                 }
-				NOT = {
-				      AND = {
+                NOT = {
+                    AND = {
                         exists = scope:pop
                         scope:pop = {
                             culture = cu:korean
                         }
-					}
+                    }
                 }
             }
         }
@@ -3454,15 +3458,11 @@ chinese_middle_clothes = {
         base = 0
         modifier = {
             add = 500
-            east_asian_clothes_pop_trigger = yes
-            japanese_clothes_pop_trigger = no
-			NOT = {
-                AND = {
-                    exists = scope:pop
-                    scope:pop = {
-                        culture = cu:korean
-                    }
-                }
+            OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
+                east_asian_clothes_pop_trigger = yes
+                chinese_clothes_pop_trigger = yes
+                manchu_clothes_pop_trigger = yes
+                EACP_is_character_EAC_chinese_trigger = yes
             }
             OR = {
                 AND = { # [EACP] Slightly altered behavior to keep traditional clothes on clergy pops
@@ -3470,6 +3470,20 @@ chinese_middle_clothes = {
                     EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                 }
                 clergy_clothes_pop_trigger = yes
+            }
+            NOT = {
+				AND = {
+					chinese_qing_clothes_pop_trigger = yes
+					bureaucrats_clothes_pop_trigger = yes
+		   		}
+		   	}
+			NOT = {
+                AND = {
+                    exists = scope:pop
+                    scope:pop = {
+                        culture = cu:korean
+                    }
+                }
             }
         }
     }
@@ -3487,10 +3501,15 @@ chinese_upper_clothes = {
         base = 0
         modifier = {
             add = 500
-            east_asian_clothes_pop_trigger = yes
-            japanese_clothes_pop_trigger = no
-            upper_clothes_pop_trigger = yes      
-			EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
+            upper_clothes_pop_trigger = yes
+            EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
+            OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
+                east_asian_clothes_pop_trigger = yes
+                chinese_clothes_pop_trigger = yes
+                manchu_clothes_pop_trigger = yes
+                north_asian_clothes_pop_trigger = yes
+                EACP_is_character_EAC_chinese_trigger = yes
+            }
             NOT = {
                 AND = {
                     exists = scope:pop
