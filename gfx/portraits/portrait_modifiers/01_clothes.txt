@@ -91,32 +91,102 @@
 		}
 	}
 
-	chinese_imperial_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = EAC_chinese_imperial_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-				chinese_imperial_clothes_trigger = yes
-                snori_character_westernize_trigger = no
+    # EACP addition / tweak - Chinese emperor gets his yellow outfit from vanilla, but the prince gets EAC-added clothes
+    # Original imperial definition kept for reference
+    #chinese_imperial_clothes = {
+    #	dna_modifiers = {
+    #		accessory = {
+    #			mode = add
+    #			gene = outfits
+    #			template = EAC_chinese_imperial_outfits
+    #			range = { 0 1 } # For the randomness to work correctly
+    #		}
+    #		accessory = {
+    #			mode = add
+    #			gene = necklaces
+    #			template = chinese_necklaces
+    #			range = { 0 1 } # For the randomness to work correctly
+    #		}
+    #	}
+    #
+    #	weight = {
+    #		base = 0
+    #		modifier = {
+    #			add = 100000
+    #			chinese_imperial_clothes_trigger = yes
+    #           EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+    #           EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+    #	    }
+    #	}
+    #}
+    
+    # [EACP] New Chinese Emperor definition - bring back yellow outfit from vanilla
+    chinese_emperor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = chinese_necklaces
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                AND = {
+                    exists = scope:character
+                    chinese_imperial_clothes_trigger = yes
+                    scope:character = {
+                        is_heir = no
+                    }
+                }
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-		    }
-		}
-	}
+            }
+        }
+    }
+    
+    # [EACP] Chinese Prince definition - uses new imperial clothes definition from EAC
+    chinese_prince_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = EAC_chinese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = chinese_necklaces
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                AND = {
+                    exists = scope:character
+                    chinese_imperial_clothes_trigger = yes
+                    scope:character = {
+                        is_ruler = no
+                    }
+                }
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+            }
+        }
+    }
 
 	chinese_court_clothes_official_01 = {
 
@@ -1083,7 +1153,7 @@
 				add = 100000
 				chinese_clothes_pop_trigger = yes # EACP - Prevent Chinese officers from going to fallback in republics
 				soldier_clothes_pop_trigger = yes
-                snori_pop_westernize_trigger = no
+                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 			}
 		}
 	}
@@ -1106,7 +1176,7 @@
 					bureaucrats_clothes_pop_trigger = yes
 					officers_clothes_pop_trigger = yes
 				}
-                snori_pop_westernize_trigger = no
+                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 			}
 		}
 	}
@@ -1160,7 +1230,7 @@
 					bureaucrats_clothes_pop_trigger = yes
 					officers_clothes_pop_trigger = yes
 				}
-                snori_pop_westernize_trigger = no
+                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 			}
             modifier = { # [EACP] No court clothing for commanders
                 add = 1000
@@ -1185,7 +1255,7 @@
 			base = 0
 			modifier = {
 				add = 100000
-                snori_pop_westernize_trigger = no
+                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 				chinese_ming_clothes_pop_trigger = yes
 				soldier_clothes_pop_trigger = yes
 			}
@@ -1212,7 +1282,7 @@
 					officers_clothes_pop_trigger = yes
 				}
 				middle_clothes_pop_trigger = yes
-                snori_pop_westernize_trigger = no
+                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 			}
 		}
 	}
@@ -1249,7 +1319,7 @@
 						}
 					}
 				}
-                snori_pop_westernize_trigger = no
+                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 			}
 		}
 	}
@@ -1329,7 +1399,7 @@
 				OR = {
                 AND = {
 				african_clothes_trigger = yes
-				snori_character_westernize_trigger = no
+				EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
 				}
 				AND = {
                     exists = scope:character
@@ -1920,7 +1990,7 @@
 						exists = scope:pop
 						scope:pop = {
 							culture = cu:japanese
-                            snori_pop_westernize_trigger = no
+                            EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 						}
 						OR = {
 							soldier_clothes_pop_trigger = yes
@@ -1985,7 +2055,7 @@
 							politician_clothes_trigger = yes
 						}
 					} 
-                    snori_pop_westernize_trigger = no
+                    EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                     EACP_unwesternized_character_trigger = yes
 				}
 			}
@@ -2128,7 +2198,7 @@
 			modifier = {
 				add = 2000
 				japanese_shogun_clothes_trigger = yes
-                snori_character_westernize_trigger = no
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
 			}
 		}
 	}
@@ -2148,7 +2218,7 @@
 			modifier = {
 				add = 2000
 				japanese_taishi_clothes_trigger = yes
-                snori_character_westernize_trigger = no
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
 			}
 		}
 	}
@@ -2168,7 +2238,7 @@
 			modifier = {
 				add = 2000
 				japanese_imperial_clothes_trigger = yes
-                snori_character_westernize_trigger = no
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
 			}
 		}
 	}
@@ -2197,7 +2267,7 @@
                             is_pop_type = laborers
                             AND = {
                                 is_pop_type = machinists
-                                snori_pop_westernize_trigger = no
+                                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                             }
 						}
                     }					  
@@ -2237,7 +2307,7 @@
 					AND = {
                         japanese_clothes_pop_trigger = yes
                         poor_clothes_pop_trigger = no
-                        snori_pop_westernize_trigger = no
+                        EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                     }
 					AND = {
 						exists = scope:pop
@@ -2336,31 +2406,18 @@
                     }  
                 }
                 OR = {
-					AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            snori_pop_westernize_trigger = no
-                        }
-                        OR = {
-                            middle_clothes_pop_trigger = yes
-                            soldier_clothes_pop_trigger = yes
-						}
+                    AND = {
+						korean_ri_clothes_pop_trigger = yes
+						soldier_clothes_pop_trigger = yes
+                        EACP_unwesternized_pop_trigger = yes
 					}
 					AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            OR = {
-                                is_pop_type = farmers
-                                is_pop_type = peasants
-                                is_pop_type = laborers
-                                is_pop_type = clergymen # [EACP] Prevent Korean clergy from falling back on generic
-                                AND = {
-                                    is_pop_type = machinists
-                                    snori_pop_westernize_trigger = no
-                                }
-                            }
-                        }
-                    }
+						exists = scope:pop
+						scope:pop = {
+							culture = cu:korean
+						}
+						poor_clothes_pop_trigger = yes
+					}
 				}
             }
         }
@@ -2382,39 +2439,21 @@
                 add = 100
                 OR = {
                     AND = {
-                        exists = scope:character
-                        scope:character = {
-                            is_ruler = no
-							snori_character_westernize_trigger = no
-							OR = {
-                                owner = c:KOR
-                                culture = cu:korean
-                            }
-                        }
-                    }
+						korean_ri_clothes_pop_trigger = yes
+						officers_clothes_pop_trigger = yes
+                        EACP_unwesternized_pop_trigger = yes
+					}
 					AND = {
-                        exists = scope:character
-                        scope:character = {
+						exists = scope:pop
+						scope:pop = {
+							culture = cu:korean
+                            EACP_unwesternized_pop_trigger = yes
 							OR = {
-								interest_group = { is_interest_group_type = ig_devout }
-								interest_group = { is_interest_group_type = ig_rural_folk }
+								upper_clothes_pop_trigger = yes
+								middle_clothes_pop_trigger = yes
+								clergy_clothes_pop_trigger = yes
 							}
-                            is_ruler = no
-							OR = {
-                                owner = c:KOR
-                                culture = cu:korean
-                            }
-                        }
-                    }
-                    AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            is_pop_type = officers
-							OR = {
-                                culture = cu:korean
-                            }
-							snori_pop_westernize_trigger = no
-                        }
+						}
 					}
                     AND = { # [EACP] No court clothing for commanders
                         exists = scope:character
@@ -2444,19 +2483,16 @@
 		weight = {
             base = 0
             modifier = {
-                add = 100
+                add = 1000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
 				AND = {
                     exists = scope:character
                     scope:character = {
                         is_ruler = yes
-						snori_character_westernize_trigger = no
+						EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+                        EACP_is_commander_trigger = no
 						OR = {
                             owner = c:KOR
                             culture = cu:korean
-                        }
-                        NOT = {
-                            has_role = general
-                            has_role = admiral
                         }
                     }
                 }
@@ -2477,18 +2513,10 @@
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
-                snori_character_westernize_trigger = no
+				add = 1000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
 				korean_king_clothes_trigger = yes
-                AND = { # [EACP] No court clothing for commanders
-                    exists = scope:character
-                    scope:character = {
-                        NOT = {
-                            has_role = general
-                            has_role = admiral
-                        }
-                    }
-                }
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		    }
 		}
 	}
@@ -2506,18 +2534,10 @@
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
-                snori_character_westernize_trigger = no
+				add = 10000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
 				korean_prince_clothes_trigger = yes
-                AND = { # [EACP] No court clothing for commanders
-                    exists = scope:character
-                    scope:character = {
-                        NOT = {
-                            has_role = general
-                            has_role = admiral
-                        }
-                    }
-                }
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		    }
 		}
 	}
@@ -2538,7 +2558,7 @@ arabic_clothes = {
 				AND = {
                     arabic_clothes_trigger = yes
                     armed_forces_clothes_trigger = no
-                    snori_character_westernize_trigger = no
+                    EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
 				}
 				AND = {
                     arabic_clothes_trigger = yes
@@ -2573,7 +2593,7 @@ arabic_coats = {
             add = 500
             AND = {
                 arabic_clothes_trigger = yes
-				snori_character_westernize_trigger = no
+				EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
                 OR = {
                     military_clothes_trigger = yes
                     officers_clothes_pop_trigger = yes
@@ -2665,7 +2685,7 @@ indian_clothes = {
 			OR = {
                 AND = {
                     indian_clothes_trigger = yes
-                    snori_character_westernize_trigger = no
+                    EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
                 }
                 AND = {
                     exists = scope:character
@@ -2715,7 +2735,7 @@ indian_royal_clothes = {
                 AND = {
                     indian_clothes_trigger = yes
                     monarchy_clothes_trigger = yes
-					snori_character_westernize_trigger = no
+					EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
                 }
                 AND = {
                     hindu_clothes_pop_trigger = yes
@@ -2751,7 +2771,7 @@ indian_royal_clothes = {
 				OR = {
 					AND = {
                         siamese_clothes_trigger = yes
-                        snori_character_westernize_trigger = no
+                        EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
                     }
                     AND = {
                         siamese_clothes_trigger = yes
@@ -2791,7 +2811,7 @@ indian_royal_clothes = {
             base = 0
             modifier = {
                 add = 1200
-				snori_character_westernize_trigger = no
+				EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
                 siamese_clothes_trigger = yes
                 monarchy_clothes_trigger = yes
             }
@@ -3181,7 +3201,7 @@ indigenous_oceanic_high_clothes_recognized = {
                                 is_pop_type = laborers
                                 AND = {
                                     is_pop_type = machinists
-                                    snori_pop_westernize_trigger = no
+                                    EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                                 }
                             }
                         }
@@ -3210,7 +3230,7 @@ indigenous_oceanic_high_clothes_recognized = {
             base = 0
             modifier = {
                 add = 100
-				snori_pop_westernize_trigger = no
+				EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                 south_east_asia_clothes_pop_trigger = yes
                 middle_clothes_pop_trigger = yes
             }
@@ -3237,7 +3257,7 @@ indigenous_oceanic_high_clothes_recognized = {
             base = 0
             modifier = {
                 add = 1200
-				snori_pop_westernize_trigger = no
+				EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                 south_east_asia_clothes_pop_trigger = yes
                 OR = {
                     upper_clothes_pop_trigger = yes
@@ -3463,8 +3483,12 @@ indian_upper_clothes = {
             base = 0
             modifier = {
                 add = 500
-                east_asian_clothes_pop_trigger = yes
-                japanese_clothes_pop_trigger = no
+                OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
+                    east_asian_clothes_pop_trigger = yes
+                    chinese_clothes_pop_trigger = yes
+                    manchu_clothes_pop_trigger = yes
+                    EACP_is_character_EAC_chinese_trigger = yes
+                }
                 AND = {
 					exists = scope:pop
 					scope:pop = {
@@ -3474,18 +3498,18 @@ indian_upper_clothes = {
                             is_pop_type = laborers
                             AND = {
                                 is_pop_type = machinists
-                                snori_pop_westernize_trigger = no
+                                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                             }
                         }
                     }					  
                 }
-				NOT = {
-				      AND = {
+                NOT = {
+                    AND = {
                         exists = scope:pop
                         scope:pop = {
                             culture = cu:korean
                         }
-					}
+                    }
                 }
             }
         }
@@ -3504,8 +3528,25 @@ chinese_middle_clothes = {
         base = 0
         modifier = {
             add = 500
-            east_asian_clothes_pop_trigger = yes
-            japanese_clothes_pop_trigger = no
+            OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
+                east_asian_clothes_pop_trigger = yes
+                chinese_clothes_pop_trigger = yes
+                manchu_clothes_pop_trigger = yes
+                EACP_is_character_EAC_chinese_trigger = yes
+            }
+            OR = {
+                AND = { # [EACP] Slightly altered behavior to keep traditional clothes on clergy pops
+                    middle_clothes_pop_trigger = yes
+                    EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
+                }
+                clergy_clothes_pop_trigger = yes
+            }
+            NOT = {
+				AND = {
+					chinese_qing_clothes_pop_trigger = yes
+					bureaucrats_clothes_pop_trigger = yes
+		   		}
+		   	}
 			NOT = {
                 AND = {
                     exists = scope:pop
@@ -3513,13 +3554,6 @@ chinese_middle_clothes = {
                         culture = cu:korean
                     }
                 }
-            }
-            OR = {
-                AND = { # [EACP] Slightly altered behavior to keep traditional clothes on clergy pops
-                    middle_clothes_pop_trigger = yes
-                    snori_pop_westernize_trigger = no
-                }
-                clergy_clothes_pop_trigger = yes
             }
         }
     }
@@ -3537,10 +3571,15 @@ chinese_upper_clothes = {
         base = 0
         modifier = {
             add = 500
-            east_asian_clothes_pop_trigger = yes
-            japanese_clothes_pop_trigger = no
-            upper_clothes_pop_trigger = yes      
-			snori_pop_westernize_trigger = no
+            upper_clothes_pop_trigger = yes
+            EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
+            OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
+                east_asian_clothes_pop_trigger = yes
+                chinese_clothes_pop_trigger = yes
+                manchu_clothes_pop_trigger = yes
+                north_asian_clothes_pop_trigger = yes
+                EACP_is_character_EAC_chinese_trigger = yes
+            }
             NOT = {
                 AND = {
                     exists = scope:pop
@@ -3592,7 +3631,7 @@ chinese_upper_clothes = {
                             is_pop_type = laborers
                             AND = {
                                 is_pop_type = machinists
-                                snori_pop_westernize_trigger = no
+                                EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                             }
                         }
                     }					  
@@ -3616,7 +3655,7 @@ chinese_upper_clothes = {
                 AND = {
                     arabic_clothes_pop_trigger = yes
                     middle_clothes_pop_trigger = yes
-					snori_pop_westernize_trigger = no
+					EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                 }
             }
         }
@@ -3637,7 +3676,7 @@ chinese_upper_clothes = {
                 AND = {
                     arabic_clothes_pop_trigger = yes
                     upper_clothes_pop_trigger = yes
-					snori_pop_westernize_trigger = no
+					EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                 }
             }
         }
@@ -4136,7 +4175,7 @@ chinese_upper_clothes = {
                         }
                     }
                     middle_clothes_pop_trigger = yes
-					snori_pop_westernize_trigger = no
+					EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                 }
             }
         }
@@ -4155,7 +4194,7 @@ chinese_upper_clothes = {
             base = 0
             modifier = {
                 add = 600
-				snori_pop_westernize_trigger = no
+				EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
                 OR = {
                     AND = {
                         OR = {
@@ -4564,7 +4603,7 @@ buddhist_religious_clothes = {
             modifier = {
                 add = 10000
                 shopkeepers_clothes_pop_trigger = yes
-                snori_pop_westernize_trigger = yes
+                EACP_unwesternized_pop_trigger = no # snori_pop_westernize_trigger = yes # [EACP] Mass replace
             }
         }
     }
@@ -4612,7 +4651,7 @@ buddhist_religious_clothes = {
                 AND = {
                     exists = scope:character
                     scope:character = {
-						snori_character_westernize_trigger = yes
+						EACP_unwesternized_character_trigger = no # snori_character_westernize_trigger = yes # [EACP] Mass replace
                     }
                 }
                 AND = {
@@ -4652,7 +4691,7 @@ buddhist_religious_clothes = {
                     AND = {
                         exists = scope:character
                         scope:character = {
-                            snori_character_westernize_trigger = yes
+                            EACP_unwesternized_character_trigger = no # snori_character_westernize_trigger = yes # [EACP] Mass replace
                         }
                     }
                     ruler_clothes_trigger = yes
@@ -4685,7 +4724,7 @@ buddhist_religious_clothes = {
                     AND = {
                     exists = scope:character
                     scope:character = {
-						snori_character_westernize_trigger = yes
+						EACP_unwesternized_character_trigger = no # snori_character_westernize_trigger = yes # [EACP] Mass replace
                     }
                   }
                     ruler_clothes_trigger = yes
@@ -4732,7 +4771,7 @@ buddhist_religious_clothes = {
                 AND = {
                     exists = scope:character
                     scope:character = {
-						snori_character_westernize_trigger = yes
+						EACP_unwesternized_character_trigger = no # snori_character_westernize_trigger = yes # [EACP] Mass replace
                     }
                   }
                 OR = {
@@ -4794,7 +4833,7 @@ buddhist_religious_clothes = {
                     AND = {
                         exists = scope:character
                         scope:character = {
-                            snori_character_westernize_trigger = yes
+                            EACP_unwesternized_character_trigger = no # snori_character_westernize_trigger = yes # [EACP] Mass replace
                         }
                     }
                     politician_clothes_trigger = yes
@@ -4820,7 +4859,7 @@ buddhist_religious_clothes = {
                    AND = {
                     exists = scope:character
                     scope:character = {
-						snori_character_westernize_trigger = yes
+						EACP_unwesternized_character_trigger = no # snori_character_westernize_trigger = yes # [EACP] Mass replace
                     }
                   }
                    ruler_clothes_trigger = yes
@@ -4861,7 +4900,7 @@ buddhist_religious_clothes = {
                     AND = {
                         exists = scope:pop
                         scope:pop = {
-                            snori_pop_westernize_trigger = yes
+                            EACP_unwesternized_pop_trigger = no # snori_pop_westernize_trigger = yes # [EACP] Mass replace
 							is_pop_type = machinists
                                      }
 					        }  
@@ -4911,7 +4950,7 @@ buddhist_religious_clothes = {
                         AND = {
                         exists = scope:pop
                         scope:pop = {
-                            snori_pop_westernize_trigger = yes
+                            EACP_unwesternized_pop_trigger = no # snori_pop_westernize_trigger = yes # [EACP] Mass replace
                                      }
 					        }
                         middle_clothes_pop_trigger = yes
@@ -4919,7 +4958,7 @@ buddhist_religious_clothes = {
                     AND = {
                         exists = scope:pop
                         scope:pop = { 
-                                snori_pop_westernize_trigger = yes
+                                EACP_unwesternized_pop_trigger = no # snori_pop_westernize_trigger = yes # [EACP] Mass replace
                         }
                         OR = {
                             middle_clothes_pop_trigger = yes
@@ -4962,7 +5001,7 @@ buddhist_religious_clothes = {
                     AND = {
                         exists = scope:pop
                         scope:pop = {
-                            snori_pop_westernize_trigger = yes
+                            EACP_unwesternized_pop_trigger = no # snori_pop_westernize_trigger = yes # [EACP] Mass replace
                                      }
 					        }
                     upper_clothes_pop_trigger = yes
@@ -5002,7 +5041,7 @@ buddhist_religious_clothes = {
                     AND = {
                         exists = scope:pop
                         scope:pop = {
-                            snori_pop_westernize_trigger = yes
+                            EACP_unwesternized_pop_trigger = no # snori_pop_westernize_trigger = yes # [EACP] Mass replace
                                      }
 					        }
                     OR = {
@@ -5037,7 +5076,7 @@ buddhist_religious_clothes = {
                     AND = {
                         exists = scope:pop
                         scope:pop = {
-                            snori_pop_westernize_trigger = yes
+                            EACP_unwesternized_pop_trigger = no # snori_pop_westernize_trigger = yes # [EACP] Mass replace
                                      }
 					        }  
                     slaves_clothes_pop_trigger = yes
