@@ -1151,7 +1151,7 @@
 			base = 0
 			modifier = {
 				add = 100000
-				chinese_clothes_pop_trigger = yes # EACP - Prevent Chinese officers from going to fallback in republics
+				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
 				soldier_clothes_pop_trigger = yes
                 EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 			}
@@ -1171,7 +1171,7 @@
 			base = 0
 			modifier = {
 				add = 100000
-				chinese_clothes_pop_trigger = yes # EACP - Prevent Chinese officers from going to fallback in republics
+				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
 				OR = {
 					bureaucrats_clothes_pop_trigger = yes
 					officers_clothes_pop_trigger = yes
@@ -1276,7 +1276,7 @@
 			modifier = {
 				add = 1000
 				empire_of_china_trigger = yes
-				chinese_clothes_pop_trigger = yes
+				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
 				NOT = {
 					bureaucrats_clothes_pop_trigger = yes
 					officers_clothes_pop_trigger = yes
@@ -1309,7 +1309,7 @@
 					}
 					AND = {
 						empire_of_china_trigger = yes
-						chinese_clothes_pop_trigger = yes
+						EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
 						OR = {
 							upper_clothes_pop_trigger = yes
 							AND = {
@@ -3485,7 +3485,7 @@ indian_upper_clothes = {
                 add = 500
                 OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
                     east_asian_clothes_pop_trigger = yes
-                    chinese_clothes_pop_trigger = yes
+                    EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
                     manchu_clothes_pop_trigger = yes
                     EACP_is_character_EAC_chinese_trigger = yes
                 }
@@ -3530,7 +3530,7 @@ chinese_middle_clothes = {
             add = 500
             OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
                 east_asian_clothes_pop_trigger = yes
-                chinese_clothes_pop_trigger = yes
+                EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
                 manchu_clothes_pop_trigger = yes
                 EACP_is_character_EAC_chinese_trigger = yes
             }
@@ -3575,7 +3575,7 @@ chinese_upper_clothes = {
             EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
             OR = { # [EACP] What I assume to be an amalgamation of EAC and AWP triggers
                 east_asian_clothes_pop_trigger = yes
-                chinese_clothes_pop_trigger = yes
+                EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
                 manchu_clothes_pop_trigger = yes
                 north_asian_clothes_pop_trigger = yes
                 EACP_is_character_EAC_chinese_trigger = yes
