@@ -65,3 +65,39 @@ EACP_is_character_EAC_chinese_trigger = {
         }
     }
 }
+
+# Trying to mesh together the definitions of Chinese between EAC (which has its own) and AWC (which uses the vanilla
+# definition, I think, but throws it into a whole bunch more stuff) has been a massive pain 
+EACP_is_pop_chinese_trigger = {
+    exists = scope:pop
+    scope:pop = {
+        OR = {
+            chinese_clothes_pop_trigger = yes
+            AND = { # Vanilla logic
+                OR = {
+                    culture = { 
+                        has_discrimination_trait = han_chinese
+                    }
+                    has_pop_culture = manchu
+                    has_pop_culture = mongol
+                }
+                owner = {
+                    exists = c:CHI
+                    CHI = {
+                        ruler = {
+                            has_culture = cu:manchu
+                            is_monarch = yes
+                        }
+                    }
+                    OR = {
+                        c:LAN = this
+                        c:CHI = this
+                        NOT = {
+                            country_has_primary_culture = cu:han
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
