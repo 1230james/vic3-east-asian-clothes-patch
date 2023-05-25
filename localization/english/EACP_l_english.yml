@@ -1,0 +1,7 @@
+﻿l_english:
+    rule_EACP_vanilla_chinese_emperor_hat: 0             "EACP | Vanilla Chinese Emperor Hat"
+    setting_EACP_vanilla_chinese_emperor_hat_yes: 0      "Yes"
+    setting_EACP_vanilla_chinese_emperor_hat_yes_desc: 0 "The [concept_ruler] of #v China#! will wear the #v vanilla red & gold hat#! where applicable."
+    setting_EACP_vanilla_chinese_emperor_hat_no: 0       "No"
+    setting_EACP_vanilla_chinese_emperor_hat_no_desc: 0  "The [concept_ruler] of #v China#! will wear the #v seasonal hats from the East Asian Clothes mod#! where applicable."
+    

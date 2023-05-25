@@ -2,6 +2,38 @@
 
 # Catches unwesternized characters OR characters in Devout or Rural Folk IGs
 # AWS does not westernize the dress of Devout and Rural Folk IG leaders apparently
+# Also catches unwesternized and rural pops.
+EACP_unwesternized_trigger = {
+    OR = {
+        scope:character ?= {
+            OR = {
+                snori_character_westernize_trigger = no
+                AND = {
+                    NOT = { # Westernize Devout + Rural Folk commanders anyway
+                        has_role = general # The army cares not about your personal opinions!
+                        has_role = admiral
+                    }
+                    OR = {
+                        interest_group = { is_interest_group_type = ig_devout }
+                        interest_group = { is_interest_group_type = ig_rural_folk }
+                    }
+                }
+            }
+        }
+        scope:pop ?= {
+            OR = {
+                snori_pop_westernize_trigger = no
+                is_pop_type = farmers
+                is_pop_type = peasants
+                is_pop_type = laborers
+                is_pop_type = clergymen
+                is_pop_type = slaves
+            }
+        }
+    }
+}
+
+# Old trigger - keeping for compatibility 
 EACP_unwesternized_character_trigger = {
     exists = scope:character
     scope:character = {
@@ -21,6 +53,7 @@ EACP_unwesternized_character_trigger = {
     }
 }
 
+# Old trigger - keeping for compatibility 
 EACP_unwesternized_pop_trigger = {
     exists = scope:pop
     scope:pop = {

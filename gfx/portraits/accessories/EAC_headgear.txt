@@ -1,0 +1,206 @@
+﻿# These assets are then used in the genes (game/common/genes/..) at the bottom of the file. 
+
+#####################################
+#									#
+# 			 Male Headgear			#
+#									#
+#####################################
+
+
+
+
+## CHINESE ##
+
+## Common Headgear ##
+
+male_headgear_chinese_common_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_common_01_entity" }	
+}
+
+male_headgear_chinese_common_02 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_common_02_entity" }	
+}
+
+male_headgear_chinese_common_03 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_common_03_entity" }	
+}
+
+male_headgear_chinese_common_03_black = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_common_03_black_entity" }	
+}
+
+male_headgear_vietnamese_common_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_vietnamese_common_01_entity" }	
+}
+
+
+## Imperial Headgear ##
+
+male_headgear_chinese_imperial_01 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_imperial_01_entity" }	
+}
+
+male_headgear_chinese_imperial_02 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_imperial_02_entity" }	
+}
+
+male_headgear_chinese_imperial_03 = { # EACP - Readd vanilla Chinese emperor hat
+    set_tags = "cap1"
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_imperial_03_entity" }	
+}
+
+## Court Headgear ##
+
+male_headgear_chinese_court_01_1 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_01_entity_1" }	
+}
+
+male_headgear_chinese_court_01_2 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_01_entity_2" }	
+}
+
+male_headgear_chinese_court_01_3 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_01_entity_3" }	
+}
+
+male_headgear_chinese_court_01_4 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_01_entity_4" }	
+}
+
+male_headgear_chinese_court_01_5 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_01_entity_5" }	
+}
+
+male_headgear_chinese_court_02_1 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_02_entity_1" }	
+}
+
+male_headgear_chinese_court_02_2 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_02_entity_2" }	
+}
+
+male_headgear_chinese_court_02_3 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_02_entity_3" }	
+}
+
+male_headgear_chinese_court_02_4 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_02_entity_4" }	
+}
+
+male_headgear_chinese_court_02_5 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_court_02_entity_5" }	
+}
+
+male_headgear_chinese_officer_01 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_officer_01_entity" }	
+}
+
+male_headgear_chinese_officer_02 = {
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_officer_02_entity" }	
+}
+
+## Ming Headgear ##
+
+yishanguan = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "yishanguan_entity" }	
+}
+
+male_headgear_korean_imperial_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_korean_imperial_01_entity" }	
+}
+
+wushamao = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "wushamao_entity" }	
+}
+
+male_headgear_japanese_imperial_01 = {
+	set_tags ="no_hair"
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_japanese_imperial_01_entity" }	
+}
+
+male_headgear_japanese_imperial_02 = {
+	set_tags ="no_hair"
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_japanese_imperial_02_entity" }	
+}
+
+## Court Headgear ##
+## 양반 갓 ##
+
+male_headgear_korean_lia_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_korean_lia_01_entity" }	
+}
+
+## 왕 익선관 ##
+
+male_headgear_korean_lia_02 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_korean_lia_02_entity" }	
+}
+
+## 병졸 전립 ##
+
+male_headgear_korean_lia_03 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_korean_lia_03_entity" }	
+}
+
+## 장군 전립 ##
+
+male_headgear_korean_lia_04 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_korean_lia_03_entity" }	
+}
+
+korean_osamo = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "korean_osamo_entity" }	
+}
+
+male_headgear_vietnamese_court_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_vietnamese_court_01_entity" }	
+}
+
+male_headgear_chinese_han_officer_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_han_officer_01_entity" }	
+}
+
+male_headgear_chinese_han_common_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_han_common_01_entity" }	
+}
+
+male_headgear_chinese_han_common_02 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_han_common_02_entity" }	
+}
+
+male_headgear_chinese_han_common_03 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_han_common_03_entity" }	
+}
+
+male_headgear_chinese_han_common_04 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_han_common_04_entity" }	
+}
+
+male_headgear_chinese_han_common_05 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_chinese_han_common_05_entity" }	
+}
+
+male_headgear_vietnamese_imperial_01 = {
+	set_tags ="cap1" 
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_headgear_vietnamese_imperial_01_entity" }	
+}

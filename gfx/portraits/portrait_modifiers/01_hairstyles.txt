@@ -55,11 +55,13 @@
         weight = {
             base = 0
             modifier = {
-                add = 1000000
+                add = 100
                 OR = {
                     chinese_manchu_queue_hairstyle_pops_trigger = yes
                     chinese_manchu_queue_hairstyle_character_trigger = yes
-					qing_subject_clothes_trigger = yes
+                    
+                    # EACP
+                    qing_subject_clothes_trigger = yes
 					AND = {
                 		chinese_qing_clothes_pop_trigger = yes
 						OR = {
@@ -107,13 +109,13 @@
             base = 0
             modifier = {
                 add = 1000
-                snori_pop_westernize_trigger = no
                 AND = {
                     exists = scope:pop
                     scope:pop = {
                         culture = cu:japanese
                     }
-#                    poor_clothes_pop_trigger = no
+                    snori_pop_westernize_trigger = no # EACP
+                    poor_clothes_pop_trigger = no
                 }
             }
         }
@@ -153,7 +155,6 @@
             base = 0
             modifier = {
                 add = 1000
-                snori_pop_westernize_trigger = no
                 AND = {
                     exists = scope:character
                     scope:character = {
@@ -164,6 +165,8 @@
 
                     }
                 }
+                agitator_character_trigger = no
+                snori_pop_westernize_trigger = no # EACP
             }
         }
     }
@@ -192,11 +195,14 @@
                                 OR = {
                                     AND = {
                                         exists = scope:character
-                                        scope:character = { owner = c:CSA }
+                                        scope:character = {
+											exists = home_country
+											home_country = c:CSA
+										}
                                     }
                                     AND = {
                                         exists = scope:pop
-                                        scope:pop = { owner = c:CSA }
+                                        scope:pop = { home_country = c:CSA }
                                     }
                                 }
                             }
@@ -259,33 +265,31 @@
             base = 0
             modifier = {
                 add = 1100
-				OR = {
-                	AND = {
-                    	exists = scope:pop
-                    	scope:pop = {
-                        	religion = {
-                            	has_discrimination_trait = buddhist
-                        	}
-                    	}
-                    	clergy_clothes_pop_trigger = yes
-						confucianism_clothes_pop_trigger = no
-                	}
-                	AND = {
-                    	exists = scope:character
-                    	scope:character = {
-                        	religion = {
-                            	has_discrimination_trait = buddhist
-								NOT = {
-									this = rel:mahayana
-								}
-                        	}
-                            is_ruler = yes
-                            owner = {
-                            	has_law = law_type:law_theocracy
-                            }
-                    	}
-                	}
-            	}
+                AND = {
+                    exists = scope:pop
+                    scope:pop = {
+                        religion = {
+                            has_discrimination_trait = buddhist
+                        }
+                    }
+                    clergy_clothes_pop_trigger = yes
+                    confucianism_clothes_pop_trigger = no # EACP
+                }
+            }
+            modifier = { # EACP - Custom port of EAC logic?
+                add = 1100
+                scope:character ?= {
+                    religion = {
+                        has_discrimination_trait = buddhist
+                        NOT = {
+                            this = rel:mahayana
+                        }
+                    }
+                    is_ruler = yes
+                    owner = {
+                        has_law = law_type:law_theocracy
+                    }
+                }
             }
         }
     }
@@ -308,7 +312,8 @@
             }
         }
     }
-
+    
+    # EACP - EAC definition
     topknot_hairstyles = {
         dna_modifiers = {
             accessory = {

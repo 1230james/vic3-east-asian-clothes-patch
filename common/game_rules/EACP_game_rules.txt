@@ -1,0 +1,6 @@
+﻿EACP_vanilla_chinese_emperor_hat = {
+    default = EACP_vanilla_chinese_emperor_hat_yes
+    
+    EACP_vanilla_chinese_emperor_hat_yes = {}
+    EACP_vanilla_chinese_emperor_hat_no  = {}
+}

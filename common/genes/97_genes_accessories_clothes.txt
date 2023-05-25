@@ -58,7 +58,7 @@
 				index = 0
 				male = {
 					1 = male_outfit_chinese_court_01
-					1 = male_outfit_chinese_court_02				 
+                    1 = male_outfit_chinese_court_02 # EACP - From EAC
 					1 = male_outfit_chinese_imperial_01
 				}
 				female = {
@@ -137,27 +137,27 @@
 
 	## CHINESE ##
 
-			EAC_chinese_imperial_outfits = {
+			chinese_imperial_outfits = {
 				index = 5
 				male = {
-					1 = EAC_male_outfit_chinese_imperial_01
+					1 = male_outfit_chinese_imperial_01
 				}
 				female = {
-					1 = male
+					1 = female_outfit_chinese_01_high
 				}
 				boy = male
 				girl = female
 
 			}
 
-			chinese_court_official_outfits_01 = {
+			chinese_court_outfits = {
 				index = 6
 				male = {
-					1 = male_outfit_chinese_court_official_01
+					1 = male_outfit_chinese_court_01
 
 				}
 				female = {
-					1 = male
+					1 = female_outfit_chinese_01_high
 				}
 				boy = male
 				girl = female
@@ -523,8 +523,6 @@ indian_high_outfits = {
 				female = {
 						1 = female_outfit_south_american_01_low
 						1 = female_outfit_south_american_01_high
-
-
 				}
 				boy = male
 				girl = female
@@ -612,518 +610,633 @@ indian_high_outfits = {
 
 		}
 
+		
+		european_outfits_agitator = {
+			index = 36
+			male = {
+				1 = male_outfit_european_agitator_01
+			}
+			female = {
+				1 = female_outfit_european_agitator_01
+			}
+			boy = male
+			girl = female
 
-		## NEW EAST ASIA ##
+		}
 
-			chinese_court_official_outfits_02 = {
-				index = 36
-				male = {
-					1 = male_outfit_chinese_court_official_02
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
+		chinese_outfits_agitator = {
+			index = 37
+			male = {
+				1 = male_outfit_chinese_agitator_01
+			}
+			female = {
+				1 = female_outfit_chinese_agitator_01
 			}
 
-			chinese_court_official_outfits_03 = {
-				index = 37
-				male = {
-					1 = male_outfit_chinese_court_official_03
+			boy = male
+			girl = female
 
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
+		}
 
-			}
-			 
-				
+## HISTORICAL ##
 
-			chinese_court_official_outfits_04 = {
+
+		historical_outfits_judge = {
 				index = 38
 				male = {
-					1 = male_outfit_chinese_court_official_04
-
+						1 = male_outfit_historical_judge
+													
 				}
+
 				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_court_official_outfits_05 = {
-				index = 39
-				male = {
-					1 = male_outfit_chinese_court_official_05
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-			 
-				
-   
-
-			chinese_court_general_outfits_01 = {
-				index = 40
-				male = {
-					1 = male_outfit_chinese_court_general_01
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_court_general_outfits_02 = {
-				index = 41
-				male = {
-					1 = male_outfit_chinese_court_general_02
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-			 
-				
-
-			chinese_court_general_outfits_03 = {
-				index = 42
-				male = {
-					1 = male_outfit_chinese_court_general_03
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			mandarin_outfits_01 = {
-				index = 43
-				male = {
-					1 = male_outfit_mandarin
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_high
-				}
-				boy = male
-				girl = female
-
-			}
-
-			mandarin_outfits_02 = {
-				index = 44
-				male = {
-					1 = male_outfit_mandarin_red
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_high
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_court_official_ming_outfits_03 = {
-				index = 45
-				male = {
-					1 = male_outfit_mandarin
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_court_official_ming_outfits_04 = {
-				index = 46
-				male = {
-					1 = male_outfit_mandarin
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_official_outfits = {
-				index = 47
-				male = {
-					1 = male_outfit_chinese_official
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_mid
-				}
-				boy = male
-				girl = female
-
-			}
-
-			korean_prince_outfits = {
-				index = 48
-				male = {
-					1 = male_outfit_korean_imperial_02
-				}
-				female = {
-					1 = female_outfit_korean_high_01
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_imperial_ming_outfits = {
-				index = 49
-				male = {
-					1 = male_outfit_chinese_imperial_ming_01
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_high
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_prince_ming_outfits = {
-				index = 50
-				male = {
-					1 = male_outfit_chinese_imperial_ming_02
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_high
-				}
-				boy = male
-				girl = female
-
-			}
-
-			korean_court_outfits_01 = {
-				index = 51
-				male = {
-					1 = male_outfit_korean_court_01
-
-				}
-				female = {
-					1 = female_outfit_korean_high_01
-				}
-				boy = male
-				girl = female
-
-			}
-
-			korean_court_outfits_02 = {
-				index = 52
-				male = {
-					1 = male_outfit_korean_court_02
-
-				}
-				female = {
-					1 = female_outfit_korean_high_01
-				}
-				boy = male
-				girl = female
-
-			}
-
-			korean_court_outfits_03 = {
-				index = 53
-				male = {
-					1 = male_outfit_korean_court_03
-
-				}
-				female = {
-					1 = female_outfit_korean_high_01
-				}
-				boy = male
-				girl = female
-
-			}
-
-			korean_court_outfits_04 = {
-				index = 54
-				male = {
-					1 = male_outfit_korean_court_04
-
-				}
-				female = {
-					1 = female_outfit_korean_high_01
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_court_official_outfits_01 = {
-				index = 55
-				male = {
-					1 = male_outfit_vietnamese_court_official_01
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_court_official_outfits_02 = {
-				index = 56
-				male = {
-					1 = male_outfit_vietnamese_court_official_02
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_court_official_outfits_03 = {
-				index = 57
-				male = {
-					1 = male_outfit_vietnamese_court_official_03
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_court_official_outfits_04 = {
-				index = 58
-				male = {
-					1 = male_outfit_vietnamese_court_official_04
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_court_official_outfits_05 = {
-				index = 59
-				male = {
-					1 = male_outfit_vietnamese_court_official_05
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_court_general_outfits_0102 = {
-				index = 60
-				male = {
-					1 = male_outfit_vietnamese_court_general_0102
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_court_general_outfits_0304 = {
-				index = 61
-				male = {
-					1 = male_outfit_vietnamese_court_general_0304
-
-				}
-				female = {
-					1 = male
-				}
-				boy = male
-				girl = female
-
-			}
-
-			vietnamese_common_outfits = {
-				index = 62
-				male = {
-					1 = male_outfit_vietnamese_common_01
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_low
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_ming_common_outfits = {
-				index = 63
-				male = {
-					1 = male_outfit_chinese_common_ming_01
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_mid
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_ming_common_outfits_02 = {
-				index = 64
-				male = {
-					1 = male_outfit_chinese_common_ming_02
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_mid
-				}
-				boy = male
-				girl = female
-
-			}
-
-			chinese_ming_common_outfits_03 = {
-				index = 65
-				male = {
-					1 = male_outfit_chinese_common_ming_03
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_mid
-				}
-				boy = male
-				girl = female
-
-			}
-
-			buddhist_outfits = {
-				index = 66
-				male = {
-					1 = male_outfit_buddhist_01
-
-				}
-				female = {
-					1 = female_outfit_chinese_01_mid
-				}
-				boy = male
-				girl = female
-
-			}
-
-		japanese_shogun_outfits = {
-				index = 67
-				male = {
-					1 = male_outfit_japanese_shogun_01
-					
-				}
-				female = {
-					1 = female_outfit_japanese_01_high
-				}
-				boy = male
-				girl = female
-		}
-
-		japanese_taishi_outfits = {
-				index = 68
-				male = {
-					1 = male_outfit_japanese_taishi_01
-					
-				}
-				female = {
-					1 = female_outfit_japanese_01_high
-				}
-				boy = male
-				girl = female
-		}
-
-		chinese_ming_officer_outfits = {
-				index = 69
-				male = {
-					1 = male_outfit_chinese_common_ming_officer_blue
-					1 = male_outfit_chinese_common_ming_officer_red
-					1 = male_outfit_chinese_common_ming_officer_brown
-					
-				}
-				female = {
-					1 = female_outfit_chinese_01_low
-				}
-				boy = male
-				girl = female
-		}
-
-		korean_king_outfits = {
-				index = 70
-				male = {
-					1 = male_outfit_korean_king_01
+						1 = female_outfit_slavic_01_low
 						
 				}
+				boy = male
+				girl = female
+		}	
+
+
+
+
+
+		## CHILDREN##
+
+		children_outfit_royal = {
+
+				index = 39
+				male = {
+						1 = male_outfit_children_royal_01
+				}
+
 				female = {
-					1 = female_outfit_korean_high_01
+						1 = female_outfit_children_royal_01
+						
 				}
 				boy = male
 				girl = female
+		}	
+
+
+
+
+
+
+		garibaldi_redshirts_outfit = {
+			index = 40
+			male = {
+				1 = male_outfit_south_american_01_camicia_rossa
+			}
+			female = {
+				1 = female_outfit_european_common_01
+			}
+
+			boy = male
+			girl = female
+
+		}
+
+		late_american_soldier_outfit = {
+			index = 41
+			male = {
+				1 = male_outfit_south_american_01_late_american
+			}
+			female = {
+				1 = female_outfit_european_common_01
+			}
+
+			boy = male
+			girl = female
+
 		}
         
-        # [EACP] Copypaste vanilla Chinese emperor outfit back in
-        chinese_imperial_outfits = {
-            index = 71
+        
+        ## EACP - EAC definitions ##
+        EAC_chinese_imperial_outfits = { # EACP - from EAC
+            index = 42
             male = {
-                1 = male_outfit_chinese_imperial_01
+                1 = EAC_male_outfit_chinese_imperial_01
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_court_official_outfits_01 = { # EACP - from EAC
+            index = 43
+            male = {
+                1 = male_outfit_chinese_court_official_01
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+            
+        chinese_court_official_outfits_02 = {
+            index = 44
+            male = {
+                1 = male_outfit_chinese_court_official_02
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_court_official_outfits_03 = {
+            index = 45
+            male = {
+                1 = male_outfit_chinese_court_official_03
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+         
+            
+
+        chinese_court_official_outfits_04 = {
+            index = 46
+            male = {
+                1 = male_outfit_chinese_court_official_04
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_court_official_outfits_05 = {
+            index = 47
+            male = {
+                1 = male_outfit_chinese_court_official_05
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+         
+            
+
+
+        chinese_court_general_outfits_01 = {
+            index = 48
+            male = {
+                1 = male_outfit_chinese_court_general_01
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_court_general_outfits_02 = {
+            index = 49
+            male = {
+                1 = male_outfit_chinese_court_general_02
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+         
+            
+
+        chinese_court_general_outfits_03 = {
+            index = 50
+            male = {
+                1 = male_outfit_chinese_court_general_03
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        mandarin_outfits_01 = {
+            index = 51
+            male = {
+                1 = male_outfit_mandarin
+
             }
             female = {
                 1 = female_outfit_chinese_01_high
             }
             boy = male
             girl = female
+
         }
+
+        mandarin_outfits_02 = {
+            index = 52
+            male = {
+                1 = male_outfit_mandarin_red
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_high
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_court_official_ming_outfits_03 = {
+            index = 53
+            male = {
+                1 = male_outfit_mandarin
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_court_official_ming_outfits_04 = {
+            index = 54
+            male = {
+                1 = male_outfit_mandarin
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_official_outfits = {
+            index = 55
+            male = {
+                1 = male_outfit_chinese_official
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_mid
+            }
+            boy = male
+            girl = female
+
+        }
+
+        korean_prince_outfits = {
+            index = 56
+            male = {
+                1 = male_outfit_korean_imperial_02
+            }
+            female = {
+                1 = female_outfit_korean_high_01
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_imperial_ming_outfits = {
+            index = 57
+            male = {
+                1 = male_outfit_chinese_imperial_ming_01
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_high
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_prince_ming_outfits = {
+            index = 58
+            male = {
+                1 = male_outfit_chinese_imperial_ming_02
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_high
+            }
+            boy = male
+            girl = female
+
+        }
+
+        korean_court_outfits_01 = {
+            index = 59
+            male = {
+                1 = male_outfit_korean_court_01
+
+            }
+            female = {
+                1 = female_outfit_korean_high_01
+            }
+            boy = male
+            girl = female
+
+        }
+
+        korean_court_outfits_02 = {
+            index = 60
+            male = {
+                1 = male_outfit_korean_court_02
+
+            }
+            female = {
+                1 = female_outfit_korean_high_01
+            }
+            boy = male
+            girl = female
+
+        }
+
+        korean_court_outfits_03 = {
+            index = 61
+            male = {
+                1 = male_outfit_korean_court_03
+
+            }
+            female = {
+                1 = female_outfit_korean_high_01
+            }
+            boy = male
+            girl = female
+
+        }
+
+        korean_court_outfits_04 = {
+            index = 62
+            male = {
+                1 = male_outfit_korean_court_04
+
+            }
+            female = {
+                1 = female_outfit_korean_high_01
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_court_official_outfits_01 = {
+            index = 63
+            male = {
+                1 = male_outfit_vietnamese_court_official_01
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_court_official_outfits_02 = {
+            index = 64
+            male = {
+                1 = male_outfit_vietnamese_court_official_02
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_court_official_outfits_03 = {
+            index = 65
+            male = {
+                1 = male_outfit_vietnamese_court_official_03
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_court_official_outfits_04 = {
+            index = 66
+            male = {
+                1 = male_outfit_vietnamese_court_official_04
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_court_official_outfits_05 = {
+            index = 67
+            male = {
+                1 = male_outfit_vietnamese_court_official_05
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_court_general_outfits_0102 = {
+            index = 68
+            male = {
+                1 = male_outfit_vietnamese_court_general_0102
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_court_general_outfits_0304 = {
+            index = 69
+            male = {
+                1 = male_outfit_vietnamese_court_general_0304
+
+            }
+            female = {
+                1 = male
+            }
+            boy = male
+            girl = female
+
+        }
+
+        vietnamese_common_outfits = {
+            index = 70
+            male = {
+                1 = male_outfit_vietnamese_common_01
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_low
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_ming_common_outfits = {
+            index = 71
+            male = {
+                1 = male_outfit_chinese_common_ming_01
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_mid
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_ming_common_outfits_02 = {
+            index = 72
+            male = {
+                1 = male_outfit_chinese_common_ming_02
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_mid
+            }
+            boy = male
+            girl = female
+
+        }
+
+        chinese_ming_common_outfits_03 = {
+            index = 73
+            male = {
+                1 = male_outfit_chinese_common_ming_03
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_mid
+            }
+            boy = male
+            girl = female
+
+        }
+
+        buddhist_outfits = {
+            index = 74
+            male = {
+                1 = male_outfit_buddhist_01
+
+            }
+            female = {
+                1 = female_outfit_chinese_01_mid
+            }
+            boy = male
+            girl = female
+
+        }
+
+        japanese_shogun_outfits = {
+            index = 75
+            male = {
+                1 = male_outfit_japanese_shogun_01
+                
+            }
+            female = {
+                1 = female_outfit_japanese_01_high
+            }
+            boy = male
+            girl = female
+		}
+
+		japanese_taishi_outfits = {
+            index = 76
+            male = {
+                1 = male_outfit_japanese_taishi_01
+                
+            }
+            female = {
+                1 = female_outfit_japanese_01_high
+            }
+            boy = male
+            girl = female
+		}
+
+		chinese_ming_officer_outfits = {
+            index = 77
+            male = {
+                1 = male_outfit_chinese_common_ming_officer_blue
+                1 = male_outfit_chinese_common_ming_officer_red
+                1 = male_outfit_chinese_common_ming_officer_brown
+                
+            }
+            female = {
+                1 = female_outfit_chinese_01_low
+            }
+            boy = male
+            girl = female
+		}
+
+		korean_king_outfits = {
+            index = 78
+            male = {
+                1 = male_outfit_korean_king_01
+                    
+            }
+            female = {
+                1 = female_outfit_korean_high_01
+            }
+            boy = male
+            girl = female
+		}
+
 	}
 
 
+	
 	#####################################
 	#									#
 	# 			   COATS 			    #
@@ -1266,6 +1379,157 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}
+
+			agitator_blanqui = {
+				index = 9
+				male = {
+					1 = male_coat_historical_blanqui_01
+				}
+
+				female = {
+					1 = female_outfit_european_common_01
+				}
+				boy = male
+				girl = female
+			}
+
+			agitator_maurras = {
+				index = 10
+				male = {
+					1 = male_coat_historical_maurras_01
+				}
+
+				female = {
+					1 = female_outfit_european_common_01
+				}
+				boy = male
+				girl = female
+			}
+
+			agitator_mazzini = {
+				index = 11
+				male = {
+					1 = male_coat_historical_mazzini_01
+				}
+
+				female = {
+					1 = female_outfit_european_common_01
+				}
+				boy = male
+				girl = female
+			}
+
+			agitator_boulanger = {
+				index = 12
+				male = {
+					1 = male_coat_historical_boulanger_01
+				}
+
+				female = {
+					1 = female_outfit_european_common_01
+				}
+				boy = male
+				girl = female
+			}
+
+			agitator_dickens = {
+				index = 13
+				male = {
+					1 = male_coat_historical_dickens_01
+				}
+
+				female = {
+					1 = female_outfit_european_common_01
+				}
+				boy = male
+				girl = female
+			}
+
+			male_coat_historical_lenin_01 = {
+				index = 14
+				male = {
+				1 = male_coat_historical_lenin_01
+				
+				}
+				female = {
+					1 = female_outfit_european_common_01
+				}
+				boy = male
+				girl = female
+			}
+			
+
+			agitator_john_brown = {
+				index = 15
+				male = {
+					1 = male_coat_historical_john_brown_01
+				
+				}
+				
+				female = {
+					1 = female_outfit_european_common_01
+				}
+			
+				boy = male
+				
+				girl = female
+			}
+
+
+			agitator_jaroslaw_dabrowski = {
+				index = 16
+				male = {
+					1 = male_coat_historical_jaroslaw_dabrowski_01
+				
+				}
+				
+				female = {
+					1 = female_outfit_european_common_01
+				}
+			
+				boy = male
+				
+				girl = female
+			}
+
+
+
+			agitator_alexis_de_tocqueville = {
+				index = 17
+				male = {
+					1 = male_coat_alexis_de_tocqueville_01
+				
+				}
+				
+				female = {
+					1 = female_outfit_european_common_01
+				}
+			
+				boy = male
+				
+				girl = female
+			}
+
+			german_military_coat = {
+				index = 18
+				male = {
+					1 = male_coat_german_military_01_entity
+				
+				}
+				
+				female = {
+					1 = female_outfit_european_common_01
+				}
+			
+				boy = male
+				
+				girl = female
+			}
+
+
+
+
+
 		}
 
 
@@ -1315,8 +1579,16 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}  
+
 		
-		}
+
+			
+		
+		}	
+		
+		
+
+
 
 
 
@@ -1423,8 +1695,72 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}	 
+
+			mexican_sashes = {
+				index = 3
+				male = {
+				
+					1 = male_sash_mexican_agitator_01
+				}
+				female = {
+				}
+				boy = male
+				girl = female
+			}	
 		
-		}
+			african_sashes = {
+				index = 4
+				male = {
+					1 = male_sash_african_agitator_01
+				}
+
+				female = {
+					1 = female_sash_african_agitator_01
+				}
+				boy = male
+				girl = female
+			}
+
+			south_american_sashes = {
+				index = 5
+				male = {
+					1 = male_top_layer_south_american_agitator_01
+				}
+
+				female = {
+					1 = female_sash_south_american_agitator_01
+				}
+				boy = male
+				girl = female
+			}
+
+			slavic_sashes = {
+				index = 6
+				male = {
+					1 = male_sash_slavic_agitator_01
+				}
+
+				female = {
+					1 = female_sash_slavic_agitator_01
+				}
+				boy = male
+				girl = female
+			}
+
+			chinese_sashes = {
+				index = 7
+				male = {
+					1 = male_sash_chinese_agitator_01
+				}
+
+				female = {
+					1 = female_sash_chinese_agitator_01
+				}
+				boy = male
+				girl = female
+			}		 
+		}	 
+
 
 
 	#####################################
@@ -1607,7 +1943,7 @@ indian_high_outfits = {
 				
 				}
 				boy = male
-				girl = male
+				girl = female
 			}
 
 
@@ -1623,13 +1959,74 @@ indian_high_outfits = {
 
 				}
 				boy = male
+				girl = male
+				
+				}
+
+			
+
+			historical_waistcoats_lenin = {
+				index = 4
+				male = {
+					1 = male_waistcoat_historical_01_lenin
+					
+				}		   
+				female = {
+
+				}
+				boy = male
 				girl = {
 				
 				}
 
-			}			
-		}
+			}
 
+
+			historical_waistcoats_maurras = {
+				index = 5
+				male = {
+					1 = male_waistcoat_historical_maurras_01
+				}		   
+				female = {
+
+				}
+				boy = male
+				girl = {
+				
+				}
+			}	
+
+			historical_waistcoats_dickens = {
+				index = 6
+				male = {
+					1 = male_waistcoat_historical_dickens_01
+				}		   
+				female = {
+
+				}
+				boy = male
+				girl = {
+				
+				}
+
+
+			}
+
+			historical_waistcoats_madero = {
+				index = 7
+				male = {
+					1 = male_waistcoat_historical_madero_01
+				}		   
+				female = {
+
+				}
+				boy = male
+				girl = {
+				
+				}
+			}				
+		}			
+		
 	#####################################
 	#									#
 	# 			   TOP LAYER			#
@@ -1739,7 +2136,19 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			} 
-		
+
+			napoleon_iii_top_layer = {
+				index = 7
+				male = {
+						1 = male_top_layer_historical_napoleon_03
+				}
+
+				female = {
+						1 = empty
+				}
+				boy = male
+				girl = female
+			} 		
 		}
 
 
@@ -1876,8 +2285,32 @@ indian_high_outfits = {
 				girl = female
 			}
 
-			mandarin_square_official_01 = {
+
+
+## HISTORICAL ##
+
+
+			necklace_louis_delescluze = {
 				index = 7
+				
+				male = {
+					1 = male_necklace_louis_delescluze
+					
+				}
+
+				female = {
+					
+
+				}
+				
+				boy = male
+				girl = female
+			}
+            
+            ## EACP - EAC mandarin squares ##
+            
+            mandarin_square_official_01 = {
+				index = 8
 				male = {
 					1 = mandarin_square_official_ming_01
 
@@ -1891,7 +2324,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_official_02 = {
-				index = 8
+				index = 9
 				male = {
 					1 = mandarin_square_official_ming_02
 
@@ -1905,7 +2338,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_official_03 = {
-				index = 9
+				index = 10
 				male = {
 					1 = mandarin_square_official_ming_03
 
@@ -1919,7 +2352,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_official_04 = {
-				index = 10
+				index = 11
 				male = {
 					1 = mandarin_square_official_ming_04
 
@@ -1933,7 +2366,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_official_05 = {
-				index = 11
+				index = 12
 				male = {
 					1 = mandarin_square_official_ming_05
 
@@ -1947,7 +2380,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_general_00 = {
-				index = 12
+				index = 13
 				male = {
 					1 = mandarin_square_general_ming_00
 
@@ -1961,7 +2394,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_general_0102 = {
-				index = 13
+				index = 14
 				male = {
 					1 = mandarin_square_general_ming_0102
 
@@ -1975,7 +2408,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_general_0304 = {
-				index = 14
+				index = 15
 				male = {
 					1 = mandarin_square_general_ming_0304
 
@@ -1989,7 +2422,7 @@ indian_high_outfits = {
 			}
 
 			mandarin_square_subject = {
-				index = 15
+				index = 16
 				male = {
 					1 = mandarin_square_ming_subject_01
 					1 = mandarin_square_ming_subject_02
@@ -2002,7 +2435,6 @@ indian_high_outfits = {
 				girl = female
 
 			}
-
 
 		
 		}
@@ -2147,6 +2579,8 @@ indian_high_outfits = {
 			}
 
 
+
+
 	## POLYNESIAN ##
 
 
@@ -2237,6 +2671,20 @@ indian_high_outfits = {
 					1 = male_legwear_european_01_black
 					1 = male_legwear_european_01_blue
 					1 = male_legwear_european_01_red
+				}
+				female = {
+					1 = empty
+				}
+				boy = male
+				girl = female
+			}
+			
+			late_american_soldier_legwear = {
+				index = 12
+				male = {		
+
+					1 = male_legwear_south_american_01_late_american
+
 				}
 				female = {
 					1 = empty
