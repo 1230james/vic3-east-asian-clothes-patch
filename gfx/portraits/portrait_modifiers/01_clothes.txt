@@ -1877,7 +1877,8 @@
                 add = 1000
                 OR = {
                     AND = {
-                        east_asian_clothes_pop_trigger = yes
+                        #east_asian_clothes_pop_trigger = yes # EACP
+                        EACP_is_pop_chinese_trigger = yes # EACP
                         soldier_clothes_pop_trigger = yes
                     }
                     AND = {
@@ -3009,7 +3010,10 @@
                         exists = scope:character
                         scope:character = {
                             has_culture = cu:korean
-                            is_ruler = no
+                            OR = { # EACP - hanbok for non-monarchic leaders
+                                is_ruler = no
+                                monarchy_clothes_trigger = no
+                            }
                         }
                     }
                     AND = {
@@ -3616,7 +3620,7 @@ indigenous_oceanic_high_clothes_recognized = {
                     }
                 }
             }
-            EACP_unwesternized_trigger = yes # EACP
+            # EACP_unwesternized_trigger = yes # EACP # Not needed 
         }
     }
 }
@@ -3925,8 +3929,9 @@ indian_upper_clothes = {
             base = 0
             modifier = {
                 add = 500
-                east_asian_clothes_pop_trigger = yes
-                japanese_clothes_pop_trigger = no
+                #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
+                #japanese_clothes_pop_trigger = no # EACP
+                EACP_is_pop_chinese_trigger = yes # EACP
                 poor_clothes_pop_trigger = yes
                 EACP_unwesternized_trigger = yes # EACP
            }
@@ -3946,8 +3951,9 @@ chinese_middle_clothes = {
         base = 0
         modifier = {
             add = 500
-            east_asian_clothes_pop_trigger = yes
-            japanese_clothes_pop_trigger = no
+            #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
+            #japanese_clothes_pop_trigger = no # EACP
+            EACP_is_pop_chinese_trigger = yes # EACP
             OR = {
                 middle_clothes_pop_trigger = yes
                 clergy_clothes_pop_trigger = yes
@@ -3969,8 +3975,9 @@ chinese_upper_clothes = {
         base = 0
         modifier = {
             add = 500
-            east_asian_clothes_pop_trigger = yes
-            japanese_clothes_pop_trigger = no
+            #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
+            #japanese_clothes_pop_trigger = no # EACP
+            EACP_is_pop_chinese_trigger = yes # EACP
             upper_clothes_pop_trigger = yes                       
             EACP_unwesternized_trigger = yes # EACP
         }
@@ -4311,7 +4318,7 @@ chinese_upper_clothes = {
                     arabic_clothes_pop_trigger = no
                     native_american_clothes_pop_trigger = no
                     cold_clothes_pop_trigger = no
-                    EACP_unwesternized_trigger = yes # EACP
+                    EACP_unwesternized_trad_trigger = yes # EACP
                 } 
                 OR = {
                     slaves_clothes_pop_trigger = yes
@@ -4965,6 +4972,7 @@ buddhist_religious_clothes = {
                     buddhist_clothes_pop_trigger = yes
                     japanese_clothes_pop_trigger = no
                     clergy_clothes_pop_trigger = yes
+                    confucianism_clothes_pop_trigger = no # EACP
                 }
                 AND = {
                     exists = scope:character
@@ -4982,9 +4990,9 @@ buddhist_religious_clothes = {
                             has_law = law_type:law_theocracy
                         }
                     }
+                    EACP_confucianism_clothes_character_trigger = no # EACP
                 }
             }
-            confucianism_clothes_pop_trigger = no # EACP
         }
     }
 }
@@ -5801,6 +5809,14 @@ buddhist_religious_clothes = {
 					 chinese_court_clothes_republic_trigger = yes
 					 chinese_imperial_clothes_republic_trigger = yes
 					 tibetan_character_clothes_trigger = yes
+                     AND = { # EACP - Chinese theocracy hotfix
+                         scope:character ?= {
+                             is_ruler = yes
+                             owner = {
+                                 has_law = law_type:law_theocracy
+                             }
+                         }
+                     }
 				}
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		    }

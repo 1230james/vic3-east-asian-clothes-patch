@@ -33,37 +33,30 @@ EACP_unwesternized_trigger = {
     }
 }
 
-# Old trigger - keeping for compatibility 
-EACP_unwesternized_character_trigger = {
-    exists = scope:character
-    scope:character = {
-        OR = {
+# Same as above except ignores traditionalist exceptions
+EACP_unwesternized_trad_trigger = {
+    OR = {
+        scope:character ?= {
             snori_character_westernize_trigger = no
-            scope:character = {
-                NOT = { # Westernize Devout + Rural Folk commanders anyway
-                    has_role = general # The army cares not about your personal opinions!
-                    has_role = admiral
-                }
-                OR = {
-                    interest_group = { is_interest_group_type = ig_devout }
-                    interest_group = { is_interest_group_type = ig_rural_folk }
-                }
-            }
+        }
+        scope:pop ?= {
+            snori_pop_westernize_trigger = no
         }
     }
 }
 
-# Old trigger - keeping for compatibility 
-EACP_unwesternized_pop_trigger = {
-    exists = scope:pop
-    scope:pop = {
-        OR = {
-            snori_pop_westernize_trigger = no
-            is_pop_type = farmers
-            is_pop_type = peasants
-            is_pop_type = laborers
-            is_pop_type = clergymen
-            is_pop_type = slaves
+EACP_confucianism_clothes_character_trigger = {
+    scope:character ?= { # Logic copied from `confucianism_clothes_pop_trigger` in EAC_clothes_triggers.txt
+        culture = {
+            OR = {
+                has_discrimination_trait = east_asian_heritage
+                this = cu:manchu
+                this = cu:vietnamese
+            }
+        }
+        religion = rel:mahayana
+        NOT = {
+            has_culture = cu:japanese
         }
     }
 }
@@ -116,7 +109,7 @@ EACP_is_pop_chinese_trigger = {
                 }
                 owner = {
                     exists = c:CHI
-                    CHI = {
+                    c:CHI = {
                         ruler = {
                             has_culture = cu:manchu
                             is_monarch = yes
@@ -131,6 +124,41 @@ EACP_is_pop_chinese_trigger = {
                     }
                 }
             }
+        }
+    }
+}
+
+# Old trigger - keeping for compatibility 
+EACP_unwesternized_character_trigger = {
+    exists = scope:character
+    scope:character = {
+        OR = {
+            snori_character_westernize_trigger = no
+            scope:character = {
+                NOT = { # Westernize Devout + Rural Folk commanders anyway
+                    has_role = general # The army cares not about your personal opinions!
+                    has_role = admiral
+                }
+                OR = {
+                    interest_group = { is_interest_group_type = ig_devout }
+                    interest_group = { is_interest_group_type = ig_rural_folk }
+                }
+            }
+        }
+    }
+}
+
+# Old trigger - keeping for compatibility 
+EACP_unwesternized_pop_trigger = {
+    exists = scope:pop
+    scope:pop = {
+        OR = {
+            snori_pop_westernize_trigger = no
+            is_pop_type = farmers
+            is_pop_type = peasants
+            is_pop_type = laborers
+            is_pop_type = clergymen
+            is_pop_type = slaves
         }
     }
 }

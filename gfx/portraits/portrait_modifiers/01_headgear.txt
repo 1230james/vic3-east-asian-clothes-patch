@@ -2143,8 +2143,13 @@
             modifier = {
                 add = 1000
                 EACP_unwesternized_trigger = yes
-                # korean_ri_clothes_pop_trigger = yes # EACP - Always use jeollip for unwesternized
                 soldier_clothes_pop_trigger = yes
+                # korean_ri_clothes_pop_trigger = yes # EACP - Always use jeollip for unwesternized
+                scope:pop ?= { # EACP - replacement Korea check
+                    owner = {
+                        country_has_primary_culture = cu:korean
+                    }
+                }
             }
         }
     }
@@ -2167,17 +2172,23 @@
                 OR = {
                     AND = {
                         exists = scope:pop
-                        # korean_ri_clothes_pop_trigger = yes # EACP - Always use jeollip for unwesternized
                         officers_clothes_pop_trigger = yes
+                        # korean_ri_clothes_pop_trigger = yes # EACP - Always use jeollip for unwesternized
+                        scope:pop ?= { # EACP - replacement Korea check
+                            owner = {
+                                country_has_primary_culture = cu:korean
+                            }
+                        }
                     }
                     AND = {
-                        exists = scope:character
-                        scope:character = {
+                        scope:character ?= {
                             OR = {
                                 has_role = general
                                 has_role = admiral
                             }
-                            owner = c:KOR
+                            owner = {
+                                country_has_primary_culture = cu:korean
+                            }
                         }
                     }
                 }
