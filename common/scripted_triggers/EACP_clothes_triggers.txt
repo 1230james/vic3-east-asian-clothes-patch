@@ -1,48 +1,10 @@
 ﻿# Trigger definitions for DRY
 
-# Catches unwesternized characters OR characters in Devout or Rural Folk IGs
-# AWS does not westernize the dress of Devout and Rural Folk IG leaders apparently
-# Also catches unwesternized and rural pops.
+# Catches unwesternized characters & pops (i.e. living in unwesternized country or living in westernized country but
+# has a condition that allows not westernizing, e.g. traditionalist ideology or being devout IG leader)
+# Now completely controlled by WCR since I have control over it :)
 EACP_unwesternized_trigger = {
-    OR = {
-        scope:character ?= {
-            OR = {
-                snori_character_westernize_trigger = no
-                AND = {
-                    NOT = { # Westernize Devout + Rural Folk commanders anyway
-                        has_role = general # The army cares not about your personal opinions!
-                        has_role = admiral
-                    }
-                    OR = {
-                        interest_group = { is_interest_group_type = ig_devout }
-                        interest_group = { is_interest_group_type = ig_rural_folk }
-                    }
-                }
-            }
-        }
-        scope:pop ?= {
-            OR = {
-                snori_pop_westernize_trigger = no
-                is_pop_type = farmers
-                is_pop_type = peasants
-                is_pop_type = laborers
-                is_pop_type = clergymen
-                is_pop_type = slaves
-            }
-        }
-    }
-}
-
-# Same as above except ignores traditionalist exceptions
-EACP_unwesternized_trad_trigger = {
-    OR = {
-        scope:character ?= {
-            snori_character_westernize_trigger = no
-        }
-        scope:pop ?= {
-            snori_pop_westernize_trigger = no
-        }
-    }
+    WCR_is_westernized_trigger = no
 }
 
 EACP_confucianism_clothes_character_trigger = {

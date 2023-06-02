@@ -1227,25 +1227,6 @@
                 boy = male
                 girl = female
             }
-            
-            ## EACP - AWC Definitions ##
-            
-            snori_german_military_headgear = {
-
-                index = 210
-
-                male = {
-                    1 = 0
-                    4 = male_headgear_european_military_03
-                }
-
-                female = {
-                    #
-                }
-                boy = male
-                girl = female
-            }
-            
 		}
 	}
 }
