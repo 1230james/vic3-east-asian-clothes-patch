@@ -333,13 +333,19 @@
                     ming_subject_clothes_trigger = yes
                     ming_subject_monarch_clothes_trigger = yes
                 }
-				NOT = {
+				NOT = { # idk why these need to be NOT(AND)s instead of NORs
 					AND = {
 						buddhist_clothes_pop_trigger = yes
                     	clergy_clothes_pop_trigger = yes
                     	confucianism_clothes_pop_trigger = no
             		}
             	}
+                NOT = {
+                    AND = {
+                        WCR_has_completed_westernization_trigger = yes
+                        agitator_character_trigger = yes
+                    }
+                }
             }
         }
     }

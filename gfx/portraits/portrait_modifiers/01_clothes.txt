@@ -3010,9 +3010,13 @@
                         exists = scope:character
                         scope:character = {
                             has_culture = cu:korean
-                            OR = { # EACP - hanbok for non-monarchic leaders
+                            OR = { # EACP - hanbok for non-monarchic leaders & monarchs in command
                                 is_ruler = no
                                 monarchy_clothes_trigger = no
+                                AND = {
+                                    monarchy_clothes_trigger = yes
+                                    has_role = general
+                                }
                             }
                         }
                     }
@@ -3054,6 +3058,7 @@
                         has_culture = cu:korean
                         is_ruler = yes
                     }
+                    military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
                 }
                 # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
@@ -5119,6 +5124,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_trigger_01 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 			}
 		}
 	}
@@ -5147,6 +5153,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_trigger_02 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5175,6 +5182,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_trigger_03 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
             }
 		}
 	}
@@ -5203,6 +5211,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_trigger_04 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5231,6 +5240,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_trigger_05 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5262,6 +5272,7 @@ buddhist_religious_clothes = {
 				}
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5290,6 +5301,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_general_trigger_02 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5318,6 +5330,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_general_trigger_03 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5346,6 +5359,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_ming_trigger_01 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5374,6 +5388,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_ming_trigger_02 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5402,6 +5417,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_ming_trigger_03 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5430,6 +5446,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_ming_trigger_04 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5458,6 +5475,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_official_ming_trigger_05 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5486,6 +5504,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_general_ming_trigger_00 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5514,6 +5533,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_general_ming_trigger_0102 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5542,6 +5562,7 @@ buddhist_religious_clothes = {
 				chinese_court_clothes_general_ming_trigger_0304 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5630,6 +5651,7 @@ buddhist_religious_clothes = {
 				ming_subject_clothes_trigger = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5652,6 +5674,7 @@ buddhist_religious_clothes = {
 				vietnamese_court_clothes_official_trigger_01 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5674,6 +5697,7 @@ buddhist_religious_clothes = {
 				vietnamese_court_clothes_official_trigger_02 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5696,6 +5720,7 @@ buddhist_religious_clothes = {
 				vietnamese_court_clothes_official_trigger_03 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5718,6 +5743,7 @@ buddhist_religious_clothes = {
 				vietnamese_court_clothes_official_trigger_04 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5740,6 +5766,7 @@ buddhist_religious_clothes = {
 				vietnamese_court_clothes_official_trigger_05 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5762,6 +5789,7 @@ buddhist_religious_clothes = {
 				vietnamese_court_clothes_general_trigger_0102 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5784,6 +5812,7 @@ buddhist_religious_clothes = {
 				vietnamese_court_clothes_general_trigger_0304 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		   }
 		}
 	}
@@ -5839,6 +5868,7 @@ buddhist_religious_clothes = {
 				add = 100
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 				OR = {
 					 chinese_imperial_clothes_ming_trigger = yes
 					 vietnamese_imperial_clothes_trigger = yes
@@ -5963,6 +5993,7 @@ buddhist_religious_clothes = {
 				korean_court_clothes_trigger_01 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -5985,6 +6016,7 @@ buddhist_religious_clothes = {
 				korean_court_clothes_trigger_02 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -6007,6 +6039,7 @@ buddhist_religious_clothes = {
 				korean_court_clothes_trigger_03 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -6029,6 +6062,7 @@ buddhist_religious_clothes = {
 				korean_court_clothes_trigger_04 = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 		    }
 		}
 	}
@@ -6091,6 +6125,7 @@ buddhist_religious_clothes = {
 				north_asian_court_clothes_trigger = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
 			}
 		}
 	}
@@ -6311,6 +6346,12 @@ buddhist_religious_clothes = {
 				}
 				slaves_clothes_pop_trigger = yes
 			}
+            modifier = {
+                add = 100
+                vietnamese_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                agitator_character_trigger = yes
+            }
 		}
 	}
 

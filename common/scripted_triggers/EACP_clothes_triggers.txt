@@ -37,19 +37,24 @@ EACP_is_commander_trigger = {
 EACP_is_character_EAC_chinese_trigger = {
     exists = scope:character
     scope:character = {
-        OR = {
-            chinese_imperial_clothes_trigger                = yes
-            chinese_imperial_clothes_ming_trigger           = yes
-            chinese_court_clothes_general_trigger_01        = yes
-            chinese_court_clothes_general_trigger_02        = yes
-            chinese_court_clothes_general_trigger_03        = yes
-            chinese_court_clothes_general_ming_trigger_00   = yes
-            chinese_court_clothes_general_ming_trigger_0102 = yes
-            chinese_court_clothes_general_ming_trigger_0304 = yes
-            chinese_court_clothes_republic_trigger          = yes
-            chinese_prince_clothes_ming_trigger             = yes
-            chinese_king_clothes_ming_trigger               = yes
-            chinese_imperial_clothes_republic_trigger       = yes
+        trigger_if = {
+            limit = {
+                exists = owner
+            }
+            OR = {
+                chinese_imperial_clothes_trigger                = yes
+                chinese_imperial_clothes_ming_trigger           = yes
+                chinese_court_clothes_general_trigger_01        = yes
+                chinese_court_clothes_general_trigger_02        = yes
+                chinese_court_clothes_general_trigger_03        = yes
+                chinese_court_clothes_general_ming_trigger_00   = yes
+                chinese_court_clothes_general_ming_trigger_0102 = yes
+                chinese_court_clothes_general_ming_trigger_0304 = yes
+                chinese_court_clothes_republic_trigger          = yes
+                chinese_prince_clothes_ming_trigger             = yes
+                chinese_king_clothes_ming_trigger               = yes
+                chinese_imperial_clothes_republic_trigger       = yes
+            }
         }
     }
 }
@@ -102,8 +107,8 @@ EACP_unwesternized_character_trigger = {
                     has_role = admiral
                 }
                 OR = {
-                    interest_group = { is_interest_group_type = ig_devout }
-                    interest_group = { is_interest_group_type = ig_rural_folk }
+                    interest_group ?= { is_interest_group_type = ig_devout }
+                    interest_group ?= { is_interest_group_type = ig_rural_folk }
                 }
             }
         }
