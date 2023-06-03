@@ -228,6 +228,7 @@
                add = 100
                chinese_imperial_clothes_trigger = yes
                EACP_unwesternized_trigger = yes # EACP
+               military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
             }
             
             # EACP - Vanilla hat game rule
@@ -1502,6 +1503,7 @@
                 add = 2000
                 EAC_character_cool_trigger = no
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     chinese_court_clothes_official_trigger_01 = yes
                     chinese_court_clothes_general_trigger_01 = yes
@@ -1531,6 +1533,7 @@
                 add = 100
                 EAC_character_cool_trigger = no
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     chinese_court_clothes_official_trigger_02 = yes
                     chinese_court_clothes_general_trigger_02 = yes
@@ -1558,6 +1561,7 @@
                 add = 100
                 EAC_character_cool_trigger = no
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     chinese_court_clothes_official_trigger_03 = yes
                     chinese_court_clothes_general_trigger_03 = yes
@@ -1585,6 +1589,7 @@
                 add = 100
                 EAC_character_cool_trigger = no
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 chinese_court_clothes_official_trigger_04 = yes
                 scope:character = {
                     is_female = no
@@ -1609,6 +1614,7 @@
                 add = 100
                 EAC_character_cool_trigger = no
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 chinese_court_clothes_official_trigger_05 = yes
                 scope:character = {
                     is_female = no
@@ -1633,6 +1639,7 @@
                 add = 2000
                 EAC_character_cool_trigger = yes
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     chinese_court_clothes_official_trigger_01 = yes
                     chinese_court_clothes_general_trigger_01 = yes
@@ -1662,6 +1669,7 @@
                 add = 100
                 EAC_character_cool_trigger = yes
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     chinese_court_clothes_official_trigger_02 = yes
                     chinese_court_clothes_general_trigger_02 = yes
@@ -1689,6 +1697,7 @@
                 add = 100
                 EAC_character_cool_trigger = yes
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     chinese_court_clothes_official_trigger_03 = yes
                     chinese_court_clothes_general_trigger_03 = yes
@@ -1716,6 +1725,7 @@
                 add = 100
                 EAC_character_cool_trigger = yes
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 chinese_court_clothes_official_trigger_04 = yes
                 scope:character = {
                     is_female = no
@@ -1740,6 +1750,7 @@
                 add = 100
                 EAC_character_cool_trigger = yes
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 chinese_court_clothes_official_trigger_05 = yes
                 scope:character = {
                     is_female = no
@@ -1815,6 +1826,7 @@
             modifier = {
                 add = 1000
                 EACP_unwesternized_trigger = yes
+                military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
                 OR = {
                     chinese_imperial_clothes_ming_trigger = yes
                     korean_imperial_clothes_trigger = yes
@@ -1838,6 +1850,7 @@
             modifier = {
                 add = 1000
                 EACP_unwesternized_trigger = yes
+                military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
                 OR = {
                     korean_king_clothes_trigger = yes
                     korean_prince_clothes_trigger = yes
@@ -1864,6 +1877,7 @@
             modifier = {
                 add = 1000
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     chinese_court_clothes_official_ming_trigger_01 = yes
                     chinese_court_clothes_official_ming_trigger_02 = yes
@@ -1916,6 +1930,7 @@
                 add = 1000
                 EACP_unwesternized_trigger = yes
                 EACP_is_commander_trigger = no
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     korean_court_clothes_trigger_01 = yes
                     korean_court_clothes_trigger_02 = yes
@@ -1941,6 +1956,7 @@
             modifier = {
                 add = 1000
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     vietnamese_court_clothes_official_trigger_01 = yes
                     vietnamese_court_clothes_official_trigger_02 = yes
@@ -1967,6 +1983,7 @@
             modifier = {
                 add = 1000
                 EACP_unwesternized_trigger = yes
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
                 OR = {
                     vietnamese_court_clothes_general_trigger_0102 = yes
                     vietnamese_court_clothes_general_trigger_0304 = yes
@@ -2226,6 +2243,25 @@
     
     ## WCR - Additions ##
     
+    WCR_european_agitator_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_headgear_agitators
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                agitator_character_trigger = yes
+            }
+        }
+    }
+    
     WCR_european_royal_headgear = {
         dna_modifiers = {
             accessory = {
@@ -2395,6 +2431,7 @@
             modifier = { # Monarchy commanders in chief
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_no_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -2426,6 +2463,7 @@
             modifier = { # Republic commanders in chief
                 add = 2100
                 republic_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 # WCR_ruler_has_no_influence_trigger = yes # Hat is same for all flavors
                 scope:character ?= {
                     is_ruler = yes
@@ -2457,6 +2495,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_american_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -2488,6 +2527,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_british_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -2519,6 +2559,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_french_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -2550,6 +2591,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_german_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
