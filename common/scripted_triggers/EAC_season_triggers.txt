@@ -1,0 +1,24 @@
+﻿# No technical reason for this to be here, just showing off that 1.4's new month comparison trigger is what we needed
+# I salute you for sitting through writing the original triggers with all 198 AND blocks, blue0china
+
+# Original logic:
+# AND = {
+#     game_date > 1836.4.1
+#     game_date < 1836.10.1
+# }
+
+EAC_character_cool_trigger = {
+	exists = scope:character
+	scope:character = {
+        month >= 3 # month compares 0 - 11
+        month <  9
+	}
+}
+
+EAC_pop_cool_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		month >= 3
+        month <  9
+	}
+}
