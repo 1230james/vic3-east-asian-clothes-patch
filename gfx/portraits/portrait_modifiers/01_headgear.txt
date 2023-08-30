@@ -225,10 +225,13 @@
         weight = {
             base = 0
             modifier = {
-               add = 100
-               chinese_imperial_clothes_trigger = yes
-               EACP_unwesternized_trigger = yes # EACP
-               military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
+                add = 100
+                chinese_imperial_clothes_trigger = yes
+                EACP_unwesternized_trigger = yes # EACP
+                military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
+                scope:character ?= {
+                    is_heir = no # EACP - Prevent use on heir
+                }
             }
             
             # EACP - Vanilla hat game rule
