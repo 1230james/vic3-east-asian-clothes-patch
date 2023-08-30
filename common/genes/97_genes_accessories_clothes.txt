@@ -709,20 +709,6 @@ indian_high_outfits = {
 			girl = female
 
 		}
-        
-        late_american_soldier_outfit = {
-			index = 41
-			male = {
-				1 = male_outfit_south_american_01_late_american
-			}
-			female = {
-				1 = female_outfit_european_common_01
-			}
-
-			boy = male
-			girl = female
-
-		}
 
 		## SLAVIC OUTFIT DLC ##
 
@@ -793,8 +779,6 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}
-
-		}
         
         
         ## EACP - EAC definitions ##
