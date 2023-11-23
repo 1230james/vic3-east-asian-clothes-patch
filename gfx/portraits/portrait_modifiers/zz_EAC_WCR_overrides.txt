@@ -1,0 +1,182 @@
+﻿# Need overriders to override the overrides in WCR overriding vanilla
+# Fun times!
+EAC_overrides = {
+    usage = game
+    selection_behavior = weighted_random
+    
+    # Undoes WCR's special Armed Forces IG hanbok logic
+    WCR_korean_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                korean_court_clothes_trigger_04 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+            }
+        }
+    }
+    
+    # Override WCR keeping Chinese clothing
+    korean_pop_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = korean_low_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                AND = {
+                    exists = scope:pop
+                    scope:pop = {
+                        culture = cu:korean
+                    }
+                    OR = {
+                       poor_clothes_pop_trigger = yes
+                       middle_clothes_pop_trigger = yes
+                    }
+                }
+                EACP_unwesternized_trigger = yes # EACP
+            }
+        }
+    }
+
+    korean_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = korean_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                OR = {
+                    scope:character ?= {
+                        has_culture = cu:korean
+                        OR = {
+                            AND = {
+                                monarchy_clothes_trigger   = no
+                                agitator_character_trigger = no
+                            }
+                            OR = {
+                                has_role = general
+                                has_role = admiral
+                            }
+                        }
+                        korean_court_clothes_trigger_01 = no
+                        korean_court_clothes_trigger_02 = no
+                        korean_court_clothes_trigger_03 = no
+                        korean_court_clothes_trigger_04 = no
+                    }
+                    AND = {
+                        scope:pop ?= {
+                            culture = cu:korean
+                        }
+					}
+                }
+                EACP_unwesternized_trigger = yes # EACP
+            }
+        }
+    }
+    
+    # Override other mods fixing hanbok and japanese clothing
+    buddhist_religious_clothes = { # TODO: Fix this
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EAC_outfits
+                template = buddhist_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                confucianism_clothes_pop_trigger = no
+                OR = {
+                    AND = {
+                        buddhist_clothes_pop_trigger = yes
+                        japanese_clothes_pop_trigger = no
+                        clergy_clothes_pop_trigger = yes
+                    }
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            is_ruler = yes
+                            OR = {
+                                religion = {
+                                    has_discrimination_trait = buddhist
+                                }
+                                #religion = rel:sikh
+                                religion = rel:shinto
+                            }
+                            exists = home_country
+                            home_country = {
+                                has_law = law_type:law_theocracy
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    # this probably should go in its own block but since its scope is very limited i think its ok to leave here
+    Japanese_imperial_headgear_ryuuei = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EAC_headgear
+                template = Japanese_imperial_headgear_ryuuei
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                japanese_imperial_clothes_trigger = yes
+                EACP_unwesternized_trigger = yes
+            }
+        }
+    }
+}
