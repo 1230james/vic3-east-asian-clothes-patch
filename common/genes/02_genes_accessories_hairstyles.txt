@@ -438,18 +438,4 @@
 			girl = female
 		} 
 		
-        ## EACP - EAC Definitions ##
-        
-        topknot_hairstyles = {
-			index = 17
-			male = {
-				1 = topknot
-			}
-			female = {
-				1 = female_hair_chinese_01
-			}
-			boy = male
-			girl = female
-		}
 	}
-}

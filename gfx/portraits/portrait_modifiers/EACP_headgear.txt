@@ -1,0 +1,42 @@
+﻿EACP_headgear = {
+    usage = game
+    selection_behavior = weighted_random
+
+    chinese_imperial_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EACP_headgear
+                template = chinese_imperial_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = EAC_headgear
+                template = no_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                has_game_rule = EACP_vanilla_chinese_emperor_hat_yes
+                chinese_imperial_clothes_trigger = yes
+                EACP_unwesternized_trigger = yes # EACP
+                military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
+                scope:character ?= {
+                    is_ruler = yes
+                }
+            }
+        }
+    }    
+}

@@ -1,0 +1,505 @@
+﻿special_genes = {
+    accessory_genes = {
+        EACP_headgear = {
+            inheritable = no
+            
+            no_headgear = {
+				index = 0
+				male = {
+					1 = empty
+				}		   
+				female = male
+				boy = male
+				girl = male
+			}
+            
+            chinese_imperial_headgear = {
+				index = 1
+				male = {
+					# 1 = male_headgear_chinese_imperial_01
+					1 = male_headgear_chinese_imperial_03 # EACP - Bring back vanilla hat
+				}
+
+				female = {
+				#	1 = female_headgear_arabic_common_01
+				}
+				boy = male
+				girl = female
+			}
+        }
+        
+        EAC_headgear = {
+            inheritable = no
+            
+            no_headgear = {
+				index = 0
+				male = {
+					1 = empty
+				}		   
+				female = male
+				boy = male
+				girl = male
+			}
+            
+            chinese_imperial_headgear_warm = {
+                index = 1
+                male = {
+                    1 = male_headgear_chinese_imperial_01
+                }
+
+                female = {
+                    1 = male
+                }
+                boy = male
+                girl = female
+            }
+            
+            chinese_imperial_headgear_cool = {
+                index = 2
+                male = {
+                    1 = male_headgear_chinese_imperial_02
+                }
+
+                female = {
+                    1 = male
+                }
+                boy = male
+                girl = female
+            }
+            
+            chinese_court_headgear_01_1 = {
+                index = 3
+
+                male = {
+                    1 = male_headgear_chinese_court_01_1
+                                           
+                                           
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+    ## Ming ##
+
+            chinese_imperial_headgear_ming = {
+                index = 4
+
+                male = {
+                    1 = yishanguan  
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_king_headgear_ming = {
+
+                index = 5
+
+                male = {
+                    1 = male_headgear_korean_imperial_01
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+            
+            chinese_court_headgear_ming = {
+                index = 6
+
+                male = {
+                    1 = wushamao
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            vietnamese_court_headgear = {
+                index = 7
+                male = {
+                    1 = male_headgear_vietnamese_court_01			
+                }
+
+                female = {
+#					1 = empty			  
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_02_1 = {
+                index = 8
+
+                male = {
+           
+                    1 = male_headgear_chinese_court_02_1
+                }
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_common_headgear_kanemochi = {
+                index = 9
+                male = {
+                    1 = male_headgear_chinese_common_03
+                    1 = male_headgear_chinese_common_03_black
+                }
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_foreign_headgear = {
+                index = 10
+                male = {
+                    6 = male_headgear_european_common_01
+                    1 = male_headgear_european_common_02
+                    1 = male_headgear_chinese_common_03
+                    1 = male_headgear_chinese_common_03_black
+                    1 = empty
+                }
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            vietnamese_common_headgear = {
+                index = 11
+                male = {
+                    1 = male_headgear_vietnamese_common_01
+                }
+
+                female = {
+#					1 = male_headgear_vietnamese_common_01
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_01_2 = {
+                index = 12
+
+                male = {
+                    1 = male_headgear_chinese_court_01_2
+                                           
+                                           
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_01_3 = {
+                index = 13
+
+                male = {
+                    1 = male_headgear_chinese_court_01_3
+                                           
+                                           
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_01_4 = {
+                index = 14
+
+                male = {
+                    1 = male_headgear_chinese_court_01_4
+                                           
+                                           
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_01_5 = {
+                index = 15
+
+                male = {
+                    1 = male_headgear_chinese_court_01_5
+                                           
+                                           
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_02_2 = {
+                index = 16
+
+                male = {
+           
+                    1 = male_headgear_chinese_court_02_2
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_02_3 = {
+                index = 17
+
+                male = {
+           
+                    1 = male_headgear_chinese_court_02_3
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_02_4 = {
+                index = 18
+
+                male = {
+           
+                    1 = male_headgear_chinese_court_02_4
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_court_headgear_02_5 = {
+                index = 19
+
+                male = {
+           
+                    1 = male_headgear_chinese_court_02_5
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_officer_headgear_01 = {
+                index = 20
+
+                male = {
+                    1 = male_headgear_chinese_officer_01
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_officer_headgear_02 = {
+                index = 21
+
+                male = {
+                    1 = male_headgear_chinese_officer_02
+                }
+
+                female = {
+#					1 = empty
+                }
+                boy = male
+                girl = female
+            }
+
+    ## 양반 ##
+
+            korean_yangban_headgear = {
+                index = 22
+                male = {
+                    1 = male_headgear_korean_lia_01
+                }
+
+                female = {
+                    1 = empty
+                }
+                boy = female
+                girl = female
+            }
+    ## 병졸 ##
+
+            korean_soldier_headgear = {
+                index = 23
+                male = {
+                    1 = male_headgear_korean_lia_03
+                }
+
+                female = {
+                    1 = empty
+                }
+                boy = female
+                girl = female
+            }
+    ## 장군 ##
+
+            korean_general_headgear = {
+                index = 24
+                male = {
+                    1 = male_headgear_korean_lia_03
+                }
+
+                female = {
+                    1 = empty
+                }
+                boy = female
+                girl = female
+            }
+
+            mongolian_common_headgear = {
+                index = 25
+                male = {
+                    1 = male_headgear_chinese_common_01
+                }
+
+                female = {
+                    1 = empty
+                }
+                boy = female
+                girl = female
+            }
+
+            korean_osamo = {
+                index = 26
+                male = {
+                    1 = korean_osamo
+                }
+
+                female = {
+                #	1 = female_headgear_arabic_common_01
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_han_officer_headgear = {
+                index = 27
+                male = {
+                    1 = male_headgear_chinese_han_officer_01
+                }
+
+                female = {
+                #	1 = female_headgear_arabic_common_01
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_han_common_headgear_01 = {
+                index = 28
+                male = {
+                    1 = male_headgear_chinese_han_common_01
+                }
+
+                female = {
+                #	1 = female_headgear_arabic_common_01
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_han_common_headgear_02 = {
+                index = 29
+                male = {
+                    1 = male_headgear_chinese_han_common_02
+                }
+
+                female = {
+                #	1 = female_headgear_arabic_common_01
+                }
+                boy = male
+                girl = female
+            }
+
+            chinese_han_common_headgear_02_baraeti = {
+                index = 30
+                male = {
+                    3 = male_headgear_chinese_han_common_02
+                    1 = male_headgear_chinese_han_common_03
+                    1 = male_headgear_chinese_han_common_04
+                    1 = male_headgear_chinese_han_common_05
+                }
+
+                female = {
+                #	1 = female_headgear_arabic_common_01
+                }
+                boy = male
+                girl = female
+            }
+
+            vietnamese_imperial_headgear = {
+                index = 31
+                male = {
+                    1 = male_headgear_vietnamese_imperial_01
+                }
+
+                female = {
+                #	1 = female_headgear_arabic_common_01
+                }
+                boy = male
+                girl = female
+            }
+
+            Japanese_imperial_headgear_ryuuei = {
+                index = 32
+
+
+                male = {
+                    2 = male_headgear_japanese_imperial_02
+                }
+
+                female = {
+                    1 = empty
+                }
+                boy = male
+                girl = female
+            }
+        }
+    }
+}

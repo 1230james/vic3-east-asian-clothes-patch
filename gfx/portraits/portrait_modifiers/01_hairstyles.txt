@@ -59,17 +59,6 @@
                 OR = {
                     chinese_manchu_queue_hairstyle_pops_trigger = yes
                     chinese_manchu_queue_hairstyle_character_trigger = yes
-                    
-                    # EACP
-                    qing_subject_clothes_trigger = yes
-					AND = {
-                		chinese_qing_clothes_pop_trigger = yes
-						OR = {
-							bureaucrats_clothes_pop_trigger = yes
-							officers_clothes_pop_trigger = yes
-							soldier_clothes_pop_trigger = yes
-                		}
-                    }
                 }
             }
         }
@@ -109,11 +98,15 @@
             base = 0
             modifier = {
                 add = 1000
-                WCR_has_completed_westernization_trigger = no # WCR
                 AND = {
                     exists = scope:pop
                     scope:pop = {
                         culture = cu:japanese
+                        owner = {
+                            NOT = {
+                                has_variable = meiji_restoration_complete
+                            }
+                        }
                     }
                     poor_clothes_pop_trigger = no
                 }
@@ -155,15 +148,37 @@
             base = 0
             modifier = {
                 add = 1000
-                WCR_has_completed_westernization_trigger = no # WCR
                 AND = {
                     exists = scope:character
                     scope:character = {
                         culture = cu:japanese
-                    }
-                 OR = {
-                        poor_clothes_pop_trigger = no
-
+                        OR = {
+                            owner ?= {
+                                NOT = {
+                                    has_variable = meiji_restoration_complete
+                                }
+                            }
+                            AND = {
+                                owner ?= {
+                                    has_variable = meiji_restoration_complete
+                                }
+                                has_ideology = ideology:ideology_traditionalist
+                            }
+                        }
+                        OR = {
+                            has_role = general
+                            scope:character ?= {
+                                AND = {
+                                    has_role = politician
+                                    is_ruler = no
+                                    OR = {
+                                        is_interest_group_type = ig_armed_forces
+                                        is_interest_group_type = ig_landowners
+                                    }
+                                }
+                            }
+                            has_ideology = ideology:ideology_traditionalist
+                        }
                     }
                 }
                 agitator_character_trigger = no
@@ -206,6 +221,23 @@
                                     }
                                 }
                             }
+                            AND = {
+                                exists = c:BRZ
+                                OR = {
+                                    AND = {
+                                        exists = scope:character
+                                        scope:character = {
+                                            exists = home_country
+                                            home_country = c:BRZ
+                                        }
+                                    }
+                                    AND = {
+                                        exists = scope:pop
+                                        scope:pop = { home_country = c:BRZ }
+                                    }
+                                }
+
+                            }
                         }
                         OR = {
                             AND = {
@@ -217,6 +249,12 @@
                             AND = {
                                 politician_clothes_trigger = yes
                                 armed_forces_clothes_trigger = yes
+                            }
+                            AND = {
+                                scope:pop ?= {
+                                    is_pop_type = soldiers
+                                    is_pop_type = officers
+                                }
                             }
                         }
                     }
@@ -265,29 +303,19 @@
             base = 0
             modifier = {
                 add = 1100
-                AND = {
-                    exists = scope:pop
-                    scope:pop = {
-                        religion = {
-                            has_discrimination_trait = buddhist
+                OR = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            religion = {
+                                has_discrimination_trait = buddhist
+                            }
                         }
+                        clergy_clothes_pop_trigger = yes
                     }
-                    clergy_clothes_pop_trigger = yes
-                    confucianism_clothes_pop_trigger = no # EACP
-                }
-            }
-            modifier = { # EACP - Custom port of EAC logic?
-                add = 1100
-                scope:character ?= {
-                    religion = {
-                        has_discrimination_trait = buddhist
-                        NOT = {
-                            this = rel:mahayana
-                        }
-                    }
-                    is_ruler = yes
-                    owner = {
-                        has_law = law_type:law_theocracy
+                    AND = {
+                        politician_clothes_trigger = yes
+                        devout_clothes_trigger = yes
                     }
                 }
             }
@@ -309,43 +337,6 @@
                 add = 100
                 indian_clothes_pop_trigger = yes
                 upper_clothes_pop_trigger = no
-            }
-        }
-    }
-    
-    # EACP - EAC definition
-    topknot_hairstyles = {
-        dna_modifiers = {
-            accessory = {
-                mode = replace
-                gene = hairstyles
-                template = topknot_hairstyles
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 100000
-                OR = {
-                    topknot_pop_trigger = yes
-                    topknot_character_trigger = yes
-                    ming_subject_clothes_trigger = yes
-                    ming_subject_monarch_clothes_trigger = yes
-                }
-				NOT = { # idk why these need to be NOT(AND)s instead of NORs
-					AND = {
-						buddhist_clothes_pop_trigger = yes
-                    	clergy_clothes_pop_trigger = yes
-                    	confucianism_clothes_pop_trigger = no
-            		}
-            	}
-                NOT = {
-                    AND = {
-                        WCR_has_completed_westernization_trigger = yes
-                        agitator_character_trigger = yes
-                    }
-                }
             }
         }
     }

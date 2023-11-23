@@ -1,0 +1,1988 @@
+﻿EAC_clothes = {
+    usage = game
+    selection_behavior = weighted_random
+    
+    ### [EACP] Begin vanilla overrides ###
+    
+    chinese_common_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                OR = {
+                    AND = {
+                        #east_asian_clothes_pop_trigger = yes # EACP
+                        EACP_is_pop_chinese_trigger = yes # EACP
+                        soldier_clothes_pop_trigger = yes
+                    }
+                    AND = {
+                        scope:character ?= {
+                            is_in_exile_pool = yes
+                            NOR = { 
+                                culture = cu:yakut 
+                                culture = cu:siberian
+                            }
+                            culture = {
+                                OR = {
+                                    has_discrimination_trait = east_asian_heritage
+                                    has_discrimination_trait = north_asian_heritage
+                                }
+                            }   
+                        }
+                    }
+                }
+                EACP_unwesternized_trigger = yes # EACP
+            }
+        }
+    }
+    
+    chinese_poor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_low_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            #accessory = {
+            #    mode = add
+            #    gene = legwear
+            #    template = peasants_legwear
+            #    range = { 0 1 } # For the randomness to work correctly
+            #}
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
+                #japanese_clothes_pop_trigger = no # EACP
+                EACP_is_pop_chinese_trigger = yes # EACP
+                poor_clothes_pop_trigger = yes
+                EACP_unwesternized_trigger = yes # EACP
+           }
+        }
+    }
+
+    chinese_middle_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
+                #japanese_clothes_pop_trigger = no # EACP
+                EACP_is_pop_chinese_trigger = yes # EACP
+                OR = {
+                    middle_clothes_pop_trigger = yes
+                    clergy_clothes_pop_trigger = yes
+                }
+                EACP_unwesternized_trigger = yes # EACP
+            }
+        }
+    }
+    
+    chinese_upper_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }  
+        } 
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
+                #japanese_clothes_pop_trigger = no # EACP
+                EACP_is_pop_chinese_trigger = yes # EACP
+                upper_clothes_pop_trigger = yes                       
+                EACP_unwesternized_trigger = yes # EACP
+            }
+        }
+    }
+    
+    # korean_pop_clothes = { # Moved to WCR overrides
+        # dna_modifiers = {
+            # accessory = {
+                # mode = add
+                # gene = outfits
+                # template = korean_low_outfits
+                # range = { 0 1 } # For the randomness to work correctly
+            # }
+        # } 
+
+        # weight = {
+            # base = 0
+            # modifier = {
+                # add = 500
+                # AND = {
+                    # exists = scope:pop
+                    # scope:pop = {
+                        # culture = cu:korean
+                    # }
+                    # OR = {
+                       # poor_clothes_pop_trigger = yes
+                       # middle_clothes_pop_trigger = yes
+                    # }
+                # }
+                # EACP_unwesternized_trigger = yes # EACP
+            # }
+        # }
+    # }
+
+    # korean_clothes = { # Moved to WCR overrides
+        # dna_modifiers = {
+            # accessory = {
+                # mode = add
+                # gene = outfits
+                # template = korean_common_outfits
+                # range = { 0 1 } # For the randomness to work correctly
+            # }
+        # }
+
+        # weight = {
+            # base = 0
+            # modifier = {
+                # add = 100
+                # OR = {
+                    # scope:character ?= {
+                        # has_culture = cu:korean
+                        # OR = {
+                            # AND = {
+                                # monarchy_clothes_trigger   = no
+                                # agitator_character_trigger = no
+                            # }
+                            # OR = {
+                                # has_role = general
+                                # has_role = admiral
+                            # }
+                        # }
+                    # }
+                    # AND = {
+                        # scope:pop ?= {
+                            # culture = cu:korean
+                        # }
+					# }
+                # }
+                # EACP_unwesternized_trigger = yes # EACP
+            # }
+        # }
+    # }
+
+    korean_imperial_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = korean_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                scope:character ?= {
+                    has_culture = cu:korean
+                    is_ruler = yes
+                    owner ?= {
+                        has_variable = KOR_korean_empire_declared
+                    }
+                }
+                military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
+                EACP_unwesternized_trigger = yes # EACP
+            }
+        }
+    }
+    
+    # buddhist_religious_clothes = { # Moved to WCR overrides
+        # dna_modifiers = {
+            # accessory = {
+                # mode = add
+                # gene = EAC_outfits
+                # template = buddhist_outfits
+                # range = { 0 1 } # For the randomness to work correctly
+            # }
+            
+            # # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            # accessory = {
+                # mode = add
+                # gene = outfits
+                # template = no_outfit
+                # range = { 0 1 } # For the randomness to work correctly
+            # }
+        # } 
+
+        # weight = {
+            # base = 0
+            # modifier = {
+                # add = 1000
+                # confucianism_clothes_pop_trigger = no
+                # OR = {
+                    # AND = {
+                        # buddhist_clothes_pop_trigger = yes
+                        # japanese_clothes_pop_trigger = no
+                        # clergy_clothes_pop_trigger = yes
+                    # }
+                    # AND = {
+                        # exists = scope:character
+                        # scope:character = {
+                            # is_ruler = yes
+                            # OR = {
+                                # religion = {
+                                    # has_discrimination_trait = buddhist
+                                # }
+                                # #religion = rel:sikh
+                                # religion = rel:shinto
+                            # }
+                            # exists = home_country
+                            # home_country = {
+                                # has_law = law_type:law_theocracy
+                            # }
+                        # }
+                    # }
+                # }
+            # }
+        # }
+    # }
+    
+    ### [EACP] Begin East Asian Clothes definitions ###
+
+    # EACP addition / tweak - Chinese emperor gets his yellow outfit from vanilla, but the prince gets EAC-added clothes
+    # Original imperial definition kept for reference
+    #chinese_imperial_clothes = {
+    #	dna_modifiers = {
+    #		accessory = {
+    #			mode = add
+    #			gene = outfits
+    #			template = EAC_chinese_imperial_outfits
+    #			range = { 0 1 } # For the randomness to work correctly
+    #		}
+    #		accessory = {
+    #			mode = add
+    #			gene = necklaces
+    #			template = chinese_necklaces
+    #			range = { 0 1 } # For the randomness to work correctly
+    #		}
+    #	}
+    #
+    #	weight = {
+    #		base = 0
+    #		modifier = {
+    #			add = 100000
+    #			chinese_imperial_clothes_trigger = yes
+    #           EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+    #           EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+    #	    }
+    #	}
+    #}
+    
+    # [EACP] New Chinese Emperor definition - bring back yellow outfit from vanilla
+    chinese_emperor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = chinese_necklaces
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                AND = {
+                    exists = scope:character
+                    chinese_imperial_clothes_trigger = yes
+                    scope:character = {
+                        is_heir = no
+                    }
+                }
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+            }
+        }
+    }
+    
+    # [EACP] Chinese Prince definition - uses new imperial clothes definition from EAC
+    chinese_prince_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EAC_outfits
+                template = EAC_chinese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = chinese_necklaces
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                AND = {
+                    exists = scope:character
+                    chinese_imperial_clothes_trigger = yes
+                    scope:character = {
+                        is_ruler = no
+                    }
+                }
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+            }
+        }
+    }
+
+	chinese_court_clothes_official_01 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_official_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_trigger_01 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+			}
+		}
+	}
+
+	chinese_court_clothes_official_02 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_official_outfits_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	chinese_court_clothes_official_03 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_official_outfits_03
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+            }
+		}
+	}
+
+	chinese_court_clothes_official_04 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_official_outfits_04
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_trigger_04 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	chinese_court_clothes_official_05 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_official_outfits_05
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_trigger_05 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	chinese_court_clothes_general_01 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_general_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				OR = {
+					chinese_court_clothes_general_trigger_01 = yes
+					qing_subject_clothes_trigger = yes
+				}
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_general_02 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_general_outfits_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_general_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_general_03 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_court_general_outfits_03
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_general_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_official_ming_01 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_official_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_ming_trigger_01 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_official_ming_02 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_official_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_ming_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_official_ming_03 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_official_03
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_ming_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+            }
+		}
+	}
+
+	chinese_court_clothes_official_ming_04 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_official_04
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_ming_trigger_04 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_official_ming_05 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_official_05
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_official_ming_trigger_05 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_general_ming_00 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_general_00
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_general_ming_trigger_00 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	chinese_court_clothes_general_ming_0102 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_general_0102
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_general_ming_trigger_0102 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	chinese_court_clothes_general_ming_0304 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_general_0304
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				chinese_court_clothes_general_ming_trigger_0304 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	chinese_court_clothes_ming_subject = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = mandarin_outfits_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = EAC_necklaces
+				template = mandarin_square_subject
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = coats
+				template = no_coat
+				range = { 0 0.5 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = aiguillettes
+				template = no_aiguillettes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = epaulettes
+				template = no_epaulette
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = belts
+				template = no_belt
+				range = { 0 0.49 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = top_layer
+				template = no_top_layer
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = no_legwear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+			   mode = add
+			   gene = waistcoats
+			   template = no_waistcoat
+			   range = { 0 0.67 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = civilian_coats
+				template = no_civilian_coat
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = medals
+				template = no_medals
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = sashes
+				template = no_sash
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 100000
+				ming_subject_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	vietnamese_court_clothes_official_01 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_court_official_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				vietnamese_court_clothes_official_trigger_01 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	vietnamese_court_clothes_official_02 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_court_official_outfits_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				vietnamese_court_clothes_official_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	vietnamese_court_clothes_official_03 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_court_official_outfits_03
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				vietnamese_court_clothes_official_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	vietnamese_court_clothes_official_04 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_court_official_outfits_04
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				vietnamese_court_clothes_official_trigger_04 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	vietnamese_court_clothes_official_05 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_court_official_outfits_05
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				vietnamese_court_clothes_official_trigger_05 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	vietnamese_court_clothes_general_0102 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_court_general_outfits_0102
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				vietnamese_court_clothes_general_trigger_0102 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	vietnamese_court_clothes_general_0304 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_court_general_outfits_0304
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				vietnamese_court_clothes_general_trigger_0304 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		   }
+		}
+	}
+
+	chinese_court_clothes_republic = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = chinese_common_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                EACP_unwesternized_character_trigger = yes
+				OR = {
+					 chinese_court_clothes_republic_trigger = yes
+					 chinese_imperial_clothes_republic_trigger = yes
+					 tibetan_character_clothes_trigger = yes
+                     AND = { # EACP - Chinese theocracy hotfix
+                         scope:character ?= {
+                             is_ruler = yes
+                             owner = {
+                                 has_law = law_type:law_theocracy
+                             }
+                         }
+                     }
+				}
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
+		}
+	}
+
+	chinese_imperial_clothes_ming = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_imperial_ming_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+				OR = {
+					 chinese_imperial_clothes_ming_trigger = yes
+					 vietnamese_imperial_clothes_trigger = yes
+				}
+		   }
+		}
+	}
+
+	chinese_prince_clothes_ming = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_prince_ming_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = no_necklace
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = coats
+				template = no_coat
+				range = { 0 0.5 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = aiguillettes
+				template = no_aiguillettes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = epaulettes
+				template = no_epaulette
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = belts
+				template = no_belt
+				range = { 0 0.49 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = top_layer
+				template = no_top_layer
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = no_legwear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+			   mode = add
+			   gene = waistcoats
+			   template = no_waistcoat
+			   range = { 0 0.67 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = civilian_coats
+				template = no_civilian_coat
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = medals
+				template = no_medals
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = sashes
+				template = no_sash
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 5000
+				OR = {
+					chinese_prince_clothes_ming_trigger = yes
+					ming_subject_monarch_clothes_trigger = yes
+					chinese_king_clothes_ming_trigger = yes
+				}
+				AND = {
+					exists = scope:character
+					scope:character = {
+                        EACP_unwesternized_character_trigger = yes
+						NOT = { has_culture = cu:korean }
+					}
+				}
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
+		}
+	}
+
+	korean_court_clothes_01 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = korean_court_outfits_01
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				korean_court_clothes_trigger_01 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	korean_court_clothes_02 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = korean_court_outfits_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				korean_court_clothes_trigger_02 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	korean_court_clothes_03 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = korean_court_outfits_03
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				korean_court_clothes_trigger_03 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+
+	korean_court_clothes_04 = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = korean_court_outfits_04
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				korean_court_clothes_trigger_04 = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+		    }
+		}
+	}
+    
+    korean_king_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = korean_king_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+				korean_king_clothes_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
+		}
+	}
+
+	korean_prince_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = korean_prince_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
+                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
+				korean_prince_clothes_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+		    }
+		}
+	}
+    
+    north_asian_court_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_official_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				north_asian_court_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
+                agitator_character_trigger = no # [EACP] No court clothing for agitators
+			}
+		}
+	}
+    
+    chinese_soldier_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = chinese_low_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100000
+				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
+				soldier_clothes_pop_trigger = yes
+                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
+			}
+		}
+	}
+
+	chinese_officer_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_official_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100000
+				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
+				OR = {
+					bureaucrats_clothes_pop_trigger = yes
+					officers_clothes_pop_trigger = yes
+				}
+                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
+			}
+		}
+	}
+    
+    # EACP addition - officer pop outfit + necklace
+    # Loosely inspired by Zeng Guofan photo on Wikipedia
+    chinese_general_clothes = {
+        dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_official_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            accessory = {
+				mode = add
+				gene = necklaces
+				template = chinese_necklaces
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+        weight = {
+			base = 0
+			modifier = {
+				add = 1000
+                EACP_is_character_EAC_chinese_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = yes
+			}
+		}
+    }
+
+	chinese_ming_offcier_clothes = { # typo? lol
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_ming_common_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100000
+				OR = {
+					vietnamese_nguyen_clothes_pop_trigger = yes
+					chinese_ming_clothes_pop_trigger = yes
+				}
+				OR = {
+					bureaucrats_clothes_pop_trigger = yes
+					officers_clothes_pop_trigger = yes
+				}
+                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
+			}
+            modifier = { # [EACP] Vietnamese commanders
+                add = 1000
+                scope:character ?= {
+                    owner ?= {
+                        OR = {
+                            c:DAI ?= THIS
+                            was_formed_from = DAI
+                        }
+                        has_law = law_type:law_monarchy
+                    }
+                }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = yes
+            }
+		}
+	}
+
+	chinese_ming_soldier_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+#				template = chinese_ming_officer_outfits
+				template = chinese_ming_common_outfits_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100000
+                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
+				chinese_ming_clothes_pop_trigger = yes
+				soldier_clothes_pop_trigger = yes
+			}
+		}
+	}
+
+	chinese_ming_common_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_ming_common_outfits_02
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				empire_of_china_trigger = yes
+				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
+				NOT = {
+					bureaucrats_clothes_pop_trigger = yes
+					officers_clothes_pop_trigger = yes
+				}
+				middle_clothes_pop_trigger = yes
+                EACP_unwesternized_trigger = yes # EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
+			}
+		}
+	}
+
+	chinese_ming_upper_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = chinese_ming_common_outfits_03
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				OR = {
+					AND = {
+						vietnamese_clothes_pop_trigger = yes
+						vietnamese_nguyen_clothes_pop_trigger = yes
+						confucianism_clothes_pop_trigger = yes
+						clergy_clothes_pop_trigger = yes
+					}
+					AND = {
+						empire_of_china_trigger = yes
+						EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
+						OR = {
+							upper_clothes_pop_trigger = yes
+							AND = {
+								confucianism_clothes_pop_trigger = yes
+								clergy_clothes_pop_trigger = yes
+							}
+						}
+					}
+				}
+                EACP_unwesternized_trigger = yes # EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
+			}
+		}
+	}
+
+	vietnamese_common_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_common_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 500
+				vietnamese_clothes_pop_trigger = yes
+                EACP_unwesternized_trigger = yes # EACP_unwesternized_pop_trigger = yes
+			}
+			modifier = {
+				add = 100
+				EAC_republic_clothes_trigger = yes
+				vietnamese_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+			}
+			modifier = {
+				add = 100
+				OR = {
+					east_asian_clothes_pop_trigger = yes
+					north_asian_clothes_pop_trigger = yes
+				}
+				slaves_clothes_pop_trigger = yes
+			}
+            modifier = {
+                add = 100
+                vietnamese_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                agitator_character_trigger = yes
+            }
+		}
+	}
+
+	vietnamese_soldier_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = EAC_outfits
+				template = vietnamese_common_outfits
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100000
+				vietnamese_nguyen_clothes_pop_trigger = yes
+				soldier_clothes_pop_trigger = yes
+                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
+			}
+		}
+	}
+    
+}

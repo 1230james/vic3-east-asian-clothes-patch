@@ -1,0 +1,53 @@
+﻿EAC_hairstyles = {
+    usage = game
+    selection_behavior = weighted_random
+    
+    # EACP - EAC definition
+    topknot_hairstyles = {
+        dna_modifiers = {
+            accessory = {
+                mode = replace
+                gene = EAC_hairstyles
+                template = topknot_hairstyles
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = replace
+                gene = hairstyles
+                template = no_hairstyles
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100000
+                OR = {
+                    EACP_unwesternized_character_trigger = yes
+                    EACP_unwesternized_pop_trigger = yes
+                }
+                OR = {
+                    topknot_pop_trigger = yes
+                    topknot_character_trigger = yes
+                    ming_subject_clothes_trigger = yes
+                    ming_subject_monarch_clothes_trigger = yes
+                }
+				NOT = { # idk why these need to be NOT(AND)s instead of NORs
+					AND = {
+						buddhist_clothes_pop_trigger = yes
+                    	clergy_clothes_pop_trigger = yes
+                    	confucianism_clothes_pop_trigger = no
+            		}
+            	}
+                NOT = {
+                    AND = {
+                        WCR_has_completed_westernization_trigger = yes
+                        agitator_character_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+}

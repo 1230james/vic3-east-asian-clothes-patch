@@ -1,10 +1,14 @@
 {
     "name" : "East Asian Clothes Patch",
     "id" : "",
-    "version" : "1.4.0",
-    "supported_game_version" : "1.4.*",
+    "version" : "1.5.0",
+    "supported_game_version" : "1.5.*",
     "short_description" : "",
-    "tags" : [],
+    "tags" : [
+        "Fixes",
+        "Graphics",
+        "Historical"
+    ],
     "relationships" : [],
     "game_custom_data" : {
         "multiplayer_synchronized" : true
