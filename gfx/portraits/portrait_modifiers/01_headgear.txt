@@ -203,7 +203,7 @@
                         politician_clothes_trigger = yes
                         armed_forces_clothes_trigger = yes
                         scope:character ?= {
-                            owner = {
+                            owner ?= {
                                 has_variable = meiji_restoration_complete
                             }
                             has_ideology = ideology:ideology_traditionalist
@@ -735,7 +735,7 @@
                     AND = {
                         scope:character ?= {
                             culture = cu:japanese
-                            owner = {
+                            owner ?= {
                                 has_variable = meiji_restoration_complete
                             }
                         }
