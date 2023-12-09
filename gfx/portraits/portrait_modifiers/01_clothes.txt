@@ -36,12 +36,6 @@
                 template = peasant_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = peasants_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
         }
         weight = {
             base = 1
@@ -96,10 +90,7 @@
             modifier = {
                 add = 25000
 
-                OR = { # EACP - OR block to allow for young westernized heirs
-                    european_clothes_trigger = yes
-                    EACP_unwesternized_trigger = no
-                }
+                european_clothes_trigger = yes
                 scope:character ?= {
                     age <= 12
                 }
@@ -132,13 +123,18 @@
             modifier = {
                 add = 100
                 european_clothes_trigger = yes
-                south_american_clothes_character_trigger = no
+                NAND = {
+                    south_american_clothes_character_trigger = yes
+                    scope:character ?= {
+                        NOR = { 
+                            culture = cu:paulista 
+                            culture = cu:sulista
+                        }
+                    }
+                }
                 slavic_clothes_trigger = no
                 agitator_character_trigger = yes
             }
-            #modifier = { # EACP - allow for westernized non-west agitators + 
-            #   TODO
-            #}
         }
     }
 
@@ -255,7 +251,75 @@
             modifier = {
                 add = 100
                 south_american_clothes_character_trigger = yes
+                scope:character ?= {
+                    NOR = {
+                        culture = cu:brazilian
+                        AND = {
+                            exists = cu:nordestino
+                            culture = cu:nordestino
+                        }
+                        AND = {
+                            exists = cu:paulista
+                            culture = cu:paulista
+                        }
+                        AND = {
+                            exists = cu:sulista
+                            culture = cu:sulista
+                        }
+
+                    }
+                }
                 agitator_character_trigger = yes 
+            }
+        }
+    }
+
+    brazil_agitator_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = south_american_bandit_lampiao
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = south_american_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = gaucho_belts
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+                OR = {
+                    scope:character ?= {
+                        has_template = BRZ_virgulino_ferreira
+                    }
+                    AND = {
+                        scope:character ?= {
+                            OR = {
+                                culture = cu:brazilian
+                                AND = {
+                                    exists = cu:nordestino
+                                    culture = cu:nordestino
+                                }
+                                AND = {
+                                    exists = cu:amazonic
+                                    culture = cu:amazonic
+                                }
+                            }
+                        }
+                        agitator_character_trigger = yes 
+                    }
+                }
             }
         }
     }
@@ -465,7 +529,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # For the randomness to work correctly
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -497,7 +561,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # For the randomness to work correctly
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -546,7 +610,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
+                accessory = male_legwear_european_01_black
             }
             accessory = {
                 mode = add
@@ -588,7 +652,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # For the randomness to work correctly
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -620,7 +684,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # For the randomness to work correctly
+                accessory = male_legwear_european_01_red
             }
         }
 
@@ -655,7 +719,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # For the randomness to work correctly
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -694,7 +758,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # For the randomness to work correctly
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -741,7 +805,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -806,7 +870,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -930,7 +994,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -962,7 +1026,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1001,7 +1065,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1033,7 +1097,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1157,7 +1221,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1196,7 +1260,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1228,7 +1292,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1312,10 +1376,10 @@
 
         dna_modifiers = {
             accessory = {
-               mode = add
-               gene = legwear
-               template = european_legwear_colors
-               range = { 0 0.1 } 
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1394,10 +1458,10 @@
 
         dna_modifiers = {
             accessory = {
-               mode = add
-               gene = legwear
-               template = european_legwear_colors
-               range = { 0 0.1 } 
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1428,10 +1492,10 @@
 
         dna_modifiers = {
             accessory = {
-               mode = add
-               gene = legwear
-               template = european_legwear_colors
-               range = { 0 0.1 } 
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1462,10 +1526,10 @@
 
         dna_modifiers = {
             accessory = {
-               mode = add
-               gene = legwear
-               template = european_legwear_colors
-               range = { 0 0.1 } 
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1582,10 +1646,10 @@
 
         dna_modifiers = {
             accessory = {
-               mode = add
-               gene = legwear
-               template = european_legwear_colors
-               range = { 0 0.1 } 
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1673,7 +1737,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1719,7 +1783,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 }
+                accessory = male_legwear_european_01_black
             }
         }
 
@@ -1774,6 +1838,66 @@
         }
     }
 
+    historical_lampiao = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = south_american_bandit_lampiao
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = historical_waistcoats_madero
+                range = { 0 0.1 }
+             }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+
+                scope:character ?= {
+                    has_template = BRZ_virgulino_ferreira
+                }
+            }
+        }
+    }
+
+    historical_getulio_vargas = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = historical_waistcoats_madero
+                range = { 0 0.1 }
+            }
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+
+                scope:character ?= {
+                    has_template = BRZ_getulio_vargas_character_template
+                }
+            }
+        }
+    }
+
 ### BACK TO YOUR REGULAR SCHEDULED PROGRAMMING ###
 
     shopkeepers_clothes = {
@@ -1803,7 +1927,21 @@
                 add = 10000
                 shopkeepers_clothes_pop_trigger = yes
                 OR = {
-                    european_clothes_pop_trigger = yes
+                    AND = {
+                        european_clothes_pop_trigger = yes
+
+                        ## Midsummer clothes exception ##
+                        NAND = {
+                            OR = {
+                                slavic_clothes_pop_trigger = yes
+                                nordic_clothes_pop_trigger = yes
+                            }
+                            scope:pop ?= {
+                                month = 5 # June. The trigger for months is on a 0-11 scale.
+                            }
+                        }
+                        ## Midsummer clothes exception ##
+                    }
                     african_diaspora_pop_clothes_trigger = yes
                     AND = {
                         native_american_clothes_pop_trigger = yes
@@ -1819,48 +1957,48 @@
         }
     }
 
-    #chinese_imperial_clothes = { # EACP - Replaced with EAC trigger
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = outfits
-    #            template = chinese_imperial_outfits
-    #            range = { 0 1 } # For the randomness to work correctly
-    #        }
-    #    }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 1100
-    #            chinese_imperial_clothes_trigger = yes
-    #        }
-    #    }
-    #}
+    chinese_imperial_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                chinese_imperial_clothes_trigger = yes
+            }
+        }
+    }
 
-    #chinese_court_clothes = { # EACP - Replaced with EAC triggers
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = outfits
-    #            template = chinese_court_outfits
-    #            range = { 0 1 } # For the randomness to work correctly
-    #        }
-    #    }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 1000
-    #            OR = {
-    #                chinese_court_clothes_trigger = yes
-    #                AND = {
-    #                    chinese_court_clothes_pop_trigger = yes
-    #                    officers_clothes_pop_trigger = yes
-    #                }
-    #            }
-    #            agitator_character_trigger = no
-    #        }
-    #    }
-    #}
+    chinese_court_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_court_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                OR = {
+                    chinese_court_clothes_trigger = yes
+                    AND = {
+                        chinese_court_clothes_pop_trigger = yes
+                        officers_clothes_pop_trigger = yes
+                    }
+                }
+                agitator_character_trigger = no
+            }
+        }
+    }
 
     chinese_common_clothes = {
         dna_modifiers = {
@@ -1877,8 +2015,7 @@
                 add = 1000
                 OR = {
                     AND = {
-                        #east_asian_clothes_pop_trigger = yes # EACP
-                        EACP_is_pop_chinese_trigger = yes # EACP
+                        east_asian_clothes_pop_trigger = yes
                         soldier_clothes_pop_trigger = yes
                     }
                     AND = {
@@ -1897,7 +2034,6 @@
                         }
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -1922,7 +2058,6 @@
             modifier = {
                 add = 100
                 african_clothes_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
                 NOT = {
                     scope:character ?= {
                         culture = {
@@ -1957,7 +2092,6 @@
             modifier = {
                 add = 200
                 african_clothes_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
                 scope:character ?= {
                     culture = {
                         has_discrimination_trait = southern_african_culture_group
@@ -2046,6 +2180,7 @@
                 american_clothes_trigger = no
                 british_empire_clothes_trigger = no
                 french_empire_clothes_trigger = no
+                russian_empire_clothes_trigger = no
                 OR = {
                     european_clothes_trigger = yes
                     scope:character ?= {
@@ -2092,29 +2227,25 @@
             base = 0
             modifier = {
                 add = 1000
-                AND = {
-                    OR = {
-                        european_clothes_trigger = yes
-                        AND = {
-                            exists = scope:character
-                            scope:character = {
-                                OR = {
-                                    culture = cu:cherokee
-                                    culture = cu:muskogean
-                                }
-                            }
-                        }
-                        african_diaspora_clothes_trigger = yes
-                    }
-                    ruler_clothes_trigger = yes
-                    republic_clothes_trigger = yes
+                exists = scope:character
+                scope:character = {
+                    is_female = no
+                }
+                OR = {
+                    european_clothes_trigger = yes
                     AND = {
                         exists = scope:character
                         scope:character = {
-                            is_female = no
+                            OR = {
+                                culture = cu:cherokee
+                                culture = cu:muskogean
+                            }
                         }
                     }
+                    african_diaspora_clothes_trigger = yes
                 }
+                ruler_clothes_trigger = yes
+                republic_clothes_trigger = yes
             }
         }
     }
@@ -2188,6 +2319,7 @@
                 arabic_clothes_trigger = no
                 british_empire_clothes_trigger = no
                 french_empire_clothes_trigger = no
+                russian_empire_clothes_trigger = no
                 OR = {
                     european_clothes_trigger = yes
                     AND = {
@@ -2240,7 +2372,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0.4 0.6 } # The gene has three color sets in it, the one in the middle being dark blue and sky blue.
+                accessory = male_legwear_european_01_blue
             }
         }
         weight = {
@@ -2331,7 +2463,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.6 } # black or blue
+                range = { 0 0.5 } # black or blue
             }
         }
         weight = {
@@ -2380,7 +2512,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range =  { 0 0.6 } # black or blue
+                range =  { 0 0.5 } # black or blue
             }
         }
         weight = {
@@ -2422,7 +2554,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # there's three colors in the gene, the first of which is black
+                accessory = male_legwear_european_01_black
             }
         }
         weight = {
@@ -2466,7 +2598,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0 0.1 } # there's three colors in the gene, the first of which is black
+                accessory = male_legwear_european_01_black
             }
         }
         weight = {
@@ -2497,13 +2629,19 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
+                accessory = male_legwear_european_01_red
             }
             accessory = {
                 mode = add
                 gene = epaulettes
                 template = all_epaulettes
                 range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                range = { 0 1 }
             }
         }
         weight = {
@@ -2547,7 +2685,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
+                accessory = male_legwear_european_01_red
             }
         }
         weight = {
@@ -2556,6 +2694,195 @@
                 add = 10000
 
                 french_empire_clothes_pop_trigger = yes
+                soldier_clothes_pop_trigger = yes
+            }
+        }
+    }
+
+    russian_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = russian_coats
+                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = slavic_legwear
+                range = { 0 1 } 
+             }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                OR = {
+                    AND = {
+                        scope:character ?= {
+                            age > 10
+                        }
+                        russian_empire_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                armed_forces_clothes_trigger = yes
+                                politician_clothes_trigger = yes
+                            }
+                        }   
+                    }
+                    AND = {
+                        russian_empire_clothes_pop_trigger = yes
+                        officers_clothes_pop_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+
+    russian_military_clothes_soldier = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = russian_coats
+                range = { 0 1 }
+            }
+            # the common soldier gets no aguillettes or epaulettes :(
+            accessory = {
+                mode = add
+                gene = legwear
+                template = slavic_legwear
+                range = { 0 1 } 
+             }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+
+                russian_empire_clothes_pop_trigger = yes
+                soldier_clothes_pop_trigger = yes
+            }
+        }
+    }
+
+    brazilian_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = brazilian_coats
+                accessory = male_coat_american_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = brazilian_white_legwear
+                accessory = male_legwear_european_01_white
+             }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                OR = {
+                    AND = {
+                        scope:character ?= {
+                            age > 10
+                            exists = c:BRZ
+                            home_country = {
+                                OR = {
+                                    AND = {
+                                        c:BRZ = this
+                                        is_subject = no # preventing uniform conflicts if BRZ becomes a subject of another country with puppet uniforms
+                                    }
+                                    is_subject_of = c:BRZ
+                                }       
+                            }
+                        }
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                armed_forces_clothes_trigger = yes
+                                politician_clothes_trigger = yes
+                            }
+                        }   
+                    }
+                    AND = {
+                        scope:pop ?= {
+                            exists = c:BRZ
+                            home_country = {
+                                OR = {
+                                    AND = {
+                                        c:BRZ = this
+                                        is_subject = no # preventing uniform conflicts if BRZ becomes a subject of another country with puppet uniforms
+                                    }
+                                    is_subject_of = c:BRZ
+                                }       
+                            }
+                        }
+                        officers_clothes_pop_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+
+    brazilian_military_clothes_soldier = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = brazilian_coats
+                accessory = male_top_layer_south_american_gaucho_01_brazilian_uniform
+            }
+            # the common soldier gets no aguillettes or epaulettes :(
+            accessory = {
+                mode = add
+                gene = legwear
+                template = brazilian_white_legwear
+                range = { 0 1 } 
+             }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+
+                scope:pop ?= {
+                    exists = c:BRZ
+                    home_country = {
+                        OR = {
+                            AND = {
+                                c:BRZ = this
+                                is_subject = no # preventing uniform conflicts if BRZ becomes a subject of another country with puppet uniforms
+                            }
+                            is_subject_of = c:BRZ
+                        }       
+                    }
+                }
                 soldier_clothes_pop_trigger = yes
             }
         }
@@ -2632,6 +2959,30 @@
             modifier = {
                 add  = 1100
                 OR = {
+                    scope:pop ?= {
+                        OR = {
+                            owner ?= {
+                                c:JAP ?= this
+                                NOT = { has_variable = meiji_restoration_complete }
+                            }
+                            owner ?= {
+                                NOT = { c:JAP ?= this }
+                            }
+                        }
+                    }
+                    scope:character ?= {
+                        OR = {
+                            owner ?= {
+                                c:JAP ?= this
+                                NOT = { has_variable = meiji_restoration_complete }
+                            }
+                            owner ?= {
+                                NOT = { c:JAP ?= this }
+                            }
+                        }
+                    }
+                }
+                OR = {
                     AND = {
                         exists = scope:pop
                         scope:pop = {
@@ -2650,12 +3001,11 @@
                         }
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
 
-        japanese_officers_clothes = {
+    japanese_officers_clothes = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -2694,14 +3044,26 @@
                  AND = {
                     japanese_clothes_trigger = yes
                     OR = {
-                        military_clothes_trigger = yes
+                        AND = {
+                            military_clothes_trigger = yes
+                            scope:character ?= {
+                                owner ?= {
+                                    NOT = { has_variable = meiji_restoration_complete }
+                                }
+                            }
+                        }
                         AND = {
                             armed_forces_clothes_trigger = yes
                             politician_clothes_trigger = yes
+                            scope:character ?= {
+                                NOT = { has_ideology = ideology:ideology_traditionalist }
+                                owner ?= {
+                                    NOT = { has_variable = meiji_restoration_complete }
+                                }
+                            }
                         }
                     } 
                 }    
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -2844,7 +3206,11 @@
             modifier = {
                 add = 2000
                 japanese_imperial_clothes_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
+                scope:character ?= {
+                    owner ?= {
+                        NOT = { has_variable = meiji_restoration_complete }
+                    }
+                }
             }
         }
     }
@@ -2865,7 +3231,13 @@
                 add = 500
                 japanese_clothes_pop_trigger = yes
                 poor_clothes_pop_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
+                #scope:pop ?= {
+                #    owner = {
+                #        NOT = {
+                #            has_variable = meiji_restoration_complete
+                #        }
+                #    }
+                #}
             }
         }
     }
@@ -2879,13 +3251,13 @@
                 range = { 0 1 } # For the randomness to work correctly
             }
 
-                accessory = {
+            accessory = {
                 mode = add
                 gene = legwear
                 template = japanese_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
-                accessory = {
+            accessory = {
                 mode = add
                 gene = top_layer
                 template = japanese_top_layer
@@ -2902,15 +3274,29 @@
                     AND = {
                         japanese_clothes_pop_trigger = yes
                         poor_clothes_pop_trigger = no
-                        # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
                     }
                     AND = {
                         japanese_clothes_trigger = yes
                         scope:character ?= {
                             is_in_exile_pool = yes
                         }
-                        # EACP - TODO: See if having unwesternized trigger is ok
                     }
+                }
+                NAND = {
+                    exists = scope:pop
+                    scope:pop = {
+                        AND = {
+                            culture = cu:japanese
+                            owner ?= {
+                                has_variable = meiji_restoration_complete
+                            }
+                        }
+                    }
+                    OR = {
+                        middle_clothes_pop_trigger = yes
+                        upper_clothes_pop_trigger = yes
+                    }
+                    clergy_clothes_pop_trigger = no
                 }
             }
         }
@@ -2945,8 +3331,8 @@
             modifier = {
                 add = 100
                 AND = {
-                    exists = scope:character
-                    scope:character = {
+                    agitator_character_trigger = no
+                    scope:character ?= {
                         OR = {
                             AND = {
                                 has_culture = cu:japanese
@@ -2954,9 +3340,14 @@
                             }
                             has_culture = cu:ainu
                         }
+                        OR = {
+                            devout_clothes_trigger = yes
+                            owner ?= {
+                                NOT = { has_variable = meiji_restoration_complete }
+                            }
+                        }
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -2975,18 +3366,17 @@
         weight = {
             base = 0
             modifier = {
-                add = 600 # EACP - up from 500 to override chinese clothes
+                add = 500
                 AND = {
                     exists = scope:pop
                     scope:pop = {
                         culture = cu:korean
                     }
-                    #OR = { # EACP - commented out to be catch-all for Korean pops
-                    #    poor_clothes_pop_trigger = yes
-                    #    middle_clothes_pop_trigger = yes
-                    #}
+                    OR = {
+                        poor_clothes_pop_trigger = yes
+                        middle_clothes_pop_trigger = yes
+                    }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -3004,36 +3394,23 @@
         weight = {
             base = 0
             modifier = {
-                add = 700 # EACP - up from 100 to override raised korean_pop_clothes weight
+                add = 100
                 OR = {
                     AND = {
                         exists = scope:character
                         scope:character = {
                             has_culture = cu:korean
-                            OR = { # EACP - hanbok for non-monarchic leaders & monarchs in command
-                                is_ruler = no
-                                monarchy_clothes_trigger = no
-                                AND = {
-                                    monarchy_clothes_trigger = yes
-                                    has_role = general
-                                }
-                            }
+                            is_ruler = no
                         }
                     }
                     AND = {
                         exists = scope:pop
                         scope:pop = {
                             culture = cu:korean
-                            
-                            # EACP
-                            OR = {
-                                is_pop_type = officers
-                                upper_clothes_pop_trigger = yes
-                            }
+                            is_pop_type = officers
                         }
 					}
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -3057,10 +3434,16 @@
                     scope:character = {
                         has_culture = cu:korean
                         is_ruler = yes
+                        OR = {
+                            age <= 10
+                            NOT = {
+                                owner ?= {
+                                    has_variable = KOR_korean_empire_declared
+                                }
+                            }
+                        }
                     }
-                    military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -3087,7 +3470,6 @@ arabic_clothes = {
                 }
             }
             armed_forces_clothes_trigger = no
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3126,7 +3508,6 @@ arabic_coats = {
                     }
                 }
             }
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3151,7 +3532,6 @@ arabic_coats = {
                     is_female = no
                     monarchy_clothes_trigger = no
                 }                
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -3187,7 +3567,6 @@ arabic_coats = {
                     is_female = no
                     monarchy_clothes_trigger = yes
                 }                
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -3206,7 +3585,6 @@ indian_clothes = {
         modifier = {
             add = 100
             indian_clothes_trigger = yes
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3253,7 +3631,6 @@ indian_royal_clothes = {
                     clergy_clothes_pop_trigger = yes
                 }
             }
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3279,7 +3656,7 @@ indian_royal_clothes = {
             modifier = {
                 add = 100
                 siamese_clothes_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
+                
            }
         }
     }
@@ -3306,7 +3683,6 @@ indian_royal_clothes = {
                 add = 1200
                 siamese_clothes_trigger = yes
                 monarchy_clothes_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -3332,6 +3708,7 @@ indian_royal_clothes = {
                         AND = {
                             politician_clothes_trigger = yes  
                             christian_clothes_trigger = yes
+                            monarchy_clothes_trigger = no
                             OR = {
                                 devout_clothes_trigger = yes
                                 AND = {
@@ -3424,7 +3801,6 @@ indian_royal_clothes = {
                         officers_clothes_pop_trigger = yes
                     }
                 }
-                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
             }
             modifier = {
                 add = 500
@@ -3436,7 +3812,6 @@ indian_royal_clothes = {
                         culture = cu:yakut
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -3469,7 +3844,6 @@ indian_royal_clothes = {
                         clergy_clothes_pop_trigger = yes
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
             modifier = {
                 add = 100
@@ -3477,7 +3851,6 @@ indian_royal_clothes = {
                 scope:character = {
                     culture = cu:sami
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }   
@@ -3505,7 +3878,6 @@ indigenous_oceanic_pop_clothes = {
             add = 500
             indigenous_oceanic_clothes_trigger = yes
             upper_clothes_pop_trigger = no
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3557,7 +3929,6 @@ indigenous_oceanic_high_clothes_unrecognized = {
             indigenous_oceanic_clothes_trigger = yes
             upper_clothes_pop_trigger = yes
             recognized_country_trigger = no
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3625,7 +3996,6 @@ indigenous_oceanic_high_clothes_recognized = {
                     }
                 }
             }
-            # # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required # Not needed 
         }
     }
 }
@@ -3707,7 +4077,6 @@ indigenous_oceanic_high_clothes_recognized = {
                         }
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -3728,7 +4097,6 @@ indigenous_oceanic_high_clothes_recognized = {
 
                 south_east_asia_clothes_pop_trigger = yes
                 middle_clothes_pop_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -3763,7 +4131,6 @@ indigenous_oceanic_high_clothes_recognized = {
                         }
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -3801,7 +4168,6 @@ indigenous_oceanic_high_clothes_recognized = {
                         }
                     }  
                 }              
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -3827,7 +4193,6 @@ indigenous_oceanic_high_clothes_recognized = {
                         poor_clothes_pop_trigger = yes
                     }
                 }                
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -3873,7 +4238,6 @@ indian_middle_clothes = {
                     soldier_clothes_pop_trigger = yes
                 }
             }
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3906,7 +4270,6 @@ indian_upper_clothes = {
                     }
                 }
             }
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3934,11 +4297,9 @@ indian_upper_clothes = {
             base = 0
             modifier = {
                 add = 500
-                #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
-                #japanese_clothes_pop_trigger = no # EACP
-                EACP_is_pop_chinese_trigger = yes # EACP
+                east_asian_clothes_pop_trigger = yes
+                japanese_clothes_pop_trigger = no
                 poor_clothes_pop_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -3956,14 +4317,12 @@ chinese_middle_clothes = {
         base = 0
         modifier = {
             add = 500
-            #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
-            #japanese_clothes_pop_trigger = no # EACP
-            EACP_is_pop_chinese_trigger = yes # EACP
+            east_asian_clothes_pop_trigger = yes
+            japanese_clothes_pop_trigger = no
             OR = {
                 middle_clothes_pop_trigger = yes
                 clergy_clothes_pop_trigger = yes
             }
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -3980,11 +4339,9 @@ chinese_upper_clothes = {
         base = 0
         modifier = {
             add = 500
-            #east_asian_clothes_pop_trigger = yes # EACP - EAC overrides trigger
-            #japanese_clothes_pop_trigger = no # EACP
-            EACP_is_pop_chinese_trigger = yes # EACP
+            east_asian_clothes_pop_trigger = yes
+            japanese_clothes_pop_trigger = no
             upper_clothes_pop_trigger = yes                       
-            # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
         }
     }
 }
@@ -4034,7 +4391,6 @@ chinese_upper_clothes = {
                         poor_clothes_pop_trigger = yes
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4062,7 +4418,6 @@ chinese_upper_clothes = {
                     }
                     middle_clothes_pop_trigger = yes
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -4083,7 +4438,6 @@ chinese_upper_clothes = {
                     arabic_clothes_pop_trigger = yes
                     upper_clothes_pop_trigger = yes
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -4172,6 +4526,18 @@ chinese_upper_clothes = {
                             OR = {
                                 culture = cu:cherokee 
                                 culture = cu:muskogean
+                                AND = {
+                                    culture = cu:japanese
+                                    owner ?= {
+                                        has_variable = meiji_restoration_complete
+                                    }
+                                }
+                                AND = {
+                                    culture = cu:korean
+                                    owner ?= {
+                                        has_variable = KOR_korean_empire_declared
+                                    }
+                                }
                             }
                         }
                         OR = {
@@ -4370,7 +4736,7 @@ chinese_upper_clothes = {
         }
     }
 
-        french_soldier_clothes = { 
+    french_soldier_clothes = { 
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -4399,18 +4765,206 @@ chinese_upper_clothes = {
                 add = 10000
                 AND = {
                    french_empire_clothes_pop_trigger = yes
-                OR = {
+                    OR = {
                         soldier_clothes_pop_trigger = yes
                         officers_clothes_pop_trigger = yes
                     }
-                    
-                }
-                
-                
-           }
+                } 
+            }
         }
     }
-        prussian_soldier_clothes = { 
+
+    japanese_meiji_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = french_coats
+                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } #
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                AND = {
+                    scope:character ?= {
+                        age > 10
+                        culture = cu:japanese
+                        owner ?= {
+                            has_variable = meiji_restoration_complete
+                        }
+                    }
+                    OR = {
+                        military_clothes_trigger = yes
+                        monarchy_clothes_trigger = yes
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }   
+                }
+            }
+        }
+    }
+
+    japanese_meiji_soldier_clothes = { 
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } # There's three colors in the gene, the second being blue and the third being red.
+            }
+
+            #accessory = {
+            #    mode = add
+            #    gene = epaulettes
+            #    template = all_epaulettes
+            #    range = { 0.5 0.8 } # For the randomness to work correctly
+            #}
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                AND = {
+                    scope:pop ?= {
+                        culture = cu:japanese
+                        owner ?= {
+                            has_variable = meiji_restoration_complete
+                        }
+                    }
+                    OR = {
+                        soldier_clothes_pop_trigger = yes
+                        officers_clothes_pop_trigger = yes
+                    }
+                } 
+            }
+        }
+    }
+
+    korean_empire_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = korean_empire_coats
+                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } #
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                AND = {
+                    scope:character ?= {
+                        age > 10
+                        culture = cu:korean
+                        owner ?= {
+                            has_variable = KOR_korean_empire_declared
+                        }
+                    }
+                    OR = {
+                        military_clothes_trigger = yes
+                        monarchy_clothes_trigger = yes
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }   
+                }
+            }
+        }
+    }
+
+    korean_empire_soldier_clothes = { 
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = korean_empire_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } # There's three colors in the gene, the second being blue and the third being red.
+            }
+
+            #accessory = {
+            #    mode = add
+            #    gene = epaulettes
+            #    template = all_epaulettes
+            #    range = { 0.5 0.8 } # For the randomness to work correctly
+            #}
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                AND = {
+                    scope:pop ?= {
+                        culture = cu:korean
+                        owner ?= {
+                            has_variable = KOR_korean_empire_declared
+                        }
+                    }
+                    OR = {
+                        soldier_clothes_pop_trigger = yes
+                        officers_clothes_pop_trigger = yes
+                    }
+                } 
+            }
+        }
+    }
+
+    prussian_soldier_clothes = { 
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -4501,7 +5055,6 @@ chinese_upper_clothes = {
                         officers_clothes_pop_trigger = yes
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4549,7 +5102,6 @@ chinese_upper_clothes = {
                     african_clothes_pop_trigger = yes
                     #poor_clothes_pop_trigger = yes
                 }  
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4584,7 +5136,6 @@ chinese_upper_clothes = {
                     }
                     middle_clothes_pop_trigger = yes
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4631,7 +5182,6 @@ chinese_upper_clothes = {
                         }
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
            }
         }
     }
@@ -4659,7 +5209,7 @@ chinese_upper_clothes = {
                     cold_clothes_pop_trigger = yes
                 }
                 
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
+                
            }
         }
     }
@@ -4688,7 +5238,6 @@ chinese_upper_clothes = {
                     native_american_clothes_pop_trigger = yes
                     poor_clothes_pop_trigger = yes
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4728,7 +5277,6 @@ chinese_upper_clothes = {
                     }
                     clergy_clothes_pop_trigger = no
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required # wtf is this indentation
             }
         }
     }
@@ -4757,7 +5305,6 @@ chinese_upper_clothes = {
                     native_american_clothes_pop_trigger = yes
                     clergy_clothes_pop_trigger = yes
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4803,7 +5350,6 @@ chinese_upper_clothes = {
                         culture = cu:muskogean
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4830,7 +5376,6 @@ chinese_upper_clothes = {
                 scope:character = {
                     is_female = yes
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -4867,7 +5412,6 @@ chinese_upper_clothes = {
                         }
                     }
                 }
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required
             }
         }
     }
@@ -5044,7 +5588,7 @@ slavik_kokoshnik_clothes = {
                             scope:pop ?= {
                                 month = 5 # June. The trigger for months is on a 0-11 scale.
                             }
-                            owner = {
+                            owner ?= {
                                 OR = {
                                     has_modifier = royal_marriage
                                     any_scope_character = {
@@ -5173,2369 +5717,236 @@ pierrot_clothing = {
     }
 }
 
-### [EACP] Begin East Asian Clothes definitions ###
-
-    # EACP addition / tweak - Chinese emperor gets his yellow outfit from vanilla, but the prince gets EAC-added clothes
-    # Original imperial definition kept for reference
-    #chinese_imperial_clothes = {
-    #	dna_modifiers = {
-    #		accessory = {
-    #			mode = add
-    #			gene = outfits
-    #			template = EAC_chinese_imperial_outfits
-    #			range = { 0 1 } # For the randomness to work correctly
-    #		}
-    #		accessory = {
-    #			mode = add
-    #			gene = necklaces
-    #			template = chinese_necklaces
-    #			range = { 0 1 } # For the randomness to work correctly
-    #		}
-    #	}
-    #
-    #	weight = {
-    #		base = 0
-    #		modifier = {
-    #			add = 100000
-    #			chinese_imperial_clothes_trigger = yes
-    #           EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
-    #           EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-    #	    }
-    #	}
-    #}
-    
-    # [EACP] New Chinese Emperor definition - bring back yellow outfit from vanilla
-    chinese_emperor_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = chinese_imperial_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = chinese_necklaces
-                range = { 0 1 } # For the randomness to work correctly
-            }
+gaucho_clothes = {
+    dna_modifiers = {
+        accessory = {
+            mode = add
+            gene = top_layer
+            template = south_american_gaucho
+            range = { 0 1 }
         }
-        
-        weight = {
-            base = 0
-            modifier = {
-                add = 1100
-                AND = {
-                    exists = scope:character
-                    chinese_imperial_clothes_trigger = yes
-                    scope:character = {
-                        is_heir = no
-                    }
-                }
-                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-            }
+        accessory = {
+            mode = add
+            gene = legwear
+            template = south_american_legwear
+            range = { 0 1 } # For the randomness to work correctly
+        }
+        accessory = {
+            mode = add
+            gene = belts
+            template = gaucho_belts
+            range = { 0 1 } # For the randomness to work correctly
         }
     }
-    
-    # [EACP] Chinese Prince definition - uses new imperial clothes definition from EAC
-    chinese_prince_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = EAC_chinese_imperial_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = chinese_necklaces
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        
-        weight = {
-            base = 0
-            modifier = {
-                add = 1100
-                AND = {
-                    exists = scope:character
-                    chinese_imperial_clothes_trigger = yes
-                    scope:character = {
-                        is_ruler = no
-                    }
-                }
-                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-            }
-        }
-    }
-
-	chinese_court_clothes_official_01 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_official_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_trigger_01 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-			}
-		}
-	}
-
-	chinese_court_clothes_official_02 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_official_outfits_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_trigger_02 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	chinese_court_clothes_official_03 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_official_outfits_03
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_trigger_03 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-            }
-		}
-	}
-
-	chinese_court_clothes_official_04 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_official_outfits_04
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_trigger_04 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	chinese_court_clothes_official_05 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_official_outfits_05
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_trigger_05 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	chinese_court_clothes_general_01 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_general_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 10000
-				OR = {
-					chinese_court_clothes_general_trigger_01 = yes
-					qing_subject_clothes_trigger = yes
-				}
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_general_02 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_general_outfits_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_general_trigger_02 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_general_03 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_court_general_outfits_03
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_general_trigger_03 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_official_ming_01 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_official_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_ming_trigger_01 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_official_ming_02 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_official_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_ming_trigger_02 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_official_ming_03 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_official_03
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_ming_trigger_03 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_official_ming_04 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_official_04
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_ming_trigger_04 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_official_ming_05 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_official_05
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_official_ming_trigger_05 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_general_ming_00 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_general_00
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_general_ming_trigger_00 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	chinese_court_clothes_general_ming_0102 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_general_0102
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_general_ming_trigger_0102 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	chinese_court_clothes_general_ming_0304 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_general_0304
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				chinese_court_clothes_general_ming_trigger_0304 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	chinese_court_clothes_ming_subject = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = mandarin_outfits_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = mandarin_square_subject
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = coats
-				template = no_coat
-				range = { 0 0.5 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = aiguillettes
-				template = no_aiguillettes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = epaulettes
-				template = no_epaulette
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = belts
-				template = no_belt
-				range = { 0 0.49 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = top_layer
-				template = no_top_layer
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = legwear
-				template = no_legwear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-			   mode = add
-			   gene = waistcoats
-			   template = no_waistcoat
-			   range = { 0 0.67 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = civilian_coats
-				template = no_civilian_coat
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = medals
-				template = no_medals
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = sashes
-				template = no_sash
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-				ming_subject_clothes_trigger = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	vietnamese_court_clothes_official_01 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_court_official_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				vietnamese_court_clothes_official_trigger_01 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	vietnamese_court_clothes_official_02 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_court_official_outfits_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				vietnamese_court_clothes_official_trigger_02 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	vietnamese_court_clothes_official_03 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_court_official_outfits_03
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				vietnamese_court_clothes_official_trigger_03 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	vietnamese_court_clothes_official_04 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_court_official_outfits_04
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				vietnamese_court_clothes_official_trigger_04 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	vietnamese_court_clothes_official_05 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_court_official_outfits_05
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				vietnamese_court_clothes_official_trigger_05 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	vietnamese_court_clothes_general_0102 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_court_general_outfits_0102
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				vietnamese_court_clothes_general_trigger_0102 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	vietnamese_court_clothes_general_0304 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_court_general_outfits_0304
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				vietnamese_court_clothes_general_trigger_0304 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		   }
-		}
-	}
-
-	chinese_court_clothes_republic = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_common_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                EACP_unwesternized_character_trigger = yes
-				OR = {
-					 chinese_court_clothes_republic_trigger = yes
-					 chinese_imperial_clothes_republic_trigger = yes
-					 tibetan_character_clothes_trigger = yes
-                     AND = { # EACP - Chinese theocracy hotfix
-                         scope:character ?= {
-                             is_ruler = yes
-                             owner = {
-                                 has_law = law_type:law_theocracy
-                             }
-                         }
-                     }
-				}
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-		    }
-		}
-	}
-
-	chinese_imperial_clothes_ming = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_imperial_ming_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-				OR = {
-					 chinese_imperial_clothes_ming_trigger = yes
-					 vietnamese_imperial_clothes_trigger = yes
-				}
-		   }
-		}
-	}
-
-	chinese_prince_clothes_ming = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_prince_ming_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = necklaces
-				template = no_necklace
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = coats
-				template = no_coat
-				range = { 0 0.5 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = aiguillettes
-				template = no_aiguillettes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = epaulettes
-				template = no_epaulette
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = belts
-				template = no_belt
-				range = { 0 0.49 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = top_layer
-				template = no_top_layer
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = legwear
-				template = no_legwear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-			   mode = add
-			   gene = waistcoats
-			   template = no_waistcoat
-			   range = { 0 0.67 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = civilian_coats
-				template = no_civilian_coat
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = medals
-				template = no_medals
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = sashes
-				template = no_sash
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 5000
-				OR = {
-					chinese_prince_clothes_ming_trigger = yes
-					ming_subject_monarch_clothes_trigger = yes
-					chinese_king_clothes_ming_trigger = yes
-				}
-				AND = {
-					exists = scope:character
-					scope:character = {
-                        EACP_unwesternized_character_trigger = yes
-						NOT = { has_culture = cu:korean }
-					}
-				}
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-		    }
-		}
-	}
-
-	korean_court_clothes_01 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = korean_court_outfits_01
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				korean_court_clothes_trigger_01 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	korean_court_clothes_02 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = korean_court_outfits_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				korean_court_clothes_trigger_02 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	korean_court_clothes_03 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = korean_court_outfits_03
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				korean_court_clothes_trigger_03 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-
-	korean_court_clothes_04 = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = korean_court_outfits_04
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				korean_court_clothes_trigger_04 = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-		    }
-		}
-	}
-    
-    korean_king_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = korean_king_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 10000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
-                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
-				korean_king_clothes_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-		    }
-		}
-	}
-
-	korean_prince_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = korean_prince_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-
-		weight = {
-			base = 0
-			modifier = {
-				add = 10000 # [EACP] Weight adjusted for priority (not having it caused issues with certain mods, e.g. Japonism)
-                EACP_unwesternized_character_trigger = yes # snori_character_westernize_trigger = no # [EACP] Mass replace
-				korean_prince_clothes_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-		    }
-		}
-	}
-    
-    north_asian_court_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_official_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				north_asian_court_clothes_trigger = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
-                agitator_character_trigger = no # [EACP] No court clothing for agitators
-			}
-		}
-	}
-    
-    chinese_soldier_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_low_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
-				soldier_clothes_pop_trigger = yes
-                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
-			}
-		}
-	}
-
-	chinese_officer_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_official_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
-				OR = {
-					bureaucrats_clothes_pop_trigger = yes
-					officers_clothes_pop_trigger = yes
-				}
-                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
-			}
-		}
-	}
-    
-    # EACP addition - officer pop outfit + necklace
-    # Loosely inspired by Zeng Guofan photo on Wikipedia
-    chinese_general_clothes = {
-        dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_official_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-            accessory = {
-				mode = add
-				gene = necklaces
-				template = chinese_necklaces
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-        weight = {
-			base = 0
-			modifier = {
-				add = 1000
-                EACP_is_character_EAC_chinese_trigger = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = yes
-			}
-		}
-    }
-
-	chinese_ming_offcier_clothes = { # typo? lol
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_ming_common_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-				OR = {
-					vietnamese_nguyen_clothes_pop_trigger = yes
-					chinese_ming_clothes_pop_trigger = yes
-				}
-				OR = {
-					bureaucrats_clothes_pop_trigger = yes
-					officers_clothes_pop_trigger = yes
-				}
-                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
-			}
-            modifier = { # [EACP] No court clothing for commanders
-                add = 1000
-                vietnamese_clothes_trigger = yes
-                EACP_unwesternized_character_trigger = yes
-                EACP_is_commander_trigger = yes
-            }
-		}
-	}
-
-	chinese_ming_soldier_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-#				template = chinese_ming_officer_outfits
-				template = chinese_ming_common_outfits_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
-				chinese_ming_clothes_pop_trigger = yes
-				soldier_clothes_pop_trigger = yes
-			}
-		}
-	}
-
-	chinese_ming_common_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_ming_common_outfits_02
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				empire_of_china_trigger = yes
-				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
-				NOT = {
-					bureaucrats_clothes_pop_trigger = yes
-					officers_clothes_pop_trigger = yes
-				}
-				middle_clothes_pop_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
-			}
-		}
-	}
-
-	chinese_ming_upper_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = chinese_ming_common_outfits_03
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				OR = {
-					AND = {
-						vietnamese_clothes_pop_trigger = yes
-						vietnamese_nguyen_clothes_pop_trigger = yes
-						confucianism_clothes_pop_trigger = yes
-						clergy_clothes_pop_trigger = yes
-					}
-					AND = {
-						empire_of_china_trigger = yes
-						EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
-						OR = {
-							upper_clothes_pop_trigger = yes
-							AND = {
-								confucianism_clothes_pop_trigger = yes
-								clergy_clothes_pop_trigger = yes
-							}
-						}
-					}
-				}
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
-			}
-		}
-	}
-
-	vietnamese_common_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_common_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 500
-				vietnamese_clothes_pop_trigger = yes
-                # EACP_unwesternized_trigger = yes # EACP # Mass replacement - no longer required_unwesternized_pop_trigger = yes
-			}
-			modifier = {
-				add = 100
-				EAC_republic_clothes_trigger = yes
-				vietnamese_clothes_trigger = yes
-                EACP_unwesternized_character_trigger = yes
-			}
-			modifier = {
-				add = 100
-				OR = {
-					east_asian_clothes_pop_trigger = yes
-					north_asian_clothes_pop_trigger = yes
-				}
-				slaves_clothes_pop_trigger = yes
-			}
-            modifier = {
-                add = 100
-                vietnamese_clothes_trigger = yes
-                EACP_unwesternized_character_trigger = yes
-                agitator_character_trigger = yes
-            }
-		}
-	}
-
-	vietnamese_soldier_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = outfits
-				template = vietnamese_common_outfits
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 100000
-				vietnamese_nguyen_clothes_pop_trigger = yes
-				soldier_clothes_pop_trigger = yes
-                EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
-			}
-		}
-	}
-
-### [EACP] Begin Western Clothes: Redux definitions ###
-    
-    ## WCR - Fixes ##
-    
-    WCR_vanilla_prussian_clothes = { # Make Prussia-formed NGF and Germany keep Prussian uniforms
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = prussian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            # no aiguillettes because they don't work with double-breasted coats, which is all the Prussians have
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 5001 # Vanilla: 5000
-                scope:character ?= {
-                    home_country ?= {
-                        OR = {
-                            c:PRU ?= this
-                            was_formed_from = PRU # Catches NGF and Prussia-formed Germany
-                        }
-                    }
-                    age > 10
+    weight = {
+        base = 0
+        modifier = {
+            add = 10000
+
+            OR = {
+                scope:character ?= { # Sulista, Platinean, Argentine and Uruguayan RF & TU leaders and Brazilian RF & TU leaders post-Sulista integration should wear this
                     OR = {
                         AND = {
-                            is_ruler = yes
-                            home_country = {
-                                has_law = law_type:law_monarchy
-                            }
+                            exists = cu:sulista
+                            culture = cu:sulista
                         }
                         AND = {
-                            has_role = politician
-                            is_ruler = no
-                            is_interest_group_type = ig_armed_forces
+                            exists = cu:platinean
+                            culture = cu:platinean
                         }
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_vanilla_prussian_soldier_clothes = { 
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = prussian_coats
-                range = { 0 0.2 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0.1 0.2 } # For the randomness to work correctly
-            }
-        } 
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 10001 # Vanilla: 10000
-                OR = {
-                    AND = {
-                        scope:pop ?= {
+                        AND = {
+                            exists = cu:argentine
+                            culture = cu:argentine
+                        }
+                        AND = {
+                            exists = cu:uruguayan
+                            culture = cu:uruguayan
+                        }
+                        culture = cu:afro_brazilian
+                        AND = {
+                            culture = cu:brazilian
                             home_country ?= {
-                                OR = {
-                                    c:PRU ?= this
-                                    was_formed_from = PRU
-                                }
+                                has_variable = sulistas_integrated
                             }
                         }
-                        OR = {
-                            soldier_clothes_pop_trigger = yes
-                            officers_clothes_pop_trigger = yes
+                    }
+                    has_role = politician
+                    OR = {
+                        is_interest_group_type = ig_rural_folk
+                        is_interest_group_type = ig_trade_unions
+                    }
+                    OR = {
+                        is_ruler = no
+                        AND = {
+                            is_ruler = yes
+                            owner ?= {
+                                NOT = { has_law = law_type:law_monarchy}
+                            }
                         }
                     }
-                    AND = {
-                        scope:character ?= {
-                            age > 10
-                            OR = {
-                                has_role = general
-                                has_role = admiral
+                }
+                scope:pop ?= {
+                    OR = {
+                        AND = {
+                            exists = cu:sulista
+                            culture = cu:sulista
+                        }
+                        AND = {
+                            exists = cu:platinean
+                            culture = cu:platinean
+                        }
+                        AND = {
+                            exists = cu:argentine
+                            culture = cu:argentine
+                        }
+                        AND = {
+                            exists = cu:uruguayan
+                            culture = cu:uruguayan
+                        }
+                        culture = cu:afro_brazilian
+                        AND = {
+                            culture = cu:brazilian
+                            owner ?= {
+                                has_variable = sulistas_integrated
                             }
-                            home_country ?= {
-                                OR = {
-                                    c:PRU ?= this
-                                    was_formed_from = PRU
-                                }
-                            }
-                        }     
+                        }
+                    }
+                    OR = {
+                        is_pop_type = farmers
+                        is_pop_type = laborers
+                        is_pop_type = peasants
+                    }
+                }
+                scope:character ?= { # All Sulista and Brazilian exiles (even pre-integration) should have this look.
+                    is_in_exile_pool = yes
+                    OR = {
+                        AND = {
+                            exists = cu:sulista
+                            culture = cu:sulista
+                        }
+                        AND = {
+                            exists = cu:platinean
+                            culture = cu:platinean
+                        }
+                        AND = {
+                            exists = cu:argentine
+                            culture = cu:argentine
+                        }
+                        AND = {
+                            exists = cu:uruguayan
+                            culture = cu:uruguayan
+                        }
+                        culture = cu:brazilian
                     }
                 }
             }
         }
     }
-    
-    ## WCR - Additions ##
-    
-    WCR_european_child_clothes = {
-        dna_modifiers = {
-             accessory = {
-                mode = add
-                gene = outfits
-                template = children_outfit_royal
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 25000
+}
 
-                WCR_has_completed_westernization_trigger = yes
-                scope:character ?= {
-                    age <= 12
+ottoman_sultan_clothes = {
+    dna_modifiers = {
+        accessory = {
+            mode = add
+            gene = coats
+            template = ottoman_sultan_coats
+            accessory = male_coat_european_08_blue
+        }
+        accessory = {
+            mode = add
+            gene = legwear
+            template = european_legwear_colors
+            accessory = male_legwear_european_01_white
+        }
+        accessory = {
+            mode = add
+            gene = belts
+            template = all_belts
+            accessory = male_belt_generic_02 # HE'S GOT A SWORD
+        }
+        accessory = {
+            mode = add
+            gene = epaulettes
+            template = all_epaulettes
+            accessory = male_epaulettes_04
+        }
+    }
+    weight = {
+        base = 0
+        modifier = {
+            add = 10000
+
+            scope:character ?= {
+                exists = owner
+                exists = c:TUR
+                owner ?= {
+                    c:TUR = this
                 }
-            }
-        }
-    }
-    
-    WCR_european_agitator_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = european_outfits_agitator
-                range = { 0 1.0 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                agitator_character_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
-            }
-        }
-    }
-    
-    WCR_shopkeepers_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = shirt
-                template = european_shirt
-                range = { 0 0.2 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = outfits
-                template = european_working_class_outfits
-                range = { 0 0.5 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                shopkeepers_clothes_pop_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
-            }
-        }
-    }
-    
-    WCR_european_politician_clothes = {
-        dna_modifiers = {
-            accessory = {
-               mode = add
-               gene = waistcoats
-               template = european_waistcoats # TODO: No open-collar shirts for intelligentsia, landowners, petty bougie, and industrialists
-               range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = civilian_coats
-                template = european_civilian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = props
-                template = gene_lences
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                politician_clothes_trigger = yes
-                armed_forces_clothes_trigger = no
-            }
-
-            modifier = { #If we want rulers to dress like politicians later.
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                monarchy_clothes_trigger = no
-            }
-        }
-    }
-    
-    WCR_european_poor_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = shirt
-                template = working_class_shirt
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = outfits
-                template = european_working_class_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                poor_clothes_pop_trigger = yes
-                
-                # Farmers, Peasants, and Laborers westernization game rule
-                OR = {
-                    machinists_clothes_pop_trigger = yes
-                    has_game_rule = WCR_westernize_poor_pop_clothing_yes
-                }
-            }
-        }
-    }
-    
-    WCR_european_middle_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = shirt
-                template = european_shirt
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = outfits
-                template = european_working_class_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                middle_clothes_pop_trigger = yes
-            }
-        }
-    }
-    
-    WCR_european_upper_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = waistcoats
-                template = european_waistcoats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = civilian_coats
-                template = european_civilian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                upper_clothes_pop_trigger = yes
-            }
-        }
-    }
-    
-    WCR_european_ruler_republic_clothes = {
-        dna_modifiers = {
-            accessory = {
-               mode = add
-               gene = waistcoats
-               template = european_waistcoats
-               range = { 0 0.67 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = civilian_coats
-                template = european_civilian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                republic_clothes_trigger = yes
-                scope:character ?= {
-                    is_female = no
-                }
-            }
-        }
-    }
-
-    WCR_european_ruler_republic_clothes_female = {
-        dna_modifiers = {
-            accessory = {
-               mode = add
-               gene = outfits
-               template = european_common_outfits
-               range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                republic_clothes_trigger = yes
-                scope:character ?= {
-                    is_female = yes
-                }
-            }
-        }
-    }
-    
-    WCR_european_royal_clothes = { #Currently only includes and checks for female clothes.
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = european_royal_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                scope:character ?= {
-                    is_female = yes
-                    is_ruler = yes
-                }
-            }
-        }
-    }
-    
-    WCR_european_ruler_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = european_coats
-                range = { 0 0.27 } # limiting the set to single-breasted coats, so aiguillettes work
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = generic_belts
-                range = { 0 0.49 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = european_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2100
-                WCR_ruler_has_no_influence_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
-                military_clothes_trigger = no # Prevent use when king is commanding an army
+                is_female = no
             }
         }
     }
-    
-    WCR_american_ruler_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = american_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0.8 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0.4 0.6 } # The gene has three color sets in it, the one in the middle being dark blue and sky blue.
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = european_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
+}
+
+ottoman_military_clothes = {
+    dna_modifiers = {
+         accessory = {
+            mode = add
+            gene = coats
+            template = french_coats
+            range = { 0 1 }
         }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2100 # Ruler clothes are 2100 to ensure heirs also wear military uniforms
-                WCR_ruler_has_american_influence_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
-                monarchy_clothes_trigger = yes
-                military_clothes_trigger = no # Prevent use when king is commanding an army
-            }
+        accessory = {
+            mode = add
+            gene = legwear
+            template = european_legwear_colors
+            accessory = male_legwear_european_01_white
+        }
+        accessory = {
+            mode = add
+            gene = epaulettes
+            template = all_epaulettes
+            range = { 0 1 } # For the randomness to work correctly
+        }
+        accessory = {
+            mode = add
+            gene = belts
+            template = all_belts
+            accessory = male_belt_generic_01
         }
     }
-    
-    WCR_british_ruler_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = british_coats
-                range = { 0 0.5 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0 0.1 } # there's three colors in the gene, the first of which is black
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = european_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2100
-                WCR_ruler_has_british_influence_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
-                monarchy_clothes_trigger = yes
-                military_clothes_trigger = no # Prevent use when king is commanding an army
-            }
-        }
-    }
-    
-    WCR_french_ruler_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = french_coats
-                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = european_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2100
-                WCR_ruler_has_french_influence_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
-                monarchy_clothes_trigger = yes
-                military_clothes_trigger = no # Prevent use when king is commanding an army
-            }
-        }
-    }
-    
-    WCR_german_ruler_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = prussian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = european_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2100
-                WCR_ruler_has_german_influence_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
-                monarchy_clothes_trigger = yes
-                military_clothes_trigger = no # Prevent use when king is commanding an army
-            }
-        }
-    }
-    
-    WCR_european_military_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = european_coats
-                range = { 0 0.27 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
-                        WCR_ruler_has_no_influence_trigger = yes
+    weight = {
+        base = 0
+        modifier = {
+            add = 10000
+            OR = {
+                AND = {
+                    exists = c:TUR
+                    scope:character ?= {
+                        age > 10
+                        owner ?= {
+                            c:TUR = this
+                        }
                     }
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_no_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_no_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_american_military_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = american_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0.8 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0.4 0.6 } # The gene has three color sets in it, the one in the middle being dark blue and sky blue.
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    AND = {
-                        ruler_clothes_trigger = yes
+                    OR = {
                         military_clothes_trigger = yes
-                        WCR_ruler_has_american_influence_trigger = yes
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }   
+                }
+                AND = {
+                    exists = c:TUR
+                    scope:pop ?= {
+                        owner ?= {
+                            c:TUR = this
+                        }
                     }
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_american_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_american_influence_trigger = yes
-                    }
+                    officers_clothes_pop_trigger = yes
                 }
             }
         }
     }
-    
-    WCR_british_military_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = british_coats
-                range = { 0 0.5 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0 0.1 } # there's three colors in the gene, the first of which is black
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                soldier_clothes_pop_trigger = no
-                OR = {
-                    AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
-                        WCR_ruler_has_british_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_british_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_british_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-
-    WCR_british_military_clothes_soldier = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = british_coats
-                range = { 0 1 }
-            }
-            # the common soldier gets no aguillettes or epaulettes :(
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0 0.1 } # there's three colors in the gene, the first of which is black
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                soldier_clothes_pop_trigger = yes
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_british_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_british_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_french_military_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = french_coats
-                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                soldier_clothes_pop_trigger = no
-                OR = {
-                    AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
-                        WCR_ruler_has_french_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_french_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_french_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-
-    WCR_french_military_clothes_soldier = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = french_coats
-                range = { 0 1 }
-            }
-            # the common soldier gets no aguillettes or epaulettes :(
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear_colors
-                range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                soldier_clothes_pop_trigger = yes
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_french_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_french_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_prussian_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = prussian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            # no aiguillettes because they don't work with double-breasted coats, which is all the Prussians have
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    ruler_clothes_trigger = yes      # Only the Armed Forces IG leader and king use this definition in the
-                    politician_clothes_trigger = yes # Prussian/German uniforms logic, apparently
-                }
-                OR = {
-                    AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
-                        WCR_ruler_has_german_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_german_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_german_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_prussian_soldier_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = prussian_coats
-                range = { 0 0.2 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0.1 0.2 } # For the randomness to work correctly
-            }
-        } 
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 9000
-                WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_german_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_german_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
 }
