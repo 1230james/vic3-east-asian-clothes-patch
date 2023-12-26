@@ -1,0 +1,10 @@
+﻿# USAGE:
+# Copy and paste this file into the common/scripted_triggers folder of any mod that has EACP interoperability.
+# Uncomment the definition for EACP_is_active_trigger below.
+#
+# If EACP is inactive, that trigger definition should be the one used by your mod, but if EACP is active, it should be
+# overwritten with the definition below, allowing you to tell when EACP is active or not dynamically.
+
+# EACP_is_active_trigger = {
+#     always = no
+# }

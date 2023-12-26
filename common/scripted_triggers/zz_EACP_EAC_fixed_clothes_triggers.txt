@@ -4,9 +4,9 @@
 japanese_imperial_clothes_trigger = {
 	exists = scope:character
 	scope:character = {
-		is_ruler = yes
+        is_ruler = yes
+		monarchy_clothes_trigger = yes
      	home_country ?= {
-     		has_law = law_type:law_monarchy
 			has_variable = meiji_var
      	}
 		OR = {
@@ -38,8 +38,8 @@ japanese_taishi_clothes_trigger = {
 	exists = scope:character
 	scope:character = {
 		is_heir = yes
+        monarchy_clothes_trigger = yes
      	home_country ?= {
-     		has_law = law_type:law_monarchy
 			has_variable = meiji_var
      	}
 		OR = {
@@ -71,8 +71,8 @@ japanese_shogun_clothes_trigger = {
 	exists = scope:character
 	scope:character = {
 		is_ruler = yes
+        monarchy_clothes_trigger = yes
      	home_country ?= {
-     		has_law = law_type:law_monarchy
 			NOT = { has_variable = meiji_var }
      	}
 		OR = {
@@ -1039,10 +1039,10 @@ korean_imperial_clothes_trigger = {
     scope:character ?= {
         owner ?= {
             OR = {
-                c:KOR = this
+                c:KOR ?= this
                 was_formed_from = KOR
             }
-            has_law = law_type:law_monarchy
+            monarchy_clothes_trigger = yes
             has_variable = KOR_korean_empire_declared
         }
         is_ruler = yes
@@ -1063,13 +1063,8 @@ korean_imperial_clothes_trigger = {
 # [EACP] New logic implemented for this trigger
 korean_king_clothes_trigger = {
 	scope:character ?= {
-        owner ?= {
-            OR = {
-                c:KOR = this
-                was_formed_from = KOR
-            }
-            has_law = law_type:law_monarchy
-        }
+        has_culture = cu:korean
+        monarchy_clothes_trigger = yes
         OR = {
             AND = {
                 is_ruler = yes
@@ -1112,9 +1107,11 @@ korean_prince_clothes_trigger = {
 	exists = scope:character
 	scope:character = {
 		is_heir = yes
-     	home_country ?= {
+     	owner ?= {
      		has_law = law_type:law_monarchy
-			is_subject = yes
+            NOT = {
+                has_variable = KOR_korean_empire_declared
+            }
      	}
 		has_culture = cu:korean
 	}

@@ -4,7 +4,7 @@
 # has a condition that allows not westernizing, e.g. traditionalist ideology or being devout IG leader)
 # Now completely controlled by WCR since I have control over it :)
 EACP_unwesternized_trigger = {
-    WCR_is_westernized_trigger = no
+    WCR_has_completed_westernization_trigger = no
 }
 
 EACP_confucianism_clothes_character_trigger = {

@@ -42,17 +42,26 @@ EAC_overrides = {
             base = 0
             modifier = {
                 add = 500
-                AND = {
-                    exists = scope:pop
-                    scope:pop = {
-                        culture = cu:korean
-                    }
+                PCT_is_active_trigger = no # Let PCT handle Korean pop clothing if PCT is active
+                scope:pop ?= {
+                    culture = cu:korean
                     OR = {
-                       poor_clothes_pop_trigger = yes
-                       middle_clothes_pop_trigger = yes
+                        strata = poor
+                        poor_clothes_pop_trigger = yes
+                        #middle_clothes_pop_trigger = yes
+                        soldier_clothes_pop_trigger = yes
                     }
                 }
-                EACP_unwesternized_trigger = yes # EACP
+                OR = {
+                    EACP_unwesternized_trigger = yes # EACP
+                    AND = {
+                        has_game_rule = WCR_westernize_poor_pop_clothing_no
+                        poor_clothes_pop_trigger = yes
+                        NOT = {
+                            machinists_clothes_pop_trigger = yes
+                        }
+                    }
+                }
             }
         }
     }
@@ -71,6 +80,7 @@ EAC_overrides = {
             base = 0
             modifier = {
                 add = 100
+                PCT_is_active_trigger = no
                 OR = {
                     scope:character ?= {
                         has_culture = cu:korean
@@ -115,6 +125,12 @@ EAC_overrides = {
                 mode = add
                 gene = outfits
                 template = no_outfit
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = no_top_layer
                 range = { 0 1 } # For the randomness to work correctly
             }
         } 

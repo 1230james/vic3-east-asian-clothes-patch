@@ -1,0 +1,6 @@
+﻿# Third-party modders:
+# See 00_EACP_active_trigger.txt for usage notes
+
+EACP_is_active_trigger = {
+    always = yes
+}

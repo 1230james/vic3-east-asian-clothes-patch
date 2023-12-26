@@ -105,6 +105,27 @@
         }
     }
     
+    japanese_imperial_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = Japanese_imperial_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				OR = {
+                	japanese_shogun_clothes_trigger = yes
+                	japanese_taishi_clothes_trigger = yes
+            	}
+            }
+        }
+    }
+    
     Japanese_imperial_headgear_ryuuei = {
         dna_modifiers = {
             accessory = {
