@@ -203,13 +203,7 @@
             base = 0
             modifier = {
                 add = 100
-                scope:character ?= {
-                    has_culture = cu:korean
-                    is_ruler = yes
-                    owner ?= {
-                        has_variable = KOR_korean_empire_declared
-                    }
-                }
+                korean_imperial_clothes_trigger = yes
                 military_clothes_trigger = no # EACP - Prevent use when king is commanding an army
                 EACP_unwesternized_trigger = yes # EACP
             }
@@ -1300,18 +1294,18 @@
 				add = 100
                 EACP_unwesternized_character_trigger = yes
 				OR = {
-					 chinese_court_clothes_republic_trigger = yes
-					 chinese_imperial_clothes_republic_trigger = yes
-					 tibetan_character_clothes_trigger = yes
-                     AND = { # EACP - Chinese theocracy hotfix
-                         scope:character ?= {
-                             is_ruler = yes
-                             owner = {
-                                 has_law = law_type:law_theocracy
-                             }
-                         }
-                     }
+                    chinese_court_clothes_republic_trigger = yes
+                    chinese_imperial_clothes_republic_trigger = yes
+                    tibetan_character_clothes_trigger = yes
 				}
+                NOT = { # EACP - Chinese theocracy hotfix
+                    scope:character ?= {
+                        is_ruler = yes
+                        owner ?= {
+                            has_law = law_type:law_theocracy
+                        }
+                    }
+                }
                 EACP_is_commander_trigger = no # [EACP] No court clothing for commanders
 		    }
 		}
@@ -1580,6 +1574,60 @@
 		    }
 		}
 	}
+    
+    japanese_shogun_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EAC_outfits
+                template = japanese_shogun_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                japanese_shogun_clothes_trigger = yes
+            }
+        }
+    }
+
+    japanese_taishi_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EAC_outfits
+                template = japanese_taishi_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                japanese_taishi_clothes_trigger = yes
+            }
+        }
+    }
     
     korean_king_clothes = {
 		dna_modifiers = {
