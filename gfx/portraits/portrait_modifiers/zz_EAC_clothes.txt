@@ -1842,7 +1842,7 @@
                             c:DAI ?= THIS
                             was_formed_from = DAI
                         }
-                        has_law = law_type:law_monarchy
+                        coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
                     }
                 }
                 EACP_unwesternized_character_trigger = yes
