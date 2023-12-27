@@ -109,7 +109,7 @@ chinese_manchu_queue_hairstyle_character_trigger = { # hairsyle for Manchu chara
 					ruler = { 
 						has_culture = cu:manchu 
 					}
-					has_law = law_type:law_monarchy
+					coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 					NOT = { 
 						has_law = law_type:law_multicultural
 					}
@@ -164,7 +164,7 @@ chinese_imperial_clothes_trigger = {
 			has_culture = cu:ainu
 		}
      	home_country ?= {
-     		has_law = law_type:law_monarchy
+     		coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
      	}
 	}
 }
@@ -186,7 +186,7 @@ north_asian_court_clothes_trigger = {
 					has_culture = cu:ainu
 				}
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -208,7 +208,7 @@ chinese_court_clothes_official_trigger_01 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -230,7 +230,7 @@ chinese_court_clothes_official_trigger_02 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -252,7 +252,7 @@ chinese_court_clothes_official_trigger_03 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -275,7 +275,7 @@ chinese_court_clothes_official_trigger_04 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -296,7 +296,7 @@ chinese_court_clothes_official_trigger_05 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -324,7 +324,7 @@ chinese_court_clothes_general_trigger_01 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -357,7 +357,7 @@ chinese_court_clothes_general_trigger_02 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -390,7 +390,7 @@ chinese_court_clothes_general_trigger_03 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -423,7 +423,7 @@ chinese_court_clothes_official_ming_trigger_01 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -458,7 +458,7 @@ chinese_court_clothes_official_ming_trigger_02 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -493,7 +493,7 @@ chinese_court_clothes_official_ming_trigger_03 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -529,7 +529,7 @@ chinese_court_clothes_official_ming_trigger_04 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -563,7 +563,7 @@ chinese_court_clothes_official_ming_trigger_05 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -604,7 +604,7 @@ chinese_court_clothes_general_ming_trigger_00 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -649,7 +649,7 @@ chinese_court_clothes_general_ming_trigger_0102 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -695,7 +695,7 @@ chinese_court_clothes_general_ming_trigger_0304 = {
 				}
 			}
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				has_law = law_type:law_theocracy
 			}
 		}
@@ -719,7 +719,7 @@ vietnamese_court_clothes_official_trigger_01 = {
 			ruler = {
 				has_culture = cu:vietnamese
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -741,7 +741,7 @@ vietnamese_court_clothes_official_trigger_02 = {
 			ruler = {
 				has_culture = cu:vietnamese
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -763,7 +763,7 @@ vietnamese_court_clothes_official_trigger_03 = {
 			ruler = {
 				has_culture = cu:vietnamese
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -786,7 +786,7 @@ vietnamese_court_clothes_official_trigger_04 = {
 			ruler = {
 				has_culture = cu:vietnamese
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -807,7 +807,7 @@ vietnamese_court_clothes_official_trigger_05 = {
 			ruler = {
 				has_culture = cu:vietnamese
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -842,7 +842,7 @@ vietnamese_court_clothes_general_trigger_0102 = {
 			ruler = {
 				has_culture = cu:vietnamese
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -878,7 +878,7 @@ vietnamese_court_clothes_general_trigger_0304 = {
 			ruler = {
 				has_culture = cu:vietnamese
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -901,7 +901,8 @@ chinese_court_clothes_republic_trigger = {
 	scope:character = {
 		is_ruler = no
 		home_country ?= {
-			NOT = { has_law = law_type:law_monarchy }
+			# NOT = { has_law = law_type:law_monarchy }
+            coa_monarchy_trigger = no # EACP # RRK compatibility
 		}
 		NOT = {
 			has_culture = cu:yakut 
@@ -926,7 +927,7 @@ chinese_imperial_clothes_ming_trigger = {
 		is_ruler = yes
      	home_country ?= {
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				AND = {
 					has_law = law_type:law_theocracy
 					NOT = {
@@ -965,7 +966,7 @@ chinese_prince_clothes_ming_trigger = {
 	scope:character = {
 		is_heir = yes
      	home_country ?= {
-     		has_law = law_type:law_monarchy
+     		coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
      	}
 		AND = {
 			OR = {
@@ -989,7 +990,7 @@ chinese_king_clothes_ming_trigger = {
 		is_ruler = yes
      	home_country ?= {
 			OR = {
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				AND = {
 					has_law = law_type:law_theocracy
 					NOT = {
@@ -1028,7 +1029,7 @@ vietnamese_imperial_clothes_trigger = {
 	scope:character = {
 		is_ruler = yes
      	home_country ?= {
-     		has_law = law_type:law_monarchy
+     		coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
      	}
 		has_culture = cu:vietnamese
 	}
@@ -1108,7 +1109,7 @@ korean_prince_clothes_trigger = {
 	scope:character = {
 		is_heir = yes
      	owner ?= {
-     		has_law = law_type:law_monarchy
+     		coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
             NOT = {
                 has_variable = KOR_korean_empire_declared
             }
@@ -1124,7 +1125,7 @@ chinese_imperial_clothes_republic_trigger = {
      	home_country ?= {
      		NOT = {
      			has_law = law_type:law_theocracy
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
      		}
      	}
 		AND = {
@@ -1149,7 +1150,8 @@ chinese_imperial_clothes_republic_trigger = {
 republic_of_china_trigger = {
 	exists = c:CHI
 	c:CHI = {
-		NOT = { has_law = law_type:law_monarchy }
+		# NOT = { has_law = law_type:law_monarchy }
+        coa_monarchy_trigger = no # EACP # RRK compatibility
 	}
 }
 
@@ -1157,7 +1159,8 @@ EAC_republic_clothes_trigger = {
 	exists = scope:character
 	scope:character = {
 		home_country ?= {
-			NOT = { has_law = law_type:law_monarchy}
+			# NOT = { has_law = law_type:law_monarchy }
+            coa_monarchy_trigger = no # EACP # RRK compatibility
 		}
 	}
 }
@@ -1165,7 +1168,7 @@ EAC_republic_clothes_trigger = {
 empire_of_china_trigger = {
 	exists = c:CHI
 	c:CHI = {
-		has_law = law_type:law_monarchy
+		coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		ruler = { 
 			culture = {
 				has_discrimination_trait = han_chinese
@@ -1177,7 +1180,7 @@ empire_of_china_trigger = {
 dynasty_of_qing_trigger = {
 	exists = c:CHI
 	c:CHI = {
-		has_law = law_type:law_monarchy
+		coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		ruler = { 
 			culture = {
 				has_discrimination_trait = north_asian_heritage
@@ -1209,7 +1212,7 @@ korean_court_clothes_trigger_01 = {
 			ruler = {
 				has_culture = cu:korean
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -1235,7 +1238,7 @@ korean_court_clothes_trigger_02 = {
 			ruler = {
 				has_culture = cu:korean
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -1257,7 +1260,7 @@ korean_court_clothes_trigger_03 = {
 			ruler = {
 				has_culture = cu:korean
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -1282,7 +1285,7 @@ korean_court_clothes_trigger_04 = {
 			ruler = {
 				has_culture = cu:korean
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
 	}	
 }
@@ -1317,7 +1320,7 @@ topknot_character_trigger = {
 								has_discrimination_trait = north_asian_heritage
 							}
 						}
-						has_law = law_type:law_monarchy
+						coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 					}
 				}
 			}
@@ -1332,7 +1335,7 @@ topknot_character_trigger = {
 							has_culture = cu:vietnamese
 						}
 					}
-					has_law = law_type:law_monarchy
+					coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 				}
 			}
 		}
@@ -1345,9 +1348,10 @@ ming_subject_clothes_trigger = {
 		is_ruler = yes
 		home_country ?= {
 			OR = {
-				NOT = {
-					has_law = law_type:law_monarchy
-				}
+				# NOT = {
+					# has_law = law_type:law_monarchy
+				# }
+                coa_monarchy_trigger = no # EACP # RRK compatibility
 				NOT = {
 					country_tier = hegemony
 					country_tier = empire
@@ -1369,7 +1373,7 @@ ming_subject_clothes_trigger = {
 						has_discrimination_trait = han_chinese
 					}
 				}
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 			}
 		}
 	}
@@ -1385,7 +1389,7 @@ ming_subject_monarch_clothes_trigger = {
 				country_tier = empire
 				country_tier = kingdom
 			}
-			has_law = law_type:law_monarchy
+			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 			NOT = {
 				has_law = law_type:law_theocracy
 			}
@@ -1401,7 +1405,7 @@ ming_subject_monarch_clothes_trigger = {
 						has_discrimination_trait = han_chinese
 					}
 				}
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 			}
 		}
 	}
@@ -1425,7 +1429,7 @@ qing_subject_clothes_trigger = {
 				ruler = {
 					has_culture = cu:manchu
 				}
-				has_law = law_type:law_monarchy
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 			}
 		}
 	}
