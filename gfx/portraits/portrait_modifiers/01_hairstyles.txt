@@ -303,21 +303,50 @@
             base = 0
             modifier = {
                 add = 1100
-                OR = {
-                    AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            religion = {
-                                has_discrimination_trait = buddhist
+				OR = {
+                	AND = {
+                    	exists = scope:pop
+                    	scope:pop = {
+                        	religion = {
+                            	has_discrimination_trait = buddhist
+                        	}
+                    	}
+                    	clergy_clothes_pop_trigger = yes
+						confucianism_clothes_pop_trigger = no
+                	}
+                	AND = {
+                    	exists = scope:character
+                    	scope:character = {
+                        	religion = {
+                            	has_discrimination_trait = buddhist
+								NOT = {
+									this = rel:mahayana
+								}
+                        	}
+                            is_ruler = yes
+                            owner = {
+                            	has_law = law_type:law_theocracy
                             }
-                        }
-                        clergy_clothes_pop_trigger = yes
-                    }
+                    	}
+                	}
                     AND = {
                         politician_clothes_trigger = yes
                         devout_clothes_trigger = yes
+                        AND = {
+                            exists = scope:character
+                            scope:character = {
+                                is_ruler = yes
+                                religion = {
+                                    has_discrimination_trait = buddhist
+                                }
+						        exists = home_country
+                                home_country = {
+                                    has_law = law_type:law_theocracy
+                                }
+                            }
+                        }
                     }
-                }
+            	}
             }
         }
     }
