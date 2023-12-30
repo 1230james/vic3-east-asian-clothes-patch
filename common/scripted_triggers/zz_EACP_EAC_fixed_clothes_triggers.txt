@@ -114,17 +114,17 @@ chinese_manchu_queue_hairstyle_character_trigger = { # hairsyle for Manchu chara
 						has_law = law_type:law_multicultural
 					}
 				}
-				culture = {
-					OR = {
-						has_discrimination_trait = east_asian_heritage
-						has_discrimination_trait = north_asian_heritage
-					}
-					NOT = {
-						this = cu:japanese
-						this = cu:korean
-						this = cu:vietnamese
-					}
-				}
+#				culture = {
+#					OR = {
+#						has_discrimination_trait = east_asian_heritage
+#						has_discrimination_trait = north_asian_heritage
+#					}
+#					NOT = {
+#						this = cu:japanese
+#						this = cu:korean
+#						this = cu:vietnamese
+#					}
+#				}
 			}
 			AND = {
 				NOT = {

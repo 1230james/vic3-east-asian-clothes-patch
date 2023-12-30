@@ -150,13 +150,13 @@ EAC_overrides = {
                         exists = scope:character
                         scope:character = {
                             is_ruler = yes
-                            OR = {
+                            #OR = {
                                 religion = {
                                     has_discrimination_trait = buddhist
                                 }
                                 #religion = rel:sikh
-                                religion = rel:shinto
-                            }
+                                #religion = rel:shinto
+                            #}
                             exists = home_country
                             home_country = {
                                 has_law = law_type:law_theocracy
