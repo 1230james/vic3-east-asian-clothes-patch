@@ -5,6 +5,24 @@
 # Now completely controlled by WCR since I have control over it :)
 EACP_unwesternized_trigger = {
     WCR_has_completed_westernization_trigger = no
+    
+    # Treat military folks in unwesternized subjects of GBR, FRA, and RUS as westernized to make way for the subject uniforms
+    NAND = {
+        OR = {
+            military_clothes_trigger = yes
+            WCR_army_clothes_trigger = yes
+            WCR_navy_clothes_trigger = yes
+        }
+        OR = {
+            british_empire_clothes_trigger     = yes
+            british_empire_clothes_pop_trigger = yes
+            british_empire_clothes_p_trigger   = yes
+            french_empire_clothes_trigger      = yes
+            french_empire_clothes_pop_trigger  = yes
+            russian_empire_clothes_trigger     = yes
+            russian_empire_clothes_pop_trigger = yes
+        }
+    }
 }
 
 EACP_confucianism_clothes_character_trigger = {
@@ -97,7 +115,7 @@ EACP_is_pop_chinese_trigger = {
 
 # Old trigger - keeping for compatibility 
 EACP_unwesternized_character_trigger = {
-    WCR_is_westernized_trigger = no
+    EACP_unwesternized_trigger = yes
     # exists = scope:character
     # scope:character = {
         # OR = {
@@ -118,7 +136,7 @@ EACP_unwesternized_character_trigger = {
 
 # Old trigger - keeping for compatibility 
 EACP_unwesternized_pop_trigger = {
-    WCR_is_westernized_trigger = no
+    EACP_unwesternized_trigger = yes
     # exists = scope:pop
     # scope:pop = {
         # OR = {
