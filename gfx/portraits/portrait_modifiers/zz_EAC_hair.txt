@@ -31,8 +31,8 @@
                 OR = {
                     topknot_pop_trigger = yes
                     topknot_character_trigger = yes
-                    ming_subject_clothes_trigger = yes
-                    ming_subject_monarch_clothes_trigger = yes
+                    # ming_subject_clothes_trigger = yes
+                    # ming_subject_monarch_clothes_trigger = yes
                 }
 				NOT = { # idk why these need to be NOT(AND)s instead of NORs
 					AND = {
