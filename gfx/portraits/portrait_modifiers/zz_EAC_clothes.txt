@@ -29,6 +29,8 @@
                             NOR = { 
                                 culture = cu:yakut 
                                 culture = cu:siberian
+                                culture = cu:korean
+                                culture = cu:japanese
                             }
                             culture = {
                                 OR = {

@@ -1304,42 +1304,117 @@ vietnamese_clothes_trigger = {
 	}	
 }
 
+topknot_pop_trigger = {
+    scope:pop ?= {
+        OR = {
+            cu:korean     ?= culture
+            cu:vietnamese ?= culture
+            culture = {
+                has_discrimination_trait = east_asian_heritage
+                NOT = {
+                    cu:japanese ?= THIS
+                }
+            }
+        }
+        EACP_unwesternized_trigger = yes
+    }
+    
+    # Old logic
+	# exists = scope:pop
+	# scope:pop = {
+		# OR = {
+			# has_pop_culture = korean
+			# has_pop_culture = vietnamese
+			# AND = {
+				# owner = {
+					# ruler = {
+						# culture = {
+							# has_discrimination_trait = han_chinese
+						# }
+					# }
+					# coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				# }
+				# culture = {
+					# has_discrimination_trait = east_asian_heritage
+				# }
+				# NOT = {
+					# has_pop_culture = japanese
+				# }
+			# }
+			# AND = {
+				# owner = {
+					# ruler = {
+						# OR = {
+							# culture = {
+								# has_discrimination_trait = han_chinese
+							# }
+							# has_culture = cu:korean
+							# has_culture = cu:vietnamese
+						# }
+					# }
+					# coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				# }
+				# OR = {
+					# is_pop_type = bureaucrats
+					# is_pop_type = officers
+					# is_pop_type = soldiers
+				# }
+			# }
+		# }
+	# }
+}
+
 topknot_character_trigger = {
-	exists = scope:character
-	scope:character = {
-		OR = {
-			AND = {
-				OR = {
-					has_culture = cu:korean
-					has_culture = cu:vietnamese
-				}
-				NOT = {
-					home_country ?= {
-						ruler = {
-							culture = {
-								has_discrimination_trait = north_asian_heritage
-							}
-						}
-						coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
-					}
-				}
-			}
-			AND = {
-				home_country ?= {
-					ruler = {
-						OR = {
-							culture = {
-								has_discrimination_trait = han_chinese
-							}
-							has_culture = cu:korean
-							has_culture = cu:vietnamese
-						}
-					}
-					coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
-				}
-			}
-		}
-	}	
+    scope:character ?= {
+        OR = {
+            cu:korean     ?= culture
+            cu:vietnamese ?= culture
+            culture = {
+                has_discrimination_trait = east_asian_heritage
+                NOT = {
+                    cu:japanese ?= THIS
+                }
+            }
+        }
+        EACP_unwesternized_trigger = yes
+    }
+    
+    # Old logic
+	# exists = scope:character
+	# scope:character = {
+		# OR = {
+			# AND = {
+				# OR = {
+					# has_culture = cu:korean
+					# has_culture = cu:vietnamese
+				# }
+				# NOT = {
+					# home_country ?= {
+						# ruler = {
+							# culture = {
+								# has_discrimination_trait = north_asian_heritage
+							# }
+						# }
+						# coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+					# }
+				# }
+			# }
+			# AND = {
+				# home_country ?= {
+					# ruler = {
+						# OR = {
+							# culture = {
+								# has_discrimination_trait = han_chinese
+							# }
+							# has_culture = cu:korean
+							# has_culture = cu:vietnamese
+						# }
+					# }
+					# coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				# }
+			# }
+		# }
+	# }	
 }
 
 ming_subject_clothes_trigger = {
