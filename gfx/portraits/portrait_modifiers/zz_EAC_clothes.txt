@@ -1606,6 +1606,7 @@
             modifier = {
                 add = 2000
                 japanese_shogun_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
             }
         }
     }
@@ -1633,6 +1634,7 @@
             modifier = {
                 add = 2000
                 japanese_taishi_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
             }
         }
     }

@@ -122,6 +122,7 @@
                 	japanese_shogun_clothes_trigger = yes
                 	japanese_taishi_clothes_trigger = yes
             	}
+                EACP_unwesternized_character_trigger = yes
             }
         }
     }
