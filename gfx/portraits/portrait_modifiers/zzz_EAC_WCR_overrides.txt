@@ -133,37 +133,26 @@ EAC_overrides = {
                 template = no_top_layer
                 range = { 0 1 } # For the randomness to work correctly
             }
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = no_waistcoat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = no_civilian_coat
+                range = { 0 1 }
+            }
         } 
 
         weight = {
             base = 0
             modifier = {
                 add = 1000
-                confucianism_clothes_pop_trigger = no
-                OR = {
-                    AND = {
-                        buddhist_clothes_pop_trigger = yes
-                        japanese_clothes_pop_trigger = no
-                        clergy_clothes_pop_trigger = yes
-                    }
-                    AND = {
-                        exists = scope:character
-                        scope:character = {
-                            is_ruler = yes
-                            #OR = {
-                                religion = {
-                                    has_discrimination_trait = buddhist
-                                }
-                                #religion = rel:sikh
-                                #religion = rel:shinto
-                            #}
-                            exists = home_country
-                            home_country = {
-                                has_law = law_type:law_theocracy
-                            }
-                        }
-                    }
-                }
+                EACP_is_buddhist_trigger = yes
+                military_clothes_trigger = no
             }
         }
     }

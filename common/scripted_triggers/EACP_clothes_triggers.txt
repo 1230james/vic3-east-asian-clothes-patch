@@ -84,27 +84,83 @@ EACP_is_pop_chinese_trigger = {
     scope:pop = {
         OR = {
             chinese_clothes_pop_trigger = yes
-            AND = { # Vanilla logic
-                OR = {
-                    culture = { 
-                        has_discrimination_trait = han_chinese
-                    }
-                    has_pop_culture = manchu
-                    has_pop_culture = mongol
+            OR = {
+                culture = { 
+                    has_discrimination_trait = han_chinese
+                }
+                has_pop_culture = manchu
+                has_pop_culture = mongol
+                has_pop_culture = tuvan # Something between EAC and EACP broke it so we fix it here
+            }
+            # Part of vanilla logic I think? Served no useful purpose afaik + it broke stuff, but keeping for reference
+            # owner = {
+                # exists = c:CHI
+                # c:CHI = {
+                    # ruler = {
+                        # has_culture = cu:manchu
+                        # is_monarch = yes
+                    # }
+                # }
+                # OR = {
+                    # c:LAN = this
+                    # c:CHI = this
+                    # NOT = {
+                        # country_has_primary_culture = cu:han
+                    # }
+                # }
+            # }
+        }
+    }
+}
+
+# Copied from the EACP modified triggers for `buddhist_monk_non_hair` in 01_hairstyles.txt
+EACP_is_buddhist_trigger = {
+    OR = {
+        AND = {
+            exists = scope:pop
+            scope:pop = {
+                religion = {
+                    has_discrimination_trait = buddhist
                 }
                 owner = {
-                    exists = c:CHI
-                    c:CHI = {
-                        ruler = {
-                            has_culture = cu:manchu
-                            is_monarch = yes
+                    ig:ig_devout = {
+                        NOT = {
+                            has_ideology = ideology:ideology_confucian
                         }
                     }
-                    OR = {
-                        c:LAN = this
-                        c:CHI = this
+                }
+            }
+            clergy_clothes_pop_trigger = yes
+        }
+        AND = {
+            politician_clothes_trigger = yes
+            devout_clothes_trigger = yes
+            exists = scope:character
+            scope:character = {
+                religion = {
+                    has_discrimination_trait = buddhist
+                }
+                owner = {
+                    ig:ig_devout = {
                         NOT = {
-                            country_has_primary_culture = cu:han
+                            has_ideology = ideology:ideology_confucian
+                        }
+                    }
+                }
+            }
+        }
+        AND = { # EAC/EACP - Extend Buddhist non-hair to leaders of Buddhist theocracies
+            exists = scope:character
+            scope:character = {
+                religion = {
+                    has_discrimination_trait = buddhist
+                }
+                is_ruler = yes
+                owner = {
+                    has_law = law_type:law_theocracy
+                    ig:ig_devout = {
+                        NOT = {
+                            has_ideology = ideology:ideology_confucian
                         }
                     }
                 }

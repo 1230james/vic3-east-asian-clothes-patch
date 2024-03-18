@@ -34,17 +34,36 @@
                     # ming_subject_clothes_trigger = yes
                     # ming_subject_monarch_clothes_trigger = yes
                 }
-				NOT = { # idk why these need to be NOT(AND)s instead of NORs
-					AND = {
-						buddhist_clothes_pop_trigger = yes
-                    	clergy_clothes_pop_trigger = yes
-                    	confucianism_clothes_pop_trigger = no
-            		}
+				NAND = { # idk why these need to be NANDs instead of NORs
+                    buddhist_clothes_pop_trigger = yes
+                    clergy_clothes_pop_trigger = yes
+                    confucianism_clothes_pop_trigger = no
             	}
-                NOT = {
+                NAND = {
+                    WCR_has_completed_westernization_trigger = yes
+                    agitator_character_trigger = yes
+                }
+                EACP_is_buddhist_trigger = no
+                chinese_manchu_queue_hairstyle_character_trigger = no
+                chinese_manchu_queue_hairstyle_pops_trigger = no
+                
+                # Prevent clipping
+                NOR = {
+                    chinese_court_clothes_official_trigger_01 = yes
+                    chinese_court_clothes_official_trigger_02 = yes
+                    chinese_court_clothes_official_trigger_03 = yes
+                    chinese_court_clothes_official_trigger_04 = yes
+                    chinese_court_clothes_official_trigger_05 = yes
+                    chinese_court_clothes_general_trigger_01  = yes
+                    chinese_court_clothes_general_trigger_02  = yes
+                    chinese_court_clothes_general_trigger_03  = yes
                     AND = {
-                        WCR_has_completed_westernization_trigger = yes
-                        agitator_character_trigger = yes
+                        chinese_qing_clothes_pop_trigger = yes
+                        OR = {
+                            bureaucrats_clothes_pop_trigger = yes
+                            officers_clothes_pop_trigger = yes
+                            soldier_clothes_pop_trigger = yes
+                        }
                     }
                 }
             }
