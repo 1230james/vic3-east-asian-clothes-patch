@@ -316,6 +316,9 @@
                                         has_ideology = ideology:ideology_confucian
                                     }
                                 }
+                                NOT = {
+                                    country_has_primary_culture = cu:japanese
+                                }
                             }
                         }
                         clergy_clothes_pop_trigger = yes
@@ -334,6 +337,9 @@
                                         has_ideology = ideology:ideology_confucian
                                     }
                                 }
+                                NOT = {
+                                    country_has_primary_culture = cu:japanese
+                                }
                             }
                         }
                     }
@@ -350,6 +356,9 @@
                                     NOT = {
                                         has_ideology = ideology:ideology_confucian
                                     }
+                                }
+                                NOT = {
+                                    country_has_primary_culture = cu:japanese
                                 }
                             }
                     	}

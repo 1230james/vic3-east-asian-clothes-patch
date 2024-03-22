@@ -111,7 +111,7 @@ EAC_overrides = {
     }
     
     # Override other mods fixing hanbok and japanese clothing
-    buddhist_religious_clothes = { # TODO: Fix this
+    buddhist_religious_clothes = {
         dna_modifiers = {
             accessory = {
                 mode = add
