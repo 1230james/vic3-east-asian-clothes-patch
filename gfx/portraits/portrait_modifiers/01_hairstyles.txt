@@ -303,50 +303,67 @@
             base = 0
             modifier = {
                 add = 1100
-				OR = {
-                	AND = {
-                    	exists = scope:pop
-                    	scope:pop = {
-                        	religion = {
-                            	has_discrimination_trait = buddhist
-                        	}
-                    	}
-                    	clergy_clothes_pop_trigger = yes
-						confucianism_clothes_pop_trigger = no
-                	}
-                	AND = {
-                    	exists = scope:character
-                    	scope:character = {
-                        	religion = {
-                            	has_discrimination_trait = buddhist
-								NOT = {
-									this = rel:mahayana
-								}
-                        	}
-                            is_ruler = yes
-                            owner = {
-                            	has_law = law_type:law_theocracy
+                OR = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            religion = {
+                                has_discrimination_trait = buddhist
                             }
-                    	}
-                	}
+                            owner = {
+                                ig:ig_devout = {
+                                    NOT = {
+                                        has_ideology = ideology:ideology_confucian
+                                    }
+                                }
+                                NOT = {
+                                    country_has_primary_culture = cu:japanese
+                                }
+                            }
+                        }
+                        clergy_clothes_pop_trigger = yes
+                    }
                     AND = {
                         politician_clothes_trigger = yes
                         devout_clothes_trigger = yes
-                        AND = {
-                            exists = scope:character
-                            scope:character = {
-                                is_ruler = yes
-                                religion = {
-                                    has_discrimination_trait = buddhist
+                        exists = scope:character
+                        scope:character = {
+                            religion = {
+                                has_discrimination_trait = buddhist
+                            }
+                            owner = {
+                                ig:ig_devout = {
+                                    NOT = {
+                                        has_ideology = ideology:ideology_confucian
+                                    }
                                 }
-						        exists = home_country
-                                home_country = {
-                                    has_law = law_type:law_theocracy
+                                NOT = {
+                                    country_has_primary_culture = cu:japanese
                                 }
                             }
                         }
                     }
-            	}
+                    AND = { # EAC/EACP - Extend Buddhist non-hair to leaders of Buddhist theocracies
+                    	exists = scope:character
+                    	scope:character = {
+                        	religion = {
+                            	has_discrimination_trait = buddhist
+                        	}
+                            is_ruler = yes
+                            owner = {
+                            	has_law = law_type:law_theocracy
+                                ig:ig_devout = {
+                                    NOT = {
+                                        has_ideology = ideology:ideology_confucian
+                                    }
+                                }
+                                NOT = {
+                                    country_has_primary_culture = cu:japanese
+                                }
+                            }
+                    	}
+                	}
+                }
             }
         }
     }

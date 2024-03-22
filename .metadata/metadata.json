@@ -1,8 +1,8 @@
 {
     "name" : "East Asian Clothes Patch",
     "id" : "",
-    "version" : "1.5.7",
-    "supported_game_version" : "1.5.*",
+    "version" : "1.5.8",
+    "supported_game_version" : "1.6.*",
     "short_description" : "",
     "tags" : [
         "Fixes",
