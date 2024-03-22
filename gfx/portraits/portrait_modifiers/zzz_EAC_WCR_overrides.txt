@@ -184,4 +184,40 @@ EAC_overrides = {
             }
         }
     }
+    
+    # Need to place here to work correctly, probably due to the whole mess of overrides going on ahead of this lol
+    EACP_chinese_female_leader_outfit = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_court_outfits
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                EACP_unwesternized_character_trigger  = yes
+                OR = {
+                    EACP_is_character_EAC_chinese_trigger = yes
+                    scope:character ?= {
+                        owner ?= {
+                            any_primary_culture = {
+                                OR = {
+                                    has_discrimination_trait = sinosphere
+                                    has_discrimination_trait = han_chinese
+                                }
+                            }
+                        }
+                    }
+                }
+                scope:character ?= {
+                    is_female = yes
+                }
+            }
+        }
+    }
 }
