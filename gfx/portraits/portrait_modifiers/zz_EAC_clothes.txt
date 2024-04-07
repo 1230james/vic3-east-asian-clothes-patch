@@ -1990,7 +1990,17 @@
 			modifier = {
 				add = 500
 				vietnamese_clothes_pop_trigger = yes
-                EACP_unwesternized_trigger = yes # EACP_unwesternized_pop_trigger = yes
+                OR = {
+                    EACP_unwesternized_trigger = yes # EACP_unwesternized_pop_trigger = yes
+                    AND = {
+                        OR = {
+                            poor_clothes_pop_trigger = yes
+                            slaves_clothes_pop_trigger = yes
+                        }
+                        machinists_clothes_pop_trigger = no
+                        has_game_rule = WCR_westernize_poor_pop_clothing_no
+                    }
+                }
 			}
 			modifier = {
 				add = 100

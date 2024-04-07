@@ -153,6 +153,24 @@ EAC_overrides = {
                 add = 1000
                 EACP_is_buddhist_trigger = yes
                 military_clothes_trigger = no
+                
+                # EAC Confucianism exclusion
+                confucianism_clothes_pop_trigger = no # trigger provided by EAC
+                NOT = {
+                    scope:character ?= { # logic copied from confucianism_clothes_pop_trigger
+                        culture = {
+                            OR = {
+                                has_discrimination_trait = east_asian_heritage
+                                this = cu:manchu
+                                this = cu:vietnamese
+                            }
+                            NOT = {
+                                THIS = cu:japanese
+                            }
+                        }
+                        religion = rel:mahayana
+                    }
+                }
             }
         }
     }
