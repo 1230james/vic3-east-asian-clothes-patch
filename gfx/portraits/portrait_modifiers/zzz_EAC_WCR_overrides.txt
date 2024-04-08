@@ -43,6 +43,7 @@ EAC_overrides = {
             modifier = {
                 add = 500
                 PCT_is_active_trigger = no # Let PCT handle Korean pop clothing if PCT is active
+                JKFP_is_active_trigger = no # Let KFP handle Korean pop clothing if KFP is active
                 scope:pop ?= {
                     culture = cu:korean
                     OR = {
@@ -81,6 +82,7 @@ EAC_overrides = {
             modifier = {
                 add = 100
                 PCT_is_active_trigger = no
+                JKFP_is_active_trigger = no
                 OR = {
                     scope:character ?= {
                         has_culture = cu:korean
@@ -153,6 +155,10 @@ EAC_overrides = {
                 add = 1000
                 EACP_is_buddhist_trigger = yes
                 military_clothes_trigger = no
+                
+                # EAC Confucianism exclusion
+                confucianism_clothes_pop_trigger = no # trigger provided by EAC
+                EACP_confucianism_clothes_character_trigger = no
             }
         }
     }

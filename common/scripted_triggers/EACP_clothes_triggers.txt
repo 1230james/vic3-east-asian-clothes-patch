@@ -51,6 +51,17 @@ EACP_is_commander_trigger = {
     }
 }
 
+EACP_qing_china_trigger = {
+    exists = c:CHI
+    c:CHI ?= {
+        ruler = {
+            culture = {
+                has_discrimination_trait = north_asian_heritage
+            }
+        }
+    }
+}
+
 # Check against all of EAC's Chinese clothes triggers
 EACP_is_character_EAC_chinese_trigger = {
     exists = scope:character
@@ -73,6 +84,9 @@ EACP_is_character_EAC_chinese_trigger = {
                 chinese_king_clothes_ming_trigger               = yes
                 chinese_imperial_clothes_republic_trigger       = yes
             }
+        }
+        trigger_else = {
+            always = no
         }
     }
 }

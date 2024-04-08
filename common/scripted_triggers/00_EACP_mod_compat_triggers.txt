@@ -1,3 +1,7 @@
 ﻿PCT_is_active_trigger = {
     always = no
 }
+
+JKFP_is_active_trigger = {
+    always = no
+}

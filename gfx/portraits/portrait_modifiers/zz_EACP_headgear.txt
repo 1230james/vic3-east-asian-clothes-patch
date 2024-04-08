@@ -39,4 +39,57 @@
             }
         }
     }    
+    
+    EACP_vietnamese_agriculture_headgear_1 = { # non la
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = chinese_common_headgear
+                accessory = male_headgear_chinese_common_02
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                vietnamese_clothes_pop_trigger = yes
+                nougyou_clothes_trigger = yes # from EAC; farmers + peasants
+                OR = {
+                    EACP_unwesternized_trigger = yes
+                    has_game_rule = WCR_westernize_poor_pop_clothing_no
+                }
+            }
+        }
+    }
+    EACP_vietnamese_agriculture_headgear_2 = { # khan van
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EAC_headgear
+                template = vietnamese_common_headgear
+                accessory = male_headgear_vietnamese_common_01
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                vietnamese_clothes_pop_trigger = yes
+                nougyou_clothes_trigger = yes # from EAC; farmers + peasants
+                OR = {
+                    EACP_unwesternized_trigger = yes
+                    has_game_rule = WCR_westernize_poor_pop_clothing_no
+                }
+            }
+        }
+    }
 }
