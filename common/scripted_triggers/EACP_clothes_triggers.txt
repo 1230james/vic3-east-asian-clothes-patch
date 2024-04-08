@@ -74,6 +74,9 @@ EACP_is_character_EAC_chinese_trigger = {
                 chinese_imperial_clothes_republic_trigger       = yes
             }
         }
+        trigger_else = {
+            always = no
+        }
     }
 }
 
