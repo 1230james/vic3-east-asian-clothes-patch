@@ -1742,6 +1742,7 @@
 				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
 				soldier_clothes_pop_trigger = yes
                 EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
+                EACP_qing_china_trigger = yes
 			}
 		}
 	}
@@ -1767,19 +1768,20 @@
 			base = 0
 			modifier = {
 				add = 100000
-				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace # EACP - Prevent Chinese officers from going to fallback in republics
+				EACP_is_pop_chinese_trigger = yes # chinese_clothes_pop_trigger = yes # [EACP] Mass replace
 				OR = {
 					bureaucrats_clothes_pop_trigger = yes
 					officers_clothes_pop_trigger = yes
 				}
                 EACP_unwesternized_trigger = yes # EACP # Still required due to high weight
+                EACP_qing_china_trigger = yes
 			}
 		}
 	}
     
     # EACP addition - officer pop outfit + necklace
     # Loosely inspired by Zeng Guofan photo on Wikipedia
-    chinese_general_clothes = {
+    chinese_qing_general_clothes = {
         dna_modifiers = {
 			accessory = {
 				mode = add
@@ -1809,6 +1811,7 @@
                 EACP_is_character_EAC_chinese_trigger = yes
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = yes
+                dynasty_of_qing_trigger = yes
 			}
 		}
     }
@@ -1837,6 +1840,10 @@
 				OR = {
 					vietnamese_nguyen_clothes_pop_trigger = yes
 					chinese_ming_clothes_pop_trigger = yes
+                    AND = { # [EACP] Fallback for Chinese officer pops if not a monarchy (since there is no fallback otherwise)
+                        EACP_is_pop_chinese_trigger = yes
+                        dynasty_of_qing_trigger = no
+                    }
 				}
 				OR = {
 					bureaucrats_clothes_pop_trigger = yes
@@ -1854,6 +1861,20 @@
                         }
                         coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
                     }
+                }
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_commander_trigger = yes
+            }
+            modifier = { # [EACP] Chinese commanders under non-Manchu rule
+                add = 1000
+                scope:character ?= {
+                    owner ?= {
+                        OR = {
+                            c:CHI ?= THIS
+                            was_formed_from = CHI
+                        }
+                    }
+                    dynasty_of_qing_trigger = no
                 }
                 EACP_unwesternized_character_trigger = yes
                 EACP_is_commander_trigger = yes

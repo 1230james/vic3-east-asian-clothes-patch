@@ -156,21 +156,7 @@ EAC_overrides = {
                 
                 # EAC Confucianism exclusion
                 confucianism_clothes_pop_trigger = no # trigger provided by EAC
-                NOT = {
-                    scope:character ?= { # logic copied from confucianism_clothes_pop_trigger
-                        culture = {
-                            OR = {
-                                has_discrimination_trait = east_asian_heritage
-                                this = cu:manchu
-                                this = cu:vietnamese
-                            }
-                            NOT = {
-                                THIS = cu:japanese
-                            }
-                        }
-                        religion = rel:mahayana
-                    }
-                }
+                EACP_confucianism_clothes_character_trigger = no
             }
         }
     }
