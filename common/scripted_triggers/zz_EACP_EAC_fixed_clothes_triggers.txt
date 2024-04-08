@@ -1,4 +1,7 @@
-﻿# Basically just makes every instance of "owner =" to "home_country ?=" to stop error log flooding whenever an agitator
+﻿# Originally made to fix triggers as per the statement below, but is slowly turning into a place to put any trigger that
+# needs its definition from EAC changed to something else
+
+# Basically just makes every instance of "owner =" to "home_country ?=" to stop error log flooding whenever an agitator
 # is pulled up on screen
 
 japanese_imperial_clothes_trigger = {
@@ -142,6 +145,124 @@ chinese_manchu_queue_hairstyle_character_trigger = { # hairsyle for Manchu chara
 					}
 				}
 				culture = cu:manchu
+			}
+            AND = { # [EACP] Overseas Chinese characters; copied from chinese_manchu_queue_hairstyle_pops_trigger
+				exists = c:CHI
+				c:CHI = {
+					ruler = {
+						has_culture = cu:manchu
+					}
+					has_law = law_type:law_monarchy
+					NOT = { 
+						has_law = law_type:law_multicultural
+					}
+				}
+				culture = {
+					OR = {
+						has_discrimination_trait = east_asian_heritage
+						has_discrimination_trait = north_asian_heritage
+					}
+					NOT = {
+						this = cu:japanese
+						this = cu:korean
+						this = cu:vietnamese
+						this = cu:ainu
+					}
+				}
+			}
+		}
+	}
+}
+
+chinese_manchu_queue_hairstyle_pops_trigger = { # hairsyle for Manchu pops not living living under discriminatory Han rule, and Han pops living under discriminatory Manchu rule
+	exists = scope:pop
+	scope:pop = {
+		OR = {
+			AND = {
+				owner = {
+					ruler = {
+						has_culture = cu:manchu
+					}
+					coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+					NOT = { 
+						has_law = law_type:law_multicultural
+					}
+				}
+				culture = {
+					OR = {
+						has_discrimination_trait = east_asian_heritage
+						has_discrimination_trait = north_asian_heritage
+					}
+					NOT = {
+						this = cu:japanese
+						this = cu:korean
+						this = cu:vietnamese
+					}
+				}
+				NOT = {
+					AND = {
+						is_pop_type = clergymen
+						religion = {
+							has_discrimination_trait = buddhist
+							NOT = {
+								this = rel:mahayana
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					owner = { 
+						ruler = { 
+							culture = { 
+								has_discrimination_trait = han_chinese 
+							}
+						}
+						cu:manchu = {
+							NOT = { 
+								culture_is_discriminated_in = scope:pop.owner 
+							}
+						}
+					}
+				}
+				culture = cu:manchu
+			}
+			AND = {
+				exists = c:CHI
+				c:CHI = {
+					ruler = {
+						has_culture = cu:manchu
+					}
+					has_law = law_type:law_monarchy
+					NOT = { 
+						has_law = law_type:law_multicultural
+					}
+				}
+				# owner = { # [EACP] What is the point of this?
+					# ruler = {
+						# culture = {
+							# has_discrimination_trait = east_asian_heritage
+						# }
+					# }
+					# has_law = law_type:law_monarchy
+					# has_law = law_type:law_autocracy
+					# NOT = {
+						# has_law = law_type:law_multicultural
+					# }
+				# }
+				culture = {
+					OR = {
+						has_discrimination_trait = east_asian_heritage
+						has_discrimination_trait = north_asian_heritage
+					}
+					NOT = {
+						this = cu:japanese
+						this = cu:korean
+						this = cu:vietnamese
+						this = cu:ainu
+					}
+				}
 			}
 		}
 	}
@@ -1317,6 +1438,13 @@ topknot_pop_trigger = {
             }
         }
         EACP_unwesternized_trigger = yes
+        
+        trigger_if = {
+            limit = {
+                EACP_is_pop_chinese_trigger = yes
+            }
+            chinese_manchu_queue_hairstyle_pops_trigger = no
+        }
     }
     
     # Old logic
@@ -1377,6 +1505,13 @@ topknot_character_trigger = {
             }
         }
         EACP_unwesternized_trigger = yes
+        
+        trigger_if = {
+            limit = {
+                EACP_is_character_EAC_chinese_trigger = yes
+            }
+            chinese_manchu_queue_hairstyle_character_trigger = no
+        }
     }
     
     # Old logic
