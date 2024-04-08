@@ -2005,6 +2005,12 @@
                 template = no_outfit
                 range = { 0 1 }
             }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = no_legwear
+                range = { 0 1 }
+            }
 		}
 		weight = {
 			base = 0
@@ -2060,6 +2066,12 @@
                 mode = add
                 gene = outfits
                 template = no_outfit
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = no_legwear
                 range = { 0 1 }
             }
 		}
