@@ -142,8 +142,9 @@ EACP_is_buddhist_trigger = {
                             has_ideology = ideology:ideology_confucian
                         }
                     }
-                    NOT = {
+                    NOR = {
                         country_has_primary_culture = cu:japanese
+                        country_has_primary_culture = cu:vietnamese
                     }
                 }
             }
@@ -163,8 +164,9 @@ EACP_is_buddhist_trigger = {
                             has_ideology = ideology:ideology_confucian
                         }
                     }
-                    NOT = {
+                    NOR = {
                         country_has_primary_culture = cu:japanese
+                        country_has_primary_culture = cu:vietnamese
                     }
                 }
             }
@@ -183,8 +185,9 @@ EACP_is_buddhist_trigger = {
                             has_ideology = ideology:ideology_confucian
                         }
                     }
-                    NOT = {
+                    NOR = {
                         country_has_primary_culture = cu:japanese
+                        country_has_primary_culture = cu:vietnamese
                     }
                 }
             }
