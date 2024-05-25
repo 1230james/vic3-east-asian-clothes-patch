@@ -861,6 +861,7 @@
                     chinese_court_clothes_general_ming_trigger_0304 = yes
                     ming_subject_clothes_trigger = yes
                 }
+                military_clothes_trigger = no # [EACP] No court clothing for generals
             }
         }
     }

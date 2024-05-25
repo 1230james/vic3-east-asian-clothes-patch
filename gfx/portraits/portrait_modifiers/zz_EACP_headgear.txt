@@ -92,4 +92,53 @@
             }
         }
     }
+    
+    EACP_chinese_han_commander_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = EAC_headgear
+                template = chinese_king_headgear_ming
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                EACP_unwesternized_trigger = yes
+                military_clothes_trigger   = yes
+                dynasty_of_qing_trigger    = no
+                scope:character ?= { # Taken from chinese_court_clothes_general_ming_trigger_00
+                    owner ?= {
+                        ruler = {
+                            NOT = {
+                                has_culture = cu:manchu
+                                has_culture = cu:japanese
+                                has_culture = cu:korean
+                                has_culture = cu:vietnamese
+                                has_culture = cu:tibetan
+                            }
+                            culture = {
+                                has_discrimination_trait = east_asian_heritage
+                            }
+                        }
+                        OR = {
+                            has_law = law_type:law_monarchy
+                            has_law = law_type:law_theocracy
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
