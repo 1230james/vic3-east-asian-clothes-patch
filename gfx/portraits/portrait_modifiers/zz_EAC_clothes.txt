@@ -120,6 +120,13 @@
                 upper_clothes_pop_trigger = yes                       
                 EACP_unwesternized_trigger = yes # EACP
             }
+            modifier = {
+                add = 500
+                EACP_is_character_chinese_culture_trigger = yes
+                EACP_unwesternized_trigger = yes
+                EACP_is_morgenrote_special_char_trigger = yes
+                EACP_qing_china_trigger = yes
+            }
         }
     }
     
@@ -1986,6 +1993,14 @@
 				}
                 EACP_unwesternized_trigger = yes # EACP_unwesternized_pop_trigger = yes # snori_pop_westernize_trigger = no # [EACP] Mass replace
 			}
+            modifier = {
+                add = 500
+                EACP_is_character_chinese_culture_trigger = yes
+                EACP_unwesternized_trigger = yes
+                EACP_is_morgenrote_special_char_trigger = yes
+                EACP_qing_china_trigger = no
+                EAC_republic_clothes_trigger = no
+            }
 		}
 	}
 
@@ -2048,6 +2063,12 @@
                 vietnamese_clothes_trigger = yes
                 EACP_unwesternized_character_trigger = yes
                 agitator_character_trigger = yes
+            }
+            modifier = {
+                add = 100
+                vietnamese_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_morgenrote_special_char_trigger = yes
             }
 		}
 	}

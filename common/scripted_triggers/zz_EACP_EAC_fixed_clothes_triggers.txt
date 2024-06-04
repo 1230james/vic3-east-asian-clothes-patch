@@ -309,6 +309,7 @@ north_asian_court_clothes_trigger = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -331,6 +332,7 @@ chinese_court_clothes_official_trigger_01 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -353,6 +355,7 @@ chinese_court_clothes_official_trigger_02 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -375,6 +378,7 @@ chinese_court_clothes_official_trigger_03 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -398,6 +402,7 @@ chinese_court_clothes_official_trigger_04 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -419,6 +424,7 @@ chinese_court_clothes_official_trigger_05 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -447,6 +453,7 @@ chinese_court_clothes_general_trigger_01 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -480,6 +487,7 @@ chinese_court_clothes_general_trigger_02 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -513,6 +521,7 @@ chinese_court_clothes_general_trigger_03 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -548,6 +557,7 @@ chinese_court_clothes_official_ming_trigger_01 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -583,6 +593,7 @@ chinese_court_clothes_official_ming_trigger_02 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -618,6 +629,7 @@ chinese_court_clothes_official_ming_trigger_03 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -654,6 +666,7 @@ chinese_court_clothes_official_ming_trigger_04 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -688,6 +701,7 @@ chinese_court_clothes_official_ming_trigger_05 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -729,6 +743,7 @@ chinese_court_clothes_general_ming_trigger_00 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -774,6 +789,7 @@ chinese_court_clothes_general_ming_trigger_0102 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -820,6 +836,7 @@ chinese_court_clothes_general_ming_trigger_0304 = {
 				has_law = law_type:law_theocracy
 			}
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -842,6 +859,7 @@ vietnamese_court_clothes_official_trigger_01 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -864,6 +882,7 @@ vietnamese_court_clothes_official_trigger_02 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -886,6 +905,7 @@ vietnamese_court_clothes_official_trigger_03 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -909,6 +929,7 @@ vietnamese_court_clothes_official_trigger_04 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -930,6 +951,7 @@ vietnamese_court_clothes_official_trigger_05 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -965,6 +987,7 @@ vietnamese_court_clothes_general_trigger_0102 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -1001,6 +1024,7 @@ vietnamese_court_clothes_general_trigger_0304 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -1335,6 +1359,7 @@ korean_court_clothes_trigger_01 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -1361,6 +1386,7 @@ korean_court_clothes_trigger_02 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -1383,6 +1409,7 @@ korean_court_clothes_trigger_03 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 
@@ -1408,6 +1435,7 @@ korean_court_clothes_trigger_04 = {
 			}
 			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
 		}
+        EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
 }
 

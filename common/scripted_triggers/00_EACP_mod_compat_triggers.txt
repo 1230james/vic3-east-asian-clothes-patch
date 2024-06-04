@@ -5,3 +5,8 @@
 JKFP_is_active_trigger = {
     always = no
 }
+
+# Morgenrote
+mr_is_special_character_no_tooltip_trigger = {
+    always = no
+}
