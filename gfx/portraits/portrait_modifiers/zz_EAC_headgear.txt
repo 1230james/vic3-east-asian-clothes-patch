@@ -222,6 +222,12 @@
                 }
                 EACP_unwesternized_trigger = yes
             }
+            modifier = {
+                add = 100
+                vietnamese_clothes_trigger = yes
+                EACP_unwesternized_character_trigger = yes
+                EACP_is_morgenrote_special_char_trigger = yes
+            }
         }
     }
 
@@ -280,6 +286,13 @@
 #                    chinese_court_clothes_republic_trigger = yes
 #                    chinese_imperial_clothes_republic_trigger = yes
 #                }
+            }
+            modifier = {
+                add = 100
+                EACP_is_character_chinese_culture_trigger = yes
+                EACP_unwesternized_trigger = yes
+                EACP_is_morgenrote_special_char_trigger = yes
+                EACP_qing_china_trigger = yes
             }
         }
     }
@@ -1071,6 +1084,13 @@
                     }
                 }
             }
+            modifier = {
+                add = 100
+                EACP_is_character_chinese_culture_trigger = yes
+                EACP_unwesternized_trigger = yes
+                EACP_is_morgenrote_special_char_trigger = yes
+                EACP_qing_china_trigger = no
+            }
         }
     }
 
@@ -1181,6 +1201,12 @@
                         korean_clothes_trigger = yes
                     }
                 }
+            }
+            modifier = {
+                add = 100
+                korean_clothes_trigger = yes
+                EACP_unwesternized_trigger = yes
+                EACP_is_morgenrote_special_char_trigger = yes
             }
         }
     }

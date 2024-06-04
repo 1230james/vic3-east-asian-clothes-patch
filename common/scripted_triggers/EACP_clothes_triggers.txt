@@ -62,6 +62,21 @@ EACP_qing_china_trigger = {
     }
 }
 
+# Morgenrote compatibility - returns true if they are strictly a special character for Morgenrote (i.e., scientist,
+# artist, etc.); returns false otherwise. Used mainly for blocking the use of court clothing 
+EACP_is_morgenrote_special_char_trigger = {
+    scope:character ?= {
+        mr_is_special_character_no_tooltip_trigger = yes
+        EACP_is_commander_trigger  = no
+        agitator_character_trigger = no
+        is_ruler = no
+        is_heir  = no
+        NOT = {
+            interest_group.leader ?= THIS
+        }
+    }
+}
+
 # Check against all of EAC's Chinese clothes triggers
 EACP_is_character_EAC_chinese_trigger = {
     exists = scope:character
@@ -123,6 +138,23 @@ EACP_is_pop_chinese_trigger = {
                     # }
                 # }
             # }
+        }
+    }
+}
+
+# EACP_is_pop_chinese_trigger but for characters
+EACP_is_character_chinese_culture_trigger = {
+    scope:character ?= {
+        OR = {
+            chinese_clothes_pop_trigger = yes
+            OR = {
+                culture = { 
+                    has_discrimination_trait = han_chinese
+                }
+                cu:manchu ?= culture
+                cu:mongol ?= culture
+                cu:tuvan  ?= culture
+            }
         }
     }
 }
