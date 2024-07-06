@@ -1684,3 +1684,32 @@ chinese_beard_character_trigger = {
 		}
 	}	
 }
+
+confucianism_clothes_pop_trigger = {
+    exists = scope:pop
+    scope:pop = {
+        # New logic for 1.7+
+        trigger_if = {
+            limit = {
+                religion = rel:confucian
+            }
+            always = yes
+        }
+        
+        # Original EAC logic
+        # Logic copied from `confucianism_clothes_pop_trigger` in EAC_clothes_triggers.txt
+        trigger_else = {
+            culture = {
+                OR = {
+                    has_discrimination_trait = east_asian_heritage
+                    this = cu:manchu
+                    this = cu:vietnamese
+                }
+            }
+            religion = rel:mahayana
+            NOT = {
+                has_pop_culture = japanese
+            }
+        }
+    }
+}
