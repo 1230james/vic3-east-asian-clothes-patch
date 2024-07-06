@@ -26,17 +26,29 @@ EACP_unwesternized_trigger = {
 }
 
 EACP_confucianism_clothes_character_trigger = {
-    scope:character ?= { # Logic copied from `confucianism_clothes_pop_trigger` in EAC_clothes_triggers.txt
-        culture = {
-            OR = {
-                has_discrimination_trait = east_asian_heritage
-                this = cu:manchu
-                this = cu:vietnamese
+    scope:character ?= {
+        # New logic for 1.7+
+        trigger_if = {
+            limit = {
+                religion = rel:confucian
             }
+            always = yes
         }
-        religion = rel:mahayana
-        NOT = {
-            has_culture = cu:japanese
+        
+        # Original EAC logic
+        # Logic copied from `confucianism_clothes_pop_trigger` in EAC_clothes_triggers.txt
+        trigger_else = {
+            culture = {
+                OR = {
+                    has_discrimination_trait = east_asian_heritage
+                    this = cu:manchu
+                    this = cu:vietnamese
+                }
+            }
+            religion = rel:mahayana
+            NOT = {
+                has_culture = japanese
+            }
         }
     }
 }

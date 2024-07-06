@@ -213,6 +213,7 @@
                                         scope:character = {
 											exists = home_country
 											home_country = c:CSA
+                                            is_female = no
 										}
                                     }
                                     AND = {
@@ -229,6 +230,7 @@
                                         scope:character = {
                                             exists = home_country
                                             home_country = c:BRZ
+                                            is_female = no
                                         }
                                     }
                                     AND = {
@@ -244,6 +246,7 @@
                                 exists = scope:character
                                 scope:character = {
                                     has_role = general
+                                    is_female = no
                                 }
                             }
                             AND = {
