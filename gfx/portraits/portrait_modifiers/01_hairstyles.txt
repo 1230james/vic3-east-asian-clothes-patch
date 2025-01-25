@@ -319,9 +319,6 @@
                                         has_ideology = ideology:ideology_confucian
                                     }
                                 }
-                                NOT = {
-                                    country_has_primary_culture = cu:japanese
-                                }
                             }
                         }
                         clergy_clothes_pop_trigger = yes
@@ -340,9 +337,6 @@
                                         has_ideology = ideology:ideology_confucian
                                     }
                                 }
-                                NOT = {
-                                    country_has_primary_culture = cu:japanese
-                                }
                             }
                         }
                     }
@@ -359,9 +353,6 @@
                                     NOT = {
                                         has_ideology = ideology:ideology_confucian
                                     }
-                                }
-                                NOT = {
-                                    country_has_primary_culture = cu:japanese
                                 }
                             }
                     	}
@@ -386,6 +377,29 @@
                 add = 100
                 indian_clothes_pop_trigger = yes
                 upper_clothes_pop_trigger = no
+            }
+        }
+    }
+
+    lakshimbai_hairstyle = { # should be good with DNA entry but I want to be absolutely 100% thorough here
+        dna_modifiers = {
+            accessory = {
+                mode = replace
+                gene = hairstyles
+                template = lakshmibai_hair
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+
+                has_dlc_feature = ip2_cosmetics
+
+                scope:character ?= {
+                    has_template = jhn_rani_of_jhansi
+                }
             }
         }
     }
