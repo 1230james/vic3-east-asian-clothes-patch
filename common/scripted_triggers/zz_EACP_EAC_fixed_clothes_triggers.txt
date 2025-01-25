@@ -285,7 +285,10 @@ chinese_imperial_clothes_trigger = {
 			has_culture = cu:ainu
 		}
      	home_country ?= {
-     		coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+     		OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
      	}
 	}
 }
@@ -307,7 +310,10 @@ north_asian_court_clothes_trigger = {
 					has_culture = cu:ainu
 				}
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -330,7 +336,10 @@ chinese_court_clothes_official_trigger_01 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -353,7 +362,10 @@ chinese_court_clothes_official_trigger_02 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -376,7 +388,10 @@ chinese_court_clothes_official_trigger_03 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -400,7 +415,10 @@ chinese_court_clothes_official_trigger_04 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -422,7 +440,10 @@ chinese_court_clothes_official_trigger_05 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -451,7 +472,10 @@ chinese_court_clothes_general_trigger_01 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -485,7 +509,10 @@ chinese_court_clothes_general_trigger_02 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
@@ -519,7 +546,10 @@ chinese_court_clothes_general_trigger_03 = {
 			ruler = {
 				has_culture = cu:manchu
 			}
-			coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+			OR = { # [EACP] Theocracy fix
+				coa_monarchy_trigger = yes # has_law = law_type:law_monarchy # EACP # RRK compatibility
+				has_law = law_type:law_theocracy
+			}
 		}
         EACP_is_morgenrote_special_char_trigger = no # [EACP] Morgenrote compatibility
 	}	
