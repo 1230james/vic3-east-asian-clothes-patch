@@ -1,15 +1,24 @@
 {
     "name" : "East Asian Clothes Patch",
-    "id" : "",
-    "version" : "1.5.13",
-    "supported_game_version" : "1.7.*",
+    "id" : "xyz.1230james.east_asian_clothes_patch",
+    "version" : "1.5.14",
+    "game_id" : "victoria3",
+    "supported_game_version" : "1.8.*",
     "short_description" : "",
     "tags" : [
         "Fixes",
         "Graphics",
         "Historical"
     ],
-    "relationships" : [],
+    "relationships" : [
+        {
+            "rel_type" : "dependency",
+            "id" : "xyz.1230james.western_clothes",
+            "display_name" : "Western Clothes: Redux",
+            "resource_type" : "mod",
+            "version" : "*"
+        }
+    ],
     "game_custom_data" : {
         "multiplayer_synchronized" : true
     }
