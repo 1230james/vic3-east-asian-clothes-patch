@@ -308,7 +308,7 @@
                 mode = add
                 gene = outfits
                 template = chinese_imperial_outfits
-                range = { 0 1 } # For the randomness to work correctly
+                accessory = male_outfit_chinese_imperial_01
             }
             accessory = {
                 mode = add
