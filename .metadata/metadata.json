@@ -1,7 +1,7 @@
 {
     "name" : "East Asian Clothes Patch",
     "id" : "xyz.1230james.east_asian_clothes_patch",
-    "version" : "1.5.14",
+    "version" : "1.5.15",
     "game_id" : "victoria3",
     "supported_game_version" : "1.8.*",
     "short_description" : "",
