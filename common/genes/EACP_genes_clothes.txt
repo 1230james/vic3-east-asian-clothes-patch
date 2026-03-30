@@ -20,9 +20,7 @@
                 male = {
                     1 = mandarin_square_official_ming_01
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -32,9 +30,7 @@
                 male = {
                     1 = mandarin_square_official_ming_02
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -44,9 +40,7 @@
                 male = {
                     1 = mandarin_square_official_ming_03
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -56,9 +50,7 @@
                 male = {
                     1 = mandarin_square_official_ming_04
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -68,9 +60,7 @@
                 male = {
                     1 = mandarin_square_official_ming_05
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -80,9 +70,7 @@
                 male = {
                     1 = mandarin_square_general_ming_00
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -92,9 +80,7 @@
                 male = {
                     1 = mandarin_square_general_ming_0102
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -104,9 +90,7 @@
                 male = {
                     1 = mandarin_square_general_ming_0304
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -117,9 +101,7 @@
                     1 = mandarin_square_ming_subject_01
                     1 = mandarin_square_ming_subject_02
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -144,9 +126,7 @@
                 male = {
                     1 = EAC_male_outfit_chinese_imperial_01
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -158,9 +138,7 @@
                     1 = male_outfit_chinese_court_official_01
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -172,9 +150,7 @@
                     1 = male_outfit_chinese_court_official_02
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -186,9 +162,7 @@
                     1 = male_outfit_chinese_court_official_03
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -202,9 +176,7 @@
                     1 = male_outfit_chinese_court_official_04
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -216,9 +188,7 @@
                     1 = male_outfit_chinese_court_official_05
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -233,9 +203,7 @@
                     1 = male_outfit_chinese_court_general_01
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -247,9 +215,7 @@
                     1 = male_outfit_chinese_court_general_02
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -263,9 +229,7 @@
                     1 = male_outfit_chinese_court_general_03
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -305,9 +269,7 @@
                     1 = male_outfit_mandarin
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -319,9 +281,7 @@
                     1 = male_outfit_mandarin
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -444,9 +404,7 @@
                     1 = male_outfit_vietnamese_court_official_01
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -458,9 +416,7 @@
                     1 = male_outfit_vietnamese_court_official_02
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -472,9 +428,7 @@
                     1 = male_outfit_vietnamese_court_official_03
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -486,9 +440,7 @@
                     1 = male_outfit_vietnamese_court_official_04
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -500,9 +452,7 @@
                     1 = male_outfit_vietnamese_court_official_05
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -514,9 +464,7 @@
                     1 = male_outfit_vietnamese_court_general_0102
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 
@@ -528,9 +476,7 @@
                     1 = male_outfit_vietnamese_court_general_0304
 
                 }
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
 

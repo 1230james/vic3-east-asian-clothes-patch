@@ -47,9 +47,7 @@
                     1 = male_headgear_chinese_imperial_01
                 }
 
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }
@@ -60,9 +58,7 @@
                     1 = male_headgear_chinese_imperial_02
                 }
 
-                female = {
-                    1 = male
-                }
+                female = male
                 boy = male
                 girl = female
             }

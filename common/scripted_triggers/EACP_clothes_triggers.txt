@@ -47,7 +47,7 @@ EACP_confucianism_clothes_character_trigger = {
             }
             religion = rel:mahayana
             NOT = {
-                has_culture = japanese
+                has_culture = cu:japanese
             }
         }
     }
